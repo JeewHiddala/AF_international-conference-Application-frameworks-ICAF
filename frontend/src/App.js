@@ -1,10 +1,16 @@
 import './App.css';
 import React from 'react';
+import { BrowserRouter as Router} from 'react-router-dom';    //make routes
+import Navbar from './components/navBar/navBar';
+import Footer from './components/footer/footer';
 
 function App(){
     return(
         <div>
-            <h1>Hello Team Volcano.</h1>
+            <Router>
+                <Navbar/>
+                <Footer/>
+            </Router>
         </div>
     );
 }
