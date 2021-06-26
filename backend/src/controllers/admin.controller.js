@@ -50,7 +50,7 @@ const updateSelectedAdmin = async (req, res) => {       //update selected admin
 
 const deleteAdmin = async (req, res) => {               // delete selected admin
     if (req.params && req.params.id) {
-        const {id} = req.params;            // fetching the id of the admin item
+        const {id} = req.params;            // fetching the id of the admin
         if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No admin with id: ${id}`);       //validating the admin id.
         await Admin.findByIdAndRemove(id);         // find admin and remove admin.
         res.json({message: "Admin deleted successfully."});

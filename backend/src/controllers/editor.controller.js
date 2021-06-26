@@ -49,7 +49,7 @@ const updateSelectedEditor = async (req, res) => {       //update selected edito
 
 const deleteEditor = async (req, res) => {               // delete selected editor
     if (req.params && req.params.id) {
-        const {id} = req.params;            // fetching the id of the editor item
+        const {id} = req.params;            // fetching the id of the editor
         if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No editor with id: ${id}`);       //validating the editor id.
         await Editor.findByIdAndRemove(id);         // find editor and remove admin.
         res.json({message: "editor deleted successfully."});
