@@ -8,6 +8,7 @@ const AdminSchema = new mongoose.Schema({    //make schema
     mobileNumber: { type: Number, required: true },
     userName: { type: String, required: true, trim: true },
     password: { type: String, required: true, trim: true },
+    salary: { type: Number, required: true },
     editors: [{ type: mongoose.Schema.Types.ObjectId, required: false, ref: 'editors'}],
     reviewers: [{ type: mongoose.Schema.Types.ObjectId, required: false, ref: 'reviewers'}]
 });
