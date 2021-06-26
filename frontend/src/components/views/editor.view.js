@@ -49,18 +49,23 @@ class viewEditors extends Component {
                     <div className="col-8"><h1>Editors</h1></div>
                     <div className="col-4"><button type="button" className="btn btn-outline-primary">Create Editor</button></div>
                 </div>
+                <div className = "row">
+                    <div className="col-4"></div>
+                    <div className="card col-4"><h6>Total Salary of Editors</h6></div>
+                    <div className="card col-2"></div>
+                </div>
                 <br/>
                     <div className="container">
                         <table className="table table-hover">
                             <thead>
                                 <tr>
-                                <th scope="col">name</th>
-                                <th scope="col">email</th>
-                                <th scope="col">nicNo</th>
-                                <th scope="col">address</th>
-                                <th scope="col">mobileNumber</th>
-                                <th scope="col">userName</th>
-                                <th scope="col">editorSalary</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">NIC No</th>
+                                <th scope="col">Address</th>
+                                <th scope="col">Mobile Number</th>
+                                <th scope="col">Username</th>
+                                <th scope="col">Editor Salary</th>
                                 </tr>
                             </thead>
                             <tbody>
