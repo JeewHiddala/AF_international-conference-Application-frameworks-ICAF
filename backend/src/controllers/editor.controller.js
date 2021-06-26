@@ -36,18 +36,29 @@ const getSelectedEditorDetails = async (req, res) => {          //get selected e
     }
 }
 
+const updateSelectedEditor = async (req, res) => {       //update selected editor
+    if (req.params && req.params.id){
+        const {id} = req.params;        // fetching the id of the editor.
+        const editor = req.body;
+
+        if(!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send('No editor With That id');      // validating the editor id
+        const updatedEditor = await Editor.findByIdAndUpdate(id, editor,{new : true});      // find editor and Update editor
+        res.json(updatedEditor);
+    }
+}
+
 const deleteEditor = async (req, res) => {               // delete selected editor
     if (req.params && req.params.id) {
         const {id} = req.params;            // fetching the id of the editor item
         if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No editor with id: ${id}`);       //validating the editor id.
         await Editor.findByIdAndRemove(id);         // find editor and remove admin.
         res.json({message: "editor deleted successfully."});
-    }
-}
+
 
 module.exports = {
     createEditor,
     getAllEditorsDetails,
     getSelectedEditorDetails,
+    updateSelectedEditor,
     deleteEditor
 };
