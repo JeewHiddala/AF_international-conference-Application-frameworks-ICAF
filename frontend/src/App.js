@@ -1,7 +1,9 @@
 import './App.css';
 import React from 'react';
-import { BrowserRouter as Router} from 'react-router-dom';    //make routes
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';    //make routes
 import Navbar from './components/navBar/navBar';
+import ViewEditors from './components/views/editor.view';
+import ViewReviewers from './components/views/reviewer.view';
 import Footer from './components/footer/footer';
 
 function App(){
@@ -9,6 +11,12 @@ function App(){
         <div>
             <Router>
                 <Navbar/>
+                    <section>
+                        <Switch>
+                            <Route path="/editor" component={ViewEditors} />
+                            <Route path="/reviewer" component={ViewReviewers} />
+                        </Switch>
+                    </section>
                 <Footer/>
             </Router>
         </div>

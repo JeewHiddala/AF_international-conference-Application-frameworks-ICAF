@@ -1,5 +1,4 @@
-//import react and react components
-import React, { Component } from 'react';
+import React, { Component } from 'react';       //import react and react components
 
 class Navbar extends Component {
     constructor(props) {
@@ -31,6 +30,15 @@ class Navbar extends Component {
                                 <li className="nav-item">
                                     <a className="nav-link disabled" href="#" tabIndex="-1"
                                        aria-disabled="true">Disabled</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link" href="/admin">Administrator</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link" href="/editor">Editor</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link" href="/reviewer">Reviewer</a>
                                 </li>
                             </ul>
                         </div>
