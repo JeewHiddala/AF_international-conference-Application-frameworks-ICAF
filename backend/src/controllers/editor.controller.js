@@ -53,7 +53,8 @@ const deleteEditor = async (req, res) => {               // delete selected edit
         if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No editor with id: ${id}`);       //validating the editor id.
         await Editor.findByIdAndRemove(id);         // find editor and remove admin.
         res.json({message: "editor deleted successfully."});
-
+    }
+}
 
 module.exports = {
     createEditor,
