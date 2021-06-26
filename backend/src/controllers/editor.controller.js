@@ -1,4 +1,5 @@
 const Editor = require('../models/editor.model');       //import editor model
+const mongoose = require("mongoose");
 
 const createEditor = async (req, res) => {       //create a editors to db.
     if (req.body) {
@@ -35,8 +36,18 @@ const getSelectedEditorDetails = async (req, res) => {          //get selected e
     }
 }
 
+const deleteEditor = async (req, res) => {               // delete selected editor
+    if (req.params && req.params.id) {
+        const {id} = req.params;            // fetching the id of the editor item
+        if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No editor with id: ${id}`);       //validating the editor id.
+        await Editor.findByIdAndRemove(id);         // find editor and remove admin.
+        res.json({message: "editor deleted successfully."});
+    }
+}
+
 module.exports = {
     createEditor,
     getAllEditorsDetails,
-    getSelectedEditorDetails
+    getSelectedEditorDetails,
+    deleteEditor
 };
