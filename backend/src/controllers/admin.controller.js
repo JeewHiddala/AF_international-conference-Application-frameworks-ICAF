@@ -1,8 +1,8 @@
 //import admin model
 const Admin = require('../models/admin.model');
+const mongoose = require("mongoose");
 
-//create a admin to db
-const createAdmin = async (req, res) => {
+const createAdmin = async (req, res) => {       //create a admin to db.
     if (req.body) {
         const admin = new Admin(req.body);
         admin.save()
@@ -15,7 +15,7 @@ const createAdmin = async (req, res) => {
     }
 }
 
-const getAllAdminsDetails = async (req, res) => {
+const getAllAdminsDetails = async (req, res) => {       //get all admin details.
     await Admin.find({})
         .then(data => {
             res.status(200).send({ data: data });
@@ -25,7 +25,21 @@ const getAllAdminsDetails = async (req, res) => {
         });
 }
 
+const deleteAdmin = async (req, res) => {
+    if (req.params && req.params.id) {
+        const {id} = req.params; //fetching the id of the post item
+        if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No admin with id: ${id}`); //Validating the post id
+
+        await Admin.findByIdAndRemove(id); //Find and Remove operation
+
+        res.json({message: "Conference deleted successfully."});
+    }
+}
+
+
 module.exports = {
     createAdmin,
-    getAllAdminsDetails
+    getAllAdminsDetails,
+    deleteAdmin
+    
 };
