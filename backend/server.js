@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 
 //import APIs
 const adminAPI = require('./src/apis/admin.api');
+const editorAPI = require('./src/apis/editor.api');
 
 dotenv.config();
 const app = express();
@@ -40,6 +41,7 @@ app.route('/').get((req, res) => {
 
 //register router
 app.use('/admin', adminAPI());
+app.use('/editor', editorAPI());
 
 app.listen(PORT, () => {
   console.log(`Server is up and running on PORT ${PORT}`);
