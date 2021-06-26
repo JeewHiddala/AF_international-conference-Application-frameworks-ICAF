@@ -11816,25 +11816,33 @@ var viewEditors = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/_react.default.createElement("button", {
         type: "button",
         className: "btn btn-outline-primary"
-      }, "Create Editor"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+      }, "Create Editor"))), /*#__PURE__*/_react.default.createElement("div", {
+        className: "row"
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        className: "col-4"
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: "card col-4"
+      }, /*#__PURE__*/_react.default.createElement("h6", null, "Total Salary of Editors")), /*#__PURE__*/_react.default.createElement("div", {
+        className: "card col-2"
+      })), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
         className: "container"
       }, /*#__PURE__*/_react.default.createElement("table", {
         className: "table table-hover"
       }, /*#__PURE__*/_react.default.createElement("thead", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("th", {
         scope: "col"
-      }, "name"), /*#__PURE__*/_react.default.createElement("th", {
+      }, "Name"), /*#__PURE__*/_react.default.createElement("th", {
         scope: "col"
-      }, "email"), /*#__PURE__*/_react.default.createElement("th", {
+      }, "Email"), /*#__PURE__*/_react.default.createElement("th", {
         scope: "col"
-      }, "nicNo"), /*#__PURE__*/_react.default.createElement("th", {
+      }, "NIC No"), /*#__PURE__*/_react.default.createElement("th", {
         scope: "col"
-      }, "address"), /*#__PURE__*/_react.default.createElement("th", {
+      }, "Address"), /*#__PURE__*/_react.default.createElement("th", {
         scope: "col"
-      }, "mobileNumber"), /*#__PURE__*/_react.default.createElement("th", {
+      }, "Mobile Number"), /*#__PURE__*/_react.default.createElement("th", {
         scope: "col"
-      }, "userName"), /*#__PURE__*/_react.default.createElement("th", {
+      }, "Username"), /*#__PURE__*/_react.default.createElement("th", {
         scope: "col"
-      }, "editorSalary"))), /*#__PURE__*/_react.default.createElement("tbody", null, this.state.editors.length > 0 && this.state.editors.map(function (item, index) {
+      }, "Editor Salary"))), /*#__PURE__*/_react.default.createElement("tbody", null, this.state.editors.length > 0 && this.state.editors.map(function (item, index) {
         return /*#__PURE__*/_react.default.createElement("tr", {
           key: index
         }, /*#__PURE__*/_react.default.createElement("td", null, item.name), /*#__PURE__*/_react.default.createElement("td", null, item.email), /*#__PURE__*/_react.default.createElement("td", null, item.nicNo), /*#__PURE__*/_react.default.createElement("td", null, item.address), /*#__PURE__*/_react.default.createElement("td", null, item.mobileNumber), /*#__PURE__*/_react.default.createElement("td", null, item.userName), /*#__PURE__*/_react.default.createElement("td", null, item.editorSalary), /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("button", {
@@ -11968,7 +11976,15 @@ var viewReviewer = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/_react.default.createElement("button", {
         type: "button",
         className: "btn btn-outline-primary"
-      }, "Create Reviewer"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+      }, "Create Reviewer"))), /*#__PURE__*/_react.default.createElement("div", {
+        className: "row"
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        className: "col-4"
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: "card col-4"
+      }, /*#__PURE__*/_react.default.createElement("h6", null, "Total Salary of Reviewers")), /*#__PURE__*/_react.default.createElement("div", {
+        className: "card col-2"
+      })), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
         className: "container"
       }, /*#__PURE__*/_react.default.createElement("table", {
         className: "table table-hover"
@@ -12011,6 +12027,166 @@ var viewReviewer = /*#__PURE__*/function (_Component) {
 
 var _default = viewReviewer;
 exports.default = _default;
+},{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js","sweetalert2":"node_modules/sweetalert2/dist/sweetalert2.all.js"}],"src/components/views/admin.view.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _axios = _interopRequireDefault(require("axios"));
+
+var _sweetalert = _interopRequireDefault(require("sweetalert2"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+var viewAdmins = /*#__PURE__*/function (_Component) {
+  _inherits(viewAdmins, _Component);
+
+  var _super = _createSuper(viewAdmins);
+
+  function viewAdmins(props) {
+    var _this;
+
+    _classCallCheck(this, viewAdmins);
+
+    _this = _super.call(this, props);
+    _this.state = {
+      admins: []
+    };
+    _this.deleteAdmin = _this.deleteAdmin.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(viewAdmins, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      //inbuild function
+      _axios.default.get('http://localhost:7000/admin/').then(function (response) {
+        _this2.setState({
+          admins: response.data.data
+        });
+      });
+    }
+  }, {
+    key: "deleteAdmin",
+    value: function deleteAdmin(e, adminId) {
+      console.log("I am on Delete", adminId);
+
+      _sweetalert.default.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then(function (result) {
+        if (result.isConfirmed) {
+          _axios.default.delete("http://localhost:7000/admin/".concat(adminId));
+
+          _sweetalert.default.fire('Deleted!', 'Product has been deleted.', 'success');
+        }
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this3 = this;
+
+      return /*#__PURE__*/_react.default.createElement("div", {
+        className: "container"
+      }, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+        className: "row"
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        className: "col-8"
+      }, /*#__PURE__*/_react.default.createElement("h1", null, "Administrators")), /*#__PURE__*/_react.default.createElement("div", {
+        className: "col-4"
+      }, /*#__PURE__*/_react.default.createElement("button", {
+        type: "button",
+        className: "btn btn-outline-primary"
+      }, "Create Administrator"))), /*#__PURE__*/_react.default.createElement("div", {
+        className: "row"
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        className: "col-4"
+      }), /*#__PURE__*/_react.default.createElement("div", {
+        className: "card col-4"
+      }, /*#__PURE__*/_react.default.createElement("h6", null, "Total Salary of Administrators")), /*#__PURE__*/_react.default.createElement("div", {
+        className: "card col-2"
+      })), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+        className: "container"
+      }, /*#__PURE__*/_react.default.createElement("table", {
+        className: "table table-hover"
+      }, /*#__PURE__*/_react.default.createElement("thead", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, "Name"), /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, "Email"), /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, "Date of Birth"), /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, "Address"), /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, "Mobile Number"), /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, "Username"), /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, "Admin Salary"))), /*#__PURE__*/_react.default.createElement("tbody", null, this.state.admins.length > 0 && this.state.admins.map(function (item, index) {
+        return /*#__PURE__*/_react.default.createElement("tr", {
+          key: index
+        }, /*#__PURE__*/_react.default.createElement("td", null, item.name), /*#__PURE__*/_react.default.createElement("td", null, item.email), /*#__PURE__*/_react.default.createElement("td", null, item.dateOfBirth), /*#__PURE__*/_react.default.createElement("td", null, item.address), /*#__PURE__*/_react.default.createElement("td", null, item.mobileNumber), /*#__PURE__*/_react.default.createElement("td", null, item.userName), /*#__PURE__*/_react.default.createElement("td", null, item.salary), /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("button", {
+          type: "button",
+          className: "btn btn-outline-warning",
+          onClick: function onClick(e) {
+            return _this3.deleteProduct(e, item._id);
+          }
+        }, "Edit")), /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("button", {
+          type: "button",
+          className: "btn btn-outline-danger",
+          onClick: function onClick(e) {
+            return _this3.deleteAdmin(e, item._id);
+          }
+        }, "Delete")));
+      })))));
+    }
+  }]);
+
+  return viewAdmins;
+}(_react.Component);
+
+var _default = viewAdmins;
+exports.default = _default;
 },{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js","sweetalert2":"node_modules/sweetalert2/dist/sweetalert2.all.js"}],"src/components/footer/footer.js":[function(require,module,exports) {
 "use strict";
 
@@ -12051,6 +12227,8 @@ var _editor = _interopRequireDefault(require("./components/views/editor.view"));
 
 var _reviewer = _interopRequireDefault(require("./components/views/reviewer.view"));
 
+var _admin = _interopRequireDefault(require("./components/views/admin.view"));
+
 var _footer = _interopRequireDefault(require("./components/footer/footer"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -12063,12 +12241,15 @@ function App() {
   }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/reviewer",
     component: _reviewer.default
+  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    path: "/admin",
+    component: _admin.default
   }))), /*#__PURE__*/_react.default.createElement(_footer.default, null)));
 }
 
 var _default = App;
 exports.default = _default;
-},{"./App.css":"src/App.css","react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./components/navBar/navBar":"src/components/navBar/navBar.js","./components/views/editor.view":"src/components/views/editor.view.js","./components/views/reviewer.view":"src/components/views/reviewer.view.js","./components/footer/footer":"src/components/footer/footer.js"}],"node_modules/scheduler/cjs/scheduler.development.js":[function(require,module,exports) {
+},{"./App.css":"src/App.css","react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./components/navBar/navBar":"src/components/navBar/navBar.js","./components/views/editor.view":"src/components/views/editor.view.js","./components/views/reviewer.view":"src/components/views/reviewer.view.js","./components/views/admin.view":"src/components/views/admin.view.js","./components/footer/footer":"src/components/footer/footer.js"}],"node_modules/scheduler/cjs/scheduler.development.js":[function(require,module,exports) {
 /** @license React v0.20.2
  * scheduler.development.js
  *
@@ -39169,7 +39350,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51960" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64626" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

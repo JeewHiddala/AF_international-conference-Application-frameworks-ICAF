@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';    //m
 import Navbar from './components/navBar/navBar';
 import ViewEditors from './components/views/editor.view';
 import ViewReviewers from './components/views/reviewer.view';
+import ViewAdmins from './components/views/admin.view';
 import Footer from './components/footer/footer';
 
 function App(){
@@ -15,6 +16,7 @@ function App(){
                         <Switch>
                             <Route path="/editor" component={ViewEditors} />
                             <Route path="/reviewer" component={ViewReviewers} />
+                            <Route path="/admin" component={ViewAdmins} />
                         </Switch>
                     </section>
                 <Footer/>

@@ -2,25 +2,25 @@ import React, { Component} from 'react';
 import axios from 'axios';
 import Swal from "sweetalert2";
 
-class viewReviewer extends Component {
+class viewAdmins extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            reviewers: []
+            admins: []
         }
-        this.deleteReviewer = this.deleteReviewer.bind(this);
+        this.deleteAdmin = this.deleteAdmin.bind(this);
 
     }
 
     componentDidMount() {   //inbuild function
-        axios.get('http://localhost:7000/reviewer/')
+        axios.get('http://localhost:7000/admin/')
             .then(response => {
-                this.setState({ reviewers: response.data.data });
+                this.setState({ admins: response.data.data });
             })
     }
 
-    deleteReviewer(e , reviewerId) {
-        console.log("I am on Delete", reviewerId)
+    deleteAdmin(e , adminId) {
+        console.log("I am on Delete", adminId)
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
@@ -31,7 +31,7 @@ class viewReviewer extends Component {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`http://localhost:7000/reviewer/${reviewerId}`)
+                axios.delete(`http://localhost:7000/admin/${adminId}`)
                 Swal.fire(
                     'Deleted!',
                     'Product has been deleted.',
@@ -46,12 +46,12 @@ class viewReviewer extends Component {
             <div className="container">
                 <br/>
                 <div className = "row">
-                    <div className="col-8"><h1>Reviewers</h1></div>
-                    <div className="col-4"><button type="button" className="btn btn-outline-primary">Create Reviewer</button></div>
+                    <div className="col-8"><h1>Administrators</h1></div>
+                    <div className="col-4"><button type="button" className="btn btn-outline-primary">Create Administrator</button></div>
                 </div>
                 <div className = "row">
                     <div className="col-4"></div>
-                    <div className="card col-4"><h6>Total Salary of Reviewers</h6></div>
+                    <div className="card col-4"><h6>Total Salary of Administrators</h6></div>
                     <div className="card col-2"></div>
                 </div>
                 <br/>
@@ -61,25 +61,25 @@ class viewReviewer extends Component {
                                 <tr>
                                 <th scope="col">Name</th>
                                 <th scope="col">Email</th>
-                                <th scope="col">NIC No</th>
+                                <th scope="col">Date of Birth</th>
                                 <th scope="col">Address</th>
                                 <th scope="col">Mobile Number</th>
                                 <th scope="col">Username</th>
-                                <th scope="col">Reviewer Salary</th>
+                                <th scope="col">Admin Salary</th>
                                 </tr>
                             </thead>
                             <tbody>
-                            {this.state.reviewers.length > 0 && this.state.reviewers.map((item, index) => (
+                            {this.state.admins.length > 0 && this.state.admins.map((item, index) => (
                                 <tr key={index}>
                                 <td>{item.name}</td>
                                 <td>{item.email}</td>
-                                <td>{item.nicNo}</td>
+                                <td>{item.dateOfBirth}</td>
                                 <td>{item.address}</td>
                                 <td>{item.mobileNumber}</td>
                                 <td>{item.userName}</td>
-                                <td>{item.reviewerSalary}</td>
+                                <td>{item.salary}</td>
                                 <td><button type="button" className="btn btn-outline-warning"  onClick={e => this.deleteProduct(e, item._id)} >Edit</button></td>
-                                <td><button type="button" className="btn btn-outline-danger"  onClick={e => this.deleteReviewer(e, item._id)} >Delete</button></td>
+                                <td><button type="button" className="btn btn-outline-danger"  onClick={e => this.deleteAdmin(e, item._id)} >Delete</button></td>
                                 </tr>
                             ))}    
                             </tbody>
@@ -90,4 +90,4 @@ class viewReviewer extends Component {
     }
 }
 
-export default viewReviewer;
+export default viewAdmins;
