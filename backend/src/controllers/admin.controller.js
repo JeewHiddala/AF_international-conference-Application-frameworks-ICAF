@@ -37,26 +37,25 @@ const getSelectedAdminDetails = async (req, res) => {          //get selected ad
     }
 }
 
-const updateSelectedAdmin = async (req, res) => {
+const updateSelectedAdmin = async (req, res) => {       //update selected admin
     if (req.params && req.params.id){
-        const {id} = req.params;        //fetching the id of the admin.
+        const {id} = req.params;        // fetching the id of the admin.
         const admin = req.body;
 
-        if(!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send('No admin With That id');      //Validating the admin id
-        const updatedAdmin = await Admin.findByIdAndUpdate(id, admin,{new : true});      //Find admin and Update admin
+        if(!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send('No admin With That id');      // validating the admin id
+        const updatedAdmin = await Admin.findByIdAndUpdate(id, admin,{new : true});      // find admin and Update admin
         res.json(updatedAdmin);
     }
 }
 
-const deleteAdmin = async (req, res) => {
+const deleteAdmin = async (req, res) => {               // delete selected admin
     if (req.params && req.params.id) {
-        const {id} = req.params;            //fetching the id of the admin item
+        const {id} = req.params;            // fetching the id of the admin item
         if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No admin with id: ${id}`);       //validating the admin id.
-        await Admin.findByIdAndRemove(id);         //find admin and remove admin.
+        await Admin.findByIdAndRemove(id);         // find admin and remove admin.
         res.json({message: "Admin deleted successfully."});
     }
 }
-
 
 module.exports = {
     createAdmin,

@@ -6,7 +6,8 @@ module.exports = function () {
     router.post('/create', adminController.createAdmin);        // create admin.
     router.get('/', adminController.getAllAdminsDetails);       //get all courses.
     router.get('/:id', adminController.getSelectedAdminDetails);       //get selected admin details.
-    router.delete('/:id', adminController.deleteAdmin);         //update selected admin details.
-    router.patch('/update/:id', adminController.updateSelectedAdmin);
+    router.delete('/:id', adminController.deleteAdmin);         //delete selected admin details.
+    router.patch('/update/:id', adminController.updateSelectedAdmin);  //update selected admin details.
+
     return router;
 }
