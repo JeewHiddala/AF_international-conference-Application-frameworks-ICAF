@@ -7,7 +7,7 @@ module.exports = function () {
     router.get('/', editorController.getAllEditorsDetails);       //get all editors.
     router.get('/:id', editorController.getSelectedEditorDetails);       //get selected editor details.
     router.delete('/:id', editorController.deleteEditor);         //delete selected editor details.
-    router.patch('/update/:id', editorController.updateSelectedEditor);  //update selected admin details.
+    router.patch('/update/:id', editorController.updateSelectedEditor);  //update selected editor details.
 
     return router;
 }
