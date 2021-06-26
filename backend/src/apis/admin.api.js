@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const AdminController = require('../controllers/admin.controller');
+const adminController = require('../controllers/admin.controller');
 
 module.exports = function () {
-    router.post('/create', AdminController.createAdmin);
+    router.post('/create', adminController.createAdmin);
+    router.get('/', adminController.getAllAdminsDetails);    //get all courses
     return router;
 }
