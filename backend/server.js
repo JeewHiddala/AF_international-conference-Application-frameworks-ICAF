@@ -3,6 +3,9 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');       //environmental variables
 const cors = require('cors');           //middleware
 const bodyParser = require('body-parser');   
+const presenterAPI = require('./src/api/presenter.api');
+const researchPaperAPI = require('./src/api/researchPaper.api');
+const workshopProposalAPI = require('./src/api/workshopProposal.api');
 
 //import APIs
 
@@ -39,7 +42,11 @@ app.route('/').get((req, res) => {
 });
 
 //register router
+app.use('/presenter', presenterAPI());
 
+app.use('/workshopProposal', workshopProposalAPI());
+
+app.use('/researchPaper', researchPaperAPI());
 
 app.listen(PORT, () => {
   console.log(`Server is up and running on PORT ${PORT}`);
