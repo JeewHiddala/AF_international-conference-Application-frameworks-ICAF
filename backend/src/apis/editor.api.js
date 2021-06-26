@@ -4,5 +4,6 @@ const editorController = require('../controllers/editor.controller');
 
 module.exports = function () {
     router.post('/create', editorController.createEditor);        // create editor.
+    router.get('/', editorController.getAllEditorsDetails);       //get all editors.
     return router;
 }
