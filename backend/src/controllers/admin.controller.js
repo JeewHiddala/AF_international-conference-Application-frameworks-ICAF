@@ -37,13 +37,22 @@ const getSelectedAdminDetails = async (req, res) => {          //get selected ad
     }
 }
 
+const updateSelectedAdmin = async (req, res) => {
+    if (req.params && req.params.id){
+        const {id} = req.params;        //fetching the id of the admin.
+        const admin = req.body;
+
+        if(!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send('No admin With That id');      //Validating the admin id
+        const updatedAdmin = await Admin.findByIdAndUpdate(id, admin,{new : true});      //Find admin and Update admin
+        res.json(updatedAdmin);
+    }
+}
+
 const deleteAdmin = async (req, res) => {
     if (req.params && req.params.id) {
         const {id} = req.params;            //fetching the id of the admin item
         if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No admin with id: ${id}`);       //validating the admin id.
-
         await Admin.findByIdAndRemove(id);         //find admin and remove admin.
-
         res.json({message: "Admin deleted successfully."});
     }
 }
@@ -53,6 +62,6 @@ module.exports = {
     createAdmin,
     getAllAdminsDetails,
     getSelectedAdminDetails,
-    deleteAdmin
-    
+    deleteAdmin,
+    updateSelectedAdmin
 };
