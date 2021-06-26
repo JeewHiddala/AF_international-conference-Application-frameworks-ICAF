@@ -5,7 +5,7 @@ const cors = require('cors');           //middleware
 const bodyParser = require('body-parser');   
 
 //import APIs
-
+const adminAPI = require('./src/apis/admin.api');
 
 dotenv.config();
 const app = express();
@@ -39,7 +39,7 @@ app.route('/').get((req, res) => {
 });
 
 //register router
-
+app.use('/admin', adminAPI());
 
 app.listen(PORT, () => {
   console.log(`Server is up and running on PORT ${PORT}`);

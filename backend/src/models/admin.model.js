@@ -2,10 +2,11 @@ const mongoose = require('mongoose');       //import mongoose
 
 const AdminSchema = new mongoose.Schema({    //make schema
     name: { type: String, required: true, trim: true },
-    email: { type: Number, required: true },
+    email: { type: String, required: true, trim: true },
     dateOfBirth: { type: String, required: true, trim: true },
-    address: { type: Number, required: true },
+    address: { type: String, required: true, trim: true },
     mobileNumber: { type: Number, required: true },
+    userName: { type: String, required: true, trim: true },
     password: { type: String, required: true, trim: true },
     editors: [{ type: mongoose.Schema.Types.ObjectId, required: false, ref: 'editors'}],
     reviewers: [{ type: mongoose.Schema.Types.ObjectId, required: false, ref: 'reviewers'}]
