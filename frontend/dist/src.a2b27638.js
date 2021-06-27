@@ -12136,7 +12136,9 @@ var viewAdmins = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/_react.default.createElement("button", {
         type: "button",
         className: "btn btn-outline-primary"
-      }, "Create Administrator"))), /*#__PURE__*/_react.default.createElement("div", {
+      }, /*#__PURE__*/_react.default.createElement("a", {
+        href: "/adminRegistration"
+      }, "Create Administrator")))), /*#__PURE__*/_react.default.createElement("div", {
         className: "row"
       }, /*#__PURE__*/_react.default.createElement("div", {
         className: "col-4"
@@ -12187,6 +12189,253 @@ var viewAdmins = /*#__PURE__*/function (_Component) {
 
 var _default = viewAdmins;
 exports.default = _default;
+},{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js","sweetalert2":"node_modules/sweetalert2/dist/sweetalert2.all.js"}],"src/components/registrationViews/admin.registrationView.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _axios = _interopRequireDefault(require("axios"));
+
+var _sweetalert = _interopRequireDefault(require("sweetalert2"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+var initialState = {
+  //initiate states
+  name: '',
+  email: '',
+  dateOfBirth: '',
+  address: '',
+  mobileNumber: 0,
+  userName: '',
+  password: '',
+  salary: 0
+};
+
+var adminRegistration = /*#__PURE__*/function (_Component) {
+  _inherits(adminRegistration, _Component);
+
+  var _super = _createSuper(adminRegistration);
+
+  function adminRegistration(props) {
+    var _this;
+
+    _classCallCheck(this, adminRegistration);
+
+    _this = _super.call(this, props);
+    _this.onChange = _this.onChange.bind(_assertThisInitialized(_this)); //bind onChange function.
+
+    _this.onSubmit = _this.onSubmit.bind(_assertThisInitialized(_this)); //bind onSubmit function.
+
+    _this.state = initialState; //apply states.
+
+    return _this;
+  }
+
+  _createClass(adminRegistration, [{
+    key: "onChange",
+    value: function onChange(e) {
+      //update states
+      this.setState(_defineProperty({}, e.target.name, e.target.value));
+    }
+  }, {
+    key: "onSubmit",
+    value: function onSubmit(e) {
+      //submit details
+      e.preventDefault(); //avoid browser refresh. because if browser refresh, erase all typed info in form automatically.
+
+      var admin = {
+        name: this.state.name,
+        email: this.state.email,
+        dateOfBirth: this.state.dateOfBirth,
+        address: this.state.address,
+        mobileNumber: this.state.mobileNumber,
+        userName: this.state.userName,
+        password: this.state.password,
+        salary: this.state.salary
+      };
+      console.log('DATA TO SEND', admin);
+
+      _axios.default.post('http://localhost:7000/admin/create', admin).then(function (response) {
+        // alert('Admin Data successfully inserted')
+        _sweetalert.default.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Your work has been saved',
+          showConfirmButton: false,
+          timer: 1500
+        });
+      }).catch(function (error) {
+        console.log(error.message);
+        alert(error.message);
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      //use to return things when call createSubject component.
+      return /*#__PURE__*/_react.default.createElement("div", {
+        className: "container"
+      }, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("h1", null, "Create Administrator"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("form", {
+        onSubmit: this.onSubmit
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        className: "mb-3"
+      }, /*#__PURE__*/_react.default.createElement("label", {
+        htmlFor: "name",
+        className: "form-label"
+      }, "Administrator Name"), /*#__PURE__*/_react.default.createElement("input", {
+        type: "text",
+        className: "form-control",
+        placeholder: "Enter administrator name",
+        id: "name",
+        name: "name" //give state name
+        ,
+        value: this.state.name //bind state value
+        ,
+        onChange: this.onChange //don't call function. only give a reference.
+
+      })), /*#__PURE__*/_react.default.createElement("div", {
+        className: "mb-3"
+      }, /*#__PURE__*/_react.default.createElement("label", {
+        htmlFor: "email",
+        className: "form-label"
+      }, "Email"), /*#__PURE__*/_react.default.createElement("input", {
+        type: "email",
+        className: "form-control",
+        placeholder: "Enter email",
+        id: "email",
+        name: "email",
+        value: this.state.email,
+        onChange: this.onChange
+      })), /*#__PURE__*/_react.default.createElement("div", {
+        className: "mb-3"
+      }, /*#__PURE__*/_react.default.createElement("label", {
+        htmlFor: "address",
+        className: "form-label"
+      }, "Address"), /*#__PURE__*/_react.default.createElement("input", {
+        type: "address",
+        className: "form-control",
+        placeholder: "Enter address",
+        id: "address",
+        name: "address",
+        value: this.state.address,
+        onChange: this.onChange
+      })), /*#__PURE__*/_react.default.createElement("div", {
+        className: "row mb-3"
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        className: "col"
+      }, /*#__PURE__*/_react.default.createElement("label", {
+        htmlFor: "dateOfBirth",
+        className: "form-label"
+      }, "Date Of Birth"), /*#__PURE__*/_react.default.createElement("input", {
+        type: "date",
+        className: "form-control",
+        id: "dateOfBirth",
+        name: "dateOfBirth" //give state name
+        ,
+        value: this.state.dateOfBirth //bind state value
+        ,
+        onChange: this.onChange //don't call function. only give a reference.
+
+      })), /*#__PURE__*/_react.default.createElement("div", {
+        className: "col"
+      }, /*#__PURE__*/_react.default.createElement("label", {
+        htmlFor: "mobileNumber",
+        className: "form-label"
+      }, "Mobile Number"), /*#__PURE__*/_react.default.createElement("input", {
+        type: "mobileNumber",
+        className: "form-control",
+        id: "mobileNumber",
+        name: "mobileNumber",
+        value: this.state.mobileNumber,
+        onChange: this.onChange
+      }))), /*#__PURE__*/_react.default.createElement("div", {
+        className: "row mb-3"
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        className: "col"
+      }, /*#__PURE__*/_react.default.createElement("label", {
+        htmlFor: "userName",
+        className: "form-label"
+      }, "Username"), /*#__PURE__*/_react.default.createElement("input", {
+        type: "text",
+        className: "form-control",
+        placeholder: "Enter username",
+        id: "userName",
+        name: "userName",
+        value: this.state.userName,
+        onChange: this.onChange
+      })), /*#__PURE__*/_react.default.createElement("div", {
+        className: "col"
+      }, /*#__PURE__*/_react.default.createElement("label", {
+        htmlFor: "password",
+        className: "form-label"
+      }, "Password"), /*#__PURE__*/_react.default.createElement("input", {
+        type: "password",
+        className: "form-control",
+        placeholder: "Enter password",
+        id: "password",
+        name: "password",
+        value: this.state.password,
+        onChange: this.onChange
+      }))), /*#__PURE__*/_react.default.createElement("div", {
+        className: "col-3 mb-3"
+      }, /*#__PURE__*/_react.default.createElement("label", {
+        htmlFor: "salary",
+        className: "form-label"
+      }, "Salary"), /*#__PURE__*/_react.default.createElement("input", {
+        type: "salary",
+        className: "form-control",
+        id: "salary",
+        name: "salary",
+        value: this.state.salary,
+        onChange: this.onChange
+      })), /*#__PURE__*/_react.default.createElement("div", {
+        className: "mb-3"
+      }, /*#__PURE__*/_react.default.createElement("button", {
+        type: "submit",
+        className: "btn btn-outline-success"
+      }, "Submit"))));
+    }
+  }]);
+
+  return adminRegistration;
+}(_react.Component);
+
+var _default = adminRegistration;
+exports.default = _default;
 },{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js","sweetalert2":"node_modules/sweetalert2/dist/sweetalert2.all.js"}],"src/components/footer/footer.js":[function(require,module,exports) {
 "use strict";
 
@@ -12229,6 +12478,8 @@ var _reviewer = _interopRequireDefault(require("./components/views/reviewer.view
 
 var _admin = _interopRequireDefault(require("./components/views/admin.view"));
 
+var _admin2 = _interopRequireDefault(require("./components/registrationViews/admin.registrationView"));
+
 var _footer = _interopRequireDefault(require("./components/footer/footer"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -12244,12 +12495,15 @@ function App() {
   }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/admin",
     component: _admin.default
+  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    path: "/adminRegistration",
+    component: _admin2.default
   }))), /*#__PURE__*/_react.default.createElement(_footer.default, null)));
 }
 
 var _default = App;
 exports.default = _default;
-},{"./App.css":"src/App.css","react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./components/navBar/navBar":"src/components/navBar/navBar.js","./components/views/editor.view":"src/components/views/editor.view.js","./components/views/reviewer.view":"src/components/views/reviewer.view.js","./components/views/admin.view":"src/components/views/admin.view.js","./components/footer/footer":"src/components/footer/footer.js"}],"node_modules/scheduler/cjs/scheduler.development.js":[function(require,module,exports) {
+},{"./App.css":"src/App.css","react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./components/navBar/navBar":"src/components/navBar/navBar.js","./components/views/editor.view":"src/components/views/editor.view.js","./components/views/reviewer.view":"src/components/views/reviewer.view.js","./components/views/admin.view":"src/components/views/admin.view.js","./components/registrationViews/admin.registrationView":"src/components/registrationViews/admin.registrationView.js","./components/footer/footer":"src/components/footer/footer.js"}],"node_modules/scheduler/cjs/scheduler.development.js":[function(require,module,exports) {
 /** @license React v0.20.2
  * scheduler.development.js
  *
@@ -39350,7 +39604,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64626" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51153" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

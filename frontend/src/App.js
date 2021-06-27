@@ -5,6 +5,7 @@ import Navbar from './components/navBar/navBar';
 import ViewEditors from './components/views/editor.view';
 import ViewReviewers from './components/views/reviewer.view';
 import ViewAdmins from './components/views/admin.view';
+import AdminRegistration from './components/registrationViews/admin.registrationView';
 import Footer from './components/footer/footer';
 
 function App(){
@@ -17,6 +18,7 @@ function App(){
                             <Route path="/editor" component={ViewEditors} />
                             <Route path="/reviewer" component={ViewReviewers} />
                             <Route path="/admin" component={ViewAdmins} />
+                            <Route path="/adminRegistration" component={AdminRegistration} />
                         </Switch>
                     </section>
                 <Footer/>
