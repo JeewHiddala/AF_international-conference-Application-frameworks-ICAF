@@ -40,10 +40,20 @@ class adminRegistration extends Component {
         axios.post('http://localhost:7000/admin/create', admin)
             .then(response => {
                 // alert('Admin Data successfully inserted')
+                this.setState({ 
+                    name: '',
+                    email: '',
+                    dateOfBirth: '',
+                    address: '',
+                    mobileNumber: 0,
+                    userName: '',
+                    password: '',
+                    salary: 0
+                 })
                 Swal.fire({
                     position: 'center',
                     icon: 'success',
-                    title: 'Your work has been saved',
+                    title: 'New Admin details has been saved',
                     showConfirmButton: false,
                     timer: 1500
                   })
