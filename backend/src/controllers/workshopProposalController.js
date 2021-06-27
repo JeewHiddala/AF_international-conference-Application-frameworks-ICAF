@@ -24,11 +24,15 @@ const getAllWorkshopProposalsDetails = async (req, res) => {
         });
 }
 
+
+  /*.populate('workshopProposal', 'content title venue date organizers duration type status document ')*/
+
 const getSelectedWorkshopProposalDetails = async (req, res) => {         
     if (req.params && req.params.id) {
         await WorkshopProposal.findById(req.params.id)
+        
             .then(data => {
-                res.status(200).send({ data : data });
+                res.status(200).send({ workshopProposal : data.workshopProposal });
             })
             .catch(error => {
                 res.status(500).send({ error: error.message });
