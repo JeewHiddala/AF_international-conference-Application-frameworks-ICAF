@@ -47,7 +47,7 @@ class viewEditors extends Component {
                 <br/>
                 <div className = "row">
                     <div className="col-8"><h1>Editors</h1></div>
-                    <div className="col-4"><button type="button" className="btn btn-outline-primary">Create Editor</button></div>
+                    <div className="col-4"><button type="button" className="btn btn-outline-primary"><a href="/editorRegistration">Create Editor</a></button></div>
                 </div>
                 <div className = "row">
                     <div className="col-4"></div>
