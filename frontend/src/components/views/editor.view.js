@@ -64,6 +64,7 @@ class viewEditors extends Component {
                                 <th scope="col">NIC No</th>
                                 <th scope="col">Address</th>
                                 <th scope="col">Mobile Number</th>
+                                <th scope="col">Recruited Administrator Name</th>
                                 <th scope="col">Username</th>
                                 <th scope="col">Editor Salary</th>
                                 </tr>
@@ -76,6 +77,9 @@ class viewEditors extends Component {
                                 <td>{item.nicNo}</td>
                                 <td>{item.address}</td>
                                 <td>{item.mobileNumber}</td>
+                                {item.admins.map((item,index)=>(
+                                    <td>{item.name}</td>
+                                ))}
                                 <td>{item.userName}</td>
                                 <td>{item.editorSalary}</td>
                                 <td><button type="button" className="btn btn-outline-warning"  onClick={e => this.deleteProduct(e, item._id)} >Edit</button></td>
