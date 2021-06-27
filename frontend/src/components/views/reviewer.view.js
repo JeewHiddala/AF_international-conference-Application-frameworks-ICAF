@@ -47,7 +47,7 @@ class viewReviewer extends Component {
                 <br/>
                 <div className = "row">
                     <div className="col-8"><h1>Reviewers</h1></div>
-                    <div className="col-4"><button type="button" className="btn btn-outline-primary">Create Reviewer</button></div>
+                    <div className="col-4"><button type="button" className="btn btn-outline-primary"><a href="/reviewerRegistration">Create Reviewer</a></button></div>
                 </div>
                 <div className = "row">
                     <div className="col-4"></div>
@@ -64,6 +64,7 @@ class viewReviewer extends Component {
                                 <th scope="col">NIC No</th>
                                 <th scope="col">Address</th>
                                 <th scope="col">Mobile Number</th>
+                                <th scope="col">Recruited Administrator Name</th>
                                 <th scope="col">Username</th>
                                 <th scope="col">Reviewer Salary</th>
                                 </tr>
@@ -76,6 +77,9 @@ class viewReviewer extends Component {
                                 <td>{item.nicNo}</td>
                                 <td>{item.address}</td>
                                 <td>{item.mobileNumber}</td>
+                                {item.admins.map((item,index)=>(
+                                    <td>{item.name}</td>
+                                ))}
                                 <td>{item.userName}</td>
                                 <td>{item.reviewerSalary}</td>
                                 <td><button type="button" className="btn btn-outline-warning"  onClick={e => this.deleteProduct(e, item._id)} >Edit</button></td>
