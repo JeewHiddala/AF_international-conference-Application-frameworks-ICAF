@@ -47,7 +47,7 @@ class viewAdmins extends Component {
                 <br/>
                 <div className = "row">
                     <div className="col-8"><h1>Administrators</h1></div>
-                    <div className="col-4"><button type="button" className="btn btn-outline-primary">Create Administrator</button></div>
+                    <div className="col-4"><button type="button" className="btn btn-outline-primary"><a href="/adminRegistration">Create Administrator</a></button></div>
                 </div>
                 <div className = "row">
                     <div className="col-4"></div>
