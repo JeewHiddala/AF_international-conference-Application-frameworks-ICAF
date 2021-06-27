@@ -5,14 +5,14 @@ import Swal from "sweetalert2";
 const initialState = {      //initiate states
     name: '',
     email: '',
-    dateOfBirth: '',
+    nicNo: '',
     address: '',
     mobileNumber: 0,
     userName: '',
     password: '',
-    salary: 0
+    editorSalary: 0
 }
-class adminRegistration extends Component {
+class editorRegistration extends Component {
     constructor(props) {
         super(props);
         this.onChange = this.onChange.bind(this);  //bind onChange function.
@@ -26,34 +26,34 @@ class adminRegistration extends Component {
 
     onSubmit(e) {      //submit details
         e.preventDefault();     //avoid browser refresh. because if browser refresh, erase all typed info in form automatically.
-        let admin = {
+        let editor = {
             name: this.state.name,
             email: this.state.email,
-            dateOfBirth: this.state.dateOfBirth,
+            nicNo: this.state.nicNo,
             address: this.state.address,
             mobileNumber: this.state.mobileNumber,
             userName: this.state.userName,
             password: this.state.password,
-            salary: this.state.salary
+            editorSalary: this.state.editorSalary
         }
-        console.log('DATA TO SEND', admin);    
-        axios.post('http://localhost:7000/admin/create', admin)
+        console.log('DATA TO SEND', editor);    
+        axios.post('http://localhost:7000/editor/create', editor)
             .then(response => {
                 // alert('Admin Data successfully inserted')
                 this.setState({ 
                     name: '',
                     email: '',
-                    dateOfBirth: '',
+                    nicNo: '',
                     address: '',
                     mobileNumber: 0,
                     userName: '',
                     password: '',
-                    salary: 0
+                    editorSalary: 0
                  })
                 Swal.fire({
                     position: 'center',
                     icon: 'success',
-                    title: 'New Admin details has been saved',
+                    title: 'New Editor details has been saved',
                     showConfirmButton: false,
                     timer: 1500
                   })
@@ -68,10 +68,10 @@ class adminRegistration extends Component {
         return (
             <div className="container">
                 <br/>
-                <h1>Create Administrator</h1><br/>
+                <h1>Create Editor</h1><br/>
                 <form onSubmit={this.onSubmit}>
                     <div className="mb-3">
-                        <label htmlFor="name" className="form-label">Administrator Name</label>
+                        <label htmlFor="name" className="form-label">Editor Name</label>
                         <input
                             type="text"
                             className="form-control"
@@ -108,13 +108,13 @@ class adminRegistration extends Component {
                     </div>
                     <div className="row mb-3">
                         <div className="col">
-                            <label htmlFor="dateOfBirth" className="form-label">Date Of Birth</label>
+                            <label htmlFor="nicNo" className="form-label">National Identity Card Number </label>
                             <input
-                                type="date"
+                                type="number"
                                 className="form-control"
-                                id="dateOfBirth"
-                                name="dateOfBirth"    //give state name
-                                value={this.state.dateOfBirth}      //bind state value
+                                id="nicNo"
+                                name="nicNo"    //give state name
+                                value={this.state.nicNo}      //bind state value
                                 onChange={this.onChange}    //don't call function. only give a reference.
                             />
                         </div>
@@ -157,13 +157,13 @@ class adminRegistration extends Component {
                         </div>
                     </div>
                     <div className="col-3 mb-3">
-                        <label htmlFor="salary" className="form-label">Salary</label>
+                        <label htmlFor="editorSalary" className="form-label">Salary</label>
                         <input
                             type="salary"
                             className="form-control"
-                            id="salary"
-                            name="salary"
-                            value={this.state.salary}
+                            id="editorSalary"
+                            name="editorSalary"
+                            value={this.state.editorSalary}
                             onChange={this.onChange}
                         />
                     </div>
@@ -176,4 +176,4 @@ class adminRegistration extends Component {
     }
 }
 
-export default adminRegistration;
+export default editorRegistration;
