@@ -1,6 +1,7 @@
 import React, { Component} from 'react';
 import axios from 'axios';
 import Swal from "sweetalert2";
+import Select from 'react-select';    //import react select
 
 const initialState = {      //initiate states
     name: '',
@@ -10,18 +11,44 @@ const initialState = {      //initiate states
     mobileNumber: 0,
     userName: '',
     password: '',
-    editorSalary: 0
+    editorSalary: 0,
+    admins: [],
+    options: [],
+    selectedAdmins: []
 }
 class editorRegistration extends Component {
     constructor(props) {
         super(props);
         this.onChange = this.onChange.bind(this);  //bind onChange function.
         this.onSubmit = this.onSubmit.bind(this);   //bind onSubmit function.
+        this.onAdminSelect = this.onAdminSelect.bind(this);
         this.state = initialState;      //apply states.
+    }
+
+    componentDidMount() {
+        axios.get('http://localhost:7000/admin/')       //get admins details to frontend from backend when component mount
+            .then(response => {
+                this.setState({ admins: response.data.data }, () => {
+                    let data = [];
+                    this.state.admins.map((item, index) => {        //map used to loop until array end.
+                        let admins = {
+                            value: item._id,
+                            label: item.name
+                        }
+                        data.push(admins)
+                    });
+                    this.setState({ options: data });
+                    console.log(data);
+                })
+            })
     }
 
     onChange(e) {     //update states
         this.setState({ [e.target.name]: e.target.value })
+    }
+
+    onAdminSelect(e) {    //push select admin array
+        this.setState({ selectedAdmins: e ? e.map(item => item.value) : [] });
     }
 
     onSubmit(e) {      //submit details
@@ -34,7 +61,8 @@ class editorRegistration extends Component {
             mobileNumber: this.state.mobileNumber,
             userName: this.state.userName,
             password: this.state.password,
-            editorSalary: this.state.editorSalary
+            editorSalary: this.state.editorSalary,
+            admins: this.state.selectedAdmins
         }
         console.log('DATA TO SEND', editor);    
         axios.post('http://localhost:7000/editor/create', editor)
@@ -48,7 +76,10 @@ class editorRegistration extends Component {
                     mobileNumber: 0,
                     userName: '',
                     password: '',
-                    editorSalary: 0
+                    editorSalary: 0,
+                    admins: [],
+                    options: [],
+                    selectedAdmins: []
                  })
                 Swal.fire({
                     position: 'center',
@@ -129,6 +160,17 @@ class editorRegistration extends Component {
                                 onChange={this.onChange}
                             />
                         </div>
+                        <div className="col">
+                            <label htmlFor="editorSalary" className="form-label">Salary</label>
+                                <input
+                                    type="salary"
+                                    className="form-control"
+                                    id="editorSalary"
+                                    name="editorSalary"
+                                    value={this.state.editorSalary}
+                                    onChange={this.onChange}
+                                />
+                        </div>
                     </div>
                     <div className="row mb-3">
                         <div className="col">
@@ -156,16 +198,14 @@ class editorRegistration extends Component {
                             />
                         </div>
                     </div>
-                    <div className="col-3 mb-3">
-                        <label htmlFor="editorSalary" className="form-label">Salary</label>
-                        <input
-                            type="salary"
-                            className="form-control"
-                            id="editorSalary"
-                            name="editorSalary"
-                            value={this.state.editorSalary}
-                            onChange={this.onChange}
-                        />
+                    <div className="mb-3">
+                    <label htmlFor="admin" className="form-label">Administrator Name</label>
+                    <Select
+                        options={this.state.options}
+                        onChange={this.onAdminSelect}
+                        className="basic-multi-select"
+                        isMulti
+                    />
                     </div>
                     <div className="mb-3">
                         <button type="submit" className="btn btn-outline-success">Submit</button>
