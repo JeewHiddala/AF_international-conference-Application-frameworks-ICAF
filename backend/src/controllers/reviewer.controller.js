@@ -16,6 +16,7 @@ const createReviewer = async (req, res) => {       //create a reviewer to db.
 
 const getAllReviewersDetails = async (req, res) => {       //get all reviewers details.
     await Reviewer.find({})
+    .populate('admins','name')
         .then(data => {
             res.status(200).send({ data: data });
         })
