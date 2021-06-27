@@ -19,6 +19,10 @@ class viewAdmins extends Component {
             })
     }
 
+    navigateEditAdminPage(e, adminId) {
+        window.location = `/updateAdmin/${adminId}`
+    }
+
     deleteAdmin(e , adminId) {
         console.log("I am on Delete", adminId)
         Swal.fire({
@@ -78,7 +82,7 @@ class viewAdmins extends Component {
                                 <td>{item.mobileNumber}</td>
                                 <td>{item.userName}</td>
                                 <td>{item.salary}</td>
-                                <td><button type="button" className="btn btn-outline-warning"  onClick={e => this.deleteProduct(e, item._id)} >Edit</button></td>
+                                <td><button type="button" className="btn btn-outline-warning"  onClick={e => this.navigateEditAdminPage(e, item._id)} >Edit</button></td>
                                 <td><button type="button" className="btn btn-outline-danger"  onClick={e => this.deleteAdmin(e, item._id)} >Delete</button></td>
                                 </tr>
                             ))}    

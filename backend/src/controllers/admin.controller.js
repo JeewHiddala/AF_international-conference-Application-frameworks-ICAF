@@ -57,10 +57,27 @@ const deleteAdmin = async (req, res) => {               // delete selected admin
     }
 }
 
+// const calculateTotalAdminsSalary = async (req,res) => {
+//     let totalSalary = 0;
+//     if(req.body){
+//         console.log(req.body);
+//             if(req.body.admins.length > 0){
+//                 for(let i=0 ; i<req.body.admins.length;i++){
+//                     const adminSalary = await Admin.findById(req.body.salary[i])
+//                     totalSalary += adminSalary.price;
+//                     console.log(adminSalary)
+//                 }
+//     }
+//     console.log(totalSalary);
+//     }
+//     res.status(200).send({ totalSalary: totalSalary });
+//     }
+
 module.exports = {
     createAdmin,
     getAllAdminsDetails,
     getSelectedAdminDetails,
     deleteAdmin,
-    updateSelectedAdmin
+    updateSelectedAdmin,
+    // calculateTotalAdminsSalary
 };
