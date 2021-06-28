@@ -23,10 +23,10 @@ class Navbar extends Component {
                                     <a className="nav-link active" aria-current="page" href="#">Home</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#">Features</a>
+                                    <a className="nav-link" href="/">Posts</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#">Pricing</a>
+                                    <a className="nav-link" href="/create-post">Create Post</a>
                                 </li>
                                 <li className="nav-item">
                                     <a className="nav-link disabled" href="#" tabIndex="-1"
