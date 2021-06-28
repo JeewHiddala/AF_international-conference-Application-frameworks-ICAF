@@ -14,7 +14,7 @@ const createPost = async (req, res) => {       //create a post to db.
     }
 }
 
-const getAllPostsDetails = async (req, res) => {       //get all posts details.
+const getAllPostsDetails = async (req, res) => {       //get all posts 
     await Post.find({})
         .then(data => {
             res.status(200).send({ data: data });
