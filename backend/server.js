@@ -2,17 +2,25 @@ const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');       //environmental variables
 const cors = require('cors');           //middleware
-const bodyParser = require('body-parser');   
+
+var bodyParser = require('body-parser');   
+var fs = require('fs');
+var path = require('path');
+require('dotenv/config');
 
 //import APIs
-const adminAPI = require('./src/apis/admin.api');
-const editorAPI = require('./src/apis/editor.api');
-const reviewerAPI = require('./src/apis/reviewer.api');
+const attendeeAPI = require('./src/apis/attendee.api');
+const presenterAPI = require('./src/apis/presenter.api');
+
 
 dotenv.config();
 const app = express();
 app.use(cors());
-app.use(bodyParser.json());
+
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json())
+ 
+app.set("view engine", "ejs");
 
 //port no for run backend server
 const PORT = process.env.PORT || 8066;
@@ -37,13 +45,12 @@ mongoose.connection.once('open', () => {
 
 //root route
 app.route('/').get((req, res) => {
-  res.send('SLIIT AF FINAL API BY SE2021 BATCH');
+  res.send('TEAM VOLCANO API BY SE2021 BATCH');
 });
 
 //register router
-app.use('/admin', adminAPI());
-app.use('/editor', editorAPI());
-app.use('/reviewer', reviewerAPI());
+app.use('/attendee', attendeeAPI());
+app.use('/presenter', presenterAPI());
 
 app.listen(PORT, () => {
   console.log(`Server is up and running on PORT ${PORT}`);
