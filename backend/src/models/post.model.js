@@ -6,6 +6,7 @@ const PostSchema = new mongoose.Schema({    //make schema
     submittedDate: { type: Date, required: true, trim: true },
     status: { type: String, required: true, trim: true },
     approvedDate: { type: Date, required: true ,trim: true },
+    admins: [{ type: mongoose.Schema.Types.ObjectId, required: false, ref: 'admins'}],
     editors: [{ type: mongoose.Schema.Types.ObjectId, required: false, ref: 'editors'}]
 });
 
