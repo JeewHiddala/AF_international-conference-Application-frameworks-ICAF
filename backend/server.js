@@ -6,6 +6,9 @@ const bodyParser = require('body-parser');
 const presenterAPI = require('./src/api/presenter.api');
 const researchPaperAPI = require('./src/api/researchPaper.api');
 const workshopProposalAPI = require('./src/api/workshopProposal.api');
+const reviewerAPI = require('./src/api/reviewer.api');
+const approvedWorkshopProposalAPI = require('./src/api/reviewedWorkshopProposal.api');
+const reviewedResearchPaperUploadAPI = require('./src/api/reviewedResearchPaperUpload.api');
 
 //import APIs
 
@@ -43,6 +46,12 @@ app.route('/').get((req, res) => {
 
 //register router
 app.use('/presenter', presenterAPI());
+
+app.use('/reviewer', reviewerAPI());
+
+app.use('/approvedWorkshopProposal', approvedWorkshopProposalAPI());
+
+app.use('/reviewedResearchPaperUpload', reviewedResearchPaperUploadAPI());
 
 app.use('/workshopProposal', workshopProposalAPI());
 

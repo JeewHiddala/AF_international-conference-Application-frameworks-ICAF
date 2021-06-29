@@ -6,8 +6,9 @@ module.exports = function () {
     router.post('/create', researchPaperController.createResearchPaper);    
     router.get('/', researchPaperController.getAllResearchPapersDetails);       
     router.get('/:id', researchPaperController.getSelectedResearchPaperDetails);       
-    router.delete('/:id', researchPaperController.deleteResearchPaper);         
-    router.patch('/update/:id', researchPaperController.updateSelectedResearchPaper);  
+    router.delete('/:id', researchPaperController.deleteResearchPaper);    
+    router.get('/amount/:id', researchPaperController.calculateAmount);     
+    router.put('/update/:id', researchPaperController.updateSelectedResearchPaper);  
 
     return router;
 }

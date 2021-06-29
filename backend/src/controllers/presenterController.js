@@ -1,4 +1,3 @@
- 
 const mongoose = require("mongoose");
 const Presenter = require('../models/presenterModel');
 
@@ -41,7 +40,6 @@ const updateSelectedPresenter = async (req, res) => {
     if (req.params && req.params.id){
         const {id} = req.params;       
         const presenter = req.body;
-
         if(!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send('No presenter With That id');    
         const updatedPresenter = await Presenter.findByIdAndUpdate(id, presenter,{new : true});      
         res.json(updatedPresenter);

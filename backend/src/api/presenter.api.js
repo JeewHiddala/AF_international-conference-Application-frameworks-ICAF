@@ -7,7 +7,7 @@ module.exports = function () {
     router.get('/', presernterController.getAllPresentersDetails);       
     router.get('/:id', presernterController.getSelectedPresenterDetails);       
     router.delete('/:id', presernterController.deletePresenter);         
-    router.patch('/update/:id', presernterController.updateSelectedPresenter);  
+    router.put('/update/:id', presernterController.updateSelectedPresenter);  
 
     return router;
 }

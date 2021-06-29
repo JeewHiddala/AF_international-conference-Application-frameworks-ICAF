@@ -3,11 +3,12 @@ const router = express.Router();
 const workshopProposalController = require('../controllers/workshopProposalController');
 
 module.exports = function () {
+
     router.post('/create', workshopProposalController.createWorkshopProposal);    
     router.get('/', workshopProposalController.getAllWorkshopProposalsDetails);       
-    router.get('/:id', workshopProposalController.getSelectedWorkshopProposalDetails);       
+    router.get('/:id', workshopProposalController.getSelectedWorkshopProposalDetails);        
     router.delete('/:id', workshopProposalController.deleteWorkshopProposal);         
-    router.patch('/update/:id', workshopProposalController.updateSelectedWorkshopProposal);  
+    router.put('/update/:id', workshopProposalController.updateSelectedWorkshopProposal);  
 
     return router;
 }
