@@ -61,5 +61,6 @@ module.exports = {
     getAllReviewersDetails,
     getSelectedReviewerDetails,
     updateSelectedReviewer,
-    deleteReviewer
+    deleteReviewer,
+    
 };

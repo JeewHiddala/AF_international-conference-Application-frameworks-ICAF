@@ -40,7 +40,6 @@ const updateSelectedResearchPaper = async (req, res) => {
     if (req.params && req.params.id){
         const {id} = req.params;       
         const researchPaper = req.body;
-
         if(!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send('No ResearchPaper With That id');    
         const updatedResearchPaper = await Presenter.findByIdAndUpdate(id, researchPaper,{new : true});      
         res.json(updatedResearchPaper);
@@ -55,11 +54,12 @@ const deleteResearchPaper = async (req, res) => {
         res.json({message: "ResearchPaper deleted successfully."});
     }
 }
-
+ 
 module.exports = {
     createResearchPaper,
     getAllResearchPapersDetails,
     getSelectedResearchPaperDetails,
     updateSelectedResearchPaper,
-    deleteResearchPaper
+    deleteResearchPaper,
+    
 };

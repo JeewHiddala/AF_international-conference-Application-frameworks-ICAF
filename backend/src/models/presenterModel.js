@@ -14,7 +14,8 @@ const PresenterSchema = new mongoose.Schema({
     researchArea: { type: String, required: true, trim: true },
     country: { type: String, required: true, trim: true },
     workshopProposal: [{ type: mongoose.Schema.Types.ObjectId, required: false, ref: 'workshopProposal'}],
-    researchPaper: [{ type: mongoose.Schema.Types.ObjectId, required: false, ref: 'researchPaper'}]
+    researchPaper: [{ type: mongoose.Schema.Types.ObjectId, required: false, ref: 'researchPaper'}],
+    reviewers:[{ type: mongoose.Schema.Types.ObjectId, required: false, ref: 'reviewers'}],
 });
 
 const Presenter = mongoose.model('presenter', PresenterSchema);      

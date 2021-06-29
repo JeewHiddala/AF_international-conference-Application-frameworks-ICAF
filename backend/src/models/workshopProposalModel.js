@@ -11,7 +11,8 @@ const WorkshopProposalSchema = new mongoose.Schema({
     type: { type: String, required: true, trim: true },
     status: { type: String, required: true, trim: true },
     document: { type: String, required: true, trim: true },
-    presenter: [{ type: mongoose.Schema.Types.ObjectId, required: false, ref: 'presenter'}]
+    presenter: [{ type: mongoose.Schema.Types.ObjectId, required: false, ref: 'presenter'}],
+    reviewedWorkshopProposal: [{type: mongoose.Schema.Types.ObjectId, required: false, ref: 'reviewedWorkshopProposal'}]
 });
 
 const WorkshopProposal = mongoose.model('workshopProposal', WorkshopProposalSchema);      

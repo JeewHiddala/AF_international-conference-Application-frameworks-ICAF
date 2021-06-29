@@ -9,7 +9,8 @@ const ReviewerSchema = new mongoose.Schema({
     userName: { type: String, required: true, trim: true },
     password: { type: String, required: true, trim: true },
     reviewerSalary: { type: Number, required: true },
-    admins: [{ type: mongoose.Schema.Types.ObjectId, required: false, ref: 'admins'}]
+    admins: [{ type: mongoose.Schema.Types.ObjectId, required: false, ref: 'admins'}],
+    reviewedWorkshopProposal: [{type: mongoose.Schema.Types.ObjectId, required: false, ref: 'reviewedWorkshopProposal'}]
 });
 
 const Reviewer = mongoose.model('reviewers', ReviewerSchema);      

@@ -7,9 +7,11 @@ const ResearchPaperSchema = new mongoose.Schema({
     researchArea: { type: String, required: true, trim: true },
     submissionFile: { type: String, required: true, trim: true },
     submittedDate: {type: Date},
+    amount:{type: Number, required: true},
     status: { type: String, required: true, trim: true },
     approvedDate: {type: Date},
-    presenter: [{ type: mongoose.Schema.Types.ObjectId, required: false, ref: 'presenter'}]
+    presenter: [{ type: mongoose.Schema.Types.ObjectId, required: false, ref: 'presenter'}],
+    reviewers: [{type: mongoose.Schema.Types.ObjectId, required: false, ref: 'reviewers'}]
 });
 
 const ResearchPaper = mongoose.model('researchPaper', ResearchPaperSchema);      
