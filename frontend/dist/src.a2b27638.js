@@ -8647,7 +8647,7 @@ var initialState = {
   title: '',
   description: '',
   submittedDate: '',
-  status: '',
+  status: 'pending',
   approvedDate: ''
 };
 
@@ -8746,7 +8746,8 @@ var CreatePost = /*#__PURE__*/function (_Component) {
         id: "status",
         name: "status",
         value: this.state.status,
-        onChange: this.onChange
+        onChange: this.onChange,
+        readonly: true
       })), /*#__PURE__*/_react.default.createElement("div", {
         class: "mb-3"
       }, /*#__PURE__*/_react.default.createElement("label", {
@@ -8758,7 +8759,8 @@ var CreatePost = /*#__PURE__*/function (_Component) {
         id: "approvedDate",
         name: "approvedDate",
         value: this.state.approvedDate,
-        onChange: this.onChange
+        onChange: this.onChange,
+        readonly: true
       })), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("button", {
         type: "submit",
         className: "btn btn-primary"
@@ -8780,6 +8782,10 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
+
+var _axios = _interopRequireDefault(require("axios"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -8813,15 +8819,80 @@ var Posts = /*#__PURE__*/function (_Component) {
   var _super = _createSuper(Posts);
 
   function Posts(props) {
+    var _this;
+
     _classCallCheck(this, Posts);
 
-    return _super.call(this, props);
+    _this = _super.call(this, props);
+    _this.state = {
+      posts: []
+    };
+    return _this;
   }
 
   _createClass(Posts, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      _axios.default.get('http://localhost:7000/post/').then(function (response) {
+        _this2.setState({
+          posts: response.data.data
+        });
+      });
+    }
+  }, {
+    key: "navigateEditPostPage",
+    value: function navigateEditPostPage(e, postId) {
+      window.location = "/updatePost/".concat(postId);
+    }
+  }, {
     key: "render",
     value: function render() {
-      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Posts"));
+      var _this3 = this;
+
+      return /*#__PURE__*/_react.default.createElement("div", {
+        className: "container"
+      }, /*#__PURE__*/_react.default.createElement("h1", null, "Posts"), /*#__PURE__*/_react.default.createElement("div", {
+        className: "col-4"
+      }, /*#__PURE__*/_react.default.createElement("button", {
+        type: "button",
+        className: "btn btn-outline-primary"
+      }, /*#__PURE__*/_react.default.createElement("a", {
+        href: "/create-post"
+      }, "Create Post"))), /*#__PURE__*/_react.default.createElement("div", {
+        className: "container"
+      }, /*#__PURE__*/_react.default.createElement("table", {
+        className: "table table-hover"
+      }, /*#__PURE__*/_react.default.createElement("thead", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, "Title"), /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, "Description"), /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, "Submitted Date"), /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, "Status"), /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, "Approved Date"))), /*#__PURE__*/_react.default.createElement("tbody", null, this.state.posts.length > 0 && this.state.posts.map(function (item, index) {
+        return /*#__PURE__*/_react.default.createElement("tr", {
+          key: index
+        }, /*#__PURE__*/_react.default.createElement("td", null, item.title), /*#__PURE__*/_react.default.createElement("td", null, item.description), /*#__PURE__*/_react.default.createElement("td", null, item.submittedDate), /*#__PURE__*/_react.default.createElement("td", null, item.status), /*#__PURE__*/_react.default.createElement("td", null, item.approvedDate), item.editors.map(function (item, index) {
+          return /*#__PURE__*/_react.default.createElement("td", null, item.name);
+        }), /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("button", {
+          type: "button",
+          className: "btn btn-outline-warning",
+          onClick: function onClick(e) {
+            return _this3.EditPostPage(e, item._id);
+          }
+        }, "Edit")), /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("button", {
+          type: "button",
+          className: "btn btn-outline-danger",
+          onClick: function onClick(e) {
+            return _this3.deletePost(e, item._id);
+          }
+        }, "Delete")));
+      })))));
     }
   }]);
 
@@ -8830,7 +8901,7 @@ var Posts = /*#__PURE__*/function (_Component) {
 
 var _default = Posts;
 exports.default = _default;
-},{"react":"node_modules/react/index.js"}],"src/App.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js"}],"src/App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -35969,7 +36040,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53814" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58449" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

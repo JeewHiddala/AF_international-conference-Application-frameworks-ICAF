@@ -5,7 +5,7 @@ const initialState = {
     title: '',
     description: '',
     submittedDate: '',
-    status: '',
+    status: 'pending',
     approvedDate: ''
 }
 
@@ -94,22 +94,25 @@ class CreatePost extends Component {
                             name="status"
                             value={this.state.status}
                             onChange={this.onChange}
+                            readonly
                         />
+                    </div>
 
-                    </div>
-                    <div class="mb-3">
-                        <label htmlFor="approvedDate" className="form-label">Approved Date</label>
-                        <input
-                            type="date"
-                            className="form-control"
-                            id="approvedDate"
-                            name="approvedDate"
-                            value={this.state.approvedDate}
-                            onChange={this.onChange}
-                        />
-                    </div>
-                    <br></br>
-                    <button type="submit" className="btn btn-primary">Submit</button>
+                        <div class="mb-3">
+                            <label htmlFor="approvedDate" className="form-label">Approved Date</label>
+                            <input
+                                type="date"
+                                className="form-control"
+                                id="approvedDate"
+                                name="approvedDate"
+                                value={this.state.approvedDate}
+                                onChange={this.onChange}
+                                readonly
+                            />
+                        </div>
+
+                        <br></br>
+                        <button type="submit" className="btn btn-primary">Submit</button>
                 </form>
             </div>
         )
