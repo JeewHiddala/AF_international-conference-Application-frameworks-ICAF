@@ -8,6 +8,9 @@ const request = require('supertest');
 //import APIs
 const adminAPI = require('../apis/admin.api');
 
+
+const reviewerAPI = require('../apis/reviewer.api');
+
 dotenv.config();
 const app = express();
 app.use(cors());
@@ -44,10 +47,10 @@ app.listen(PORT, () => {
     console.log(`Server is up and running on PORT ${PORT}`);
 });
 
-//register router - CHANGEABLE
+//register router - testcase 1
 app.use('/admin', adminAPI());
 
-//test case - Hiddalarachchi J. - IT19007502
+//test case 1- Hiddalarachchi J. - IT19007502
 test('should insert a new administrator', async () => {
     await request(app).post('/admin/create').send({
         name:"Kamal22 Hettiwaththa",
@@ -58,6 +61,25 @@ test('should insert a new administrator', async () => {
         userName:"kamal22",
         password:"33333",
         salary:25000,
+    }).expect(200).then((res) => {
+        id = res.body._id;
+    });
+})
+
+//register router - testcase 2
+app.use('/reviewer', reviewerAPI());
+
+//test case 2- Hiddalarachchi J. - IT19007502
+test('should insert a new administrator', async () => {
+    await request(app).post('/reviewer/create').send({
+        name:"Kamal22 Hettiwaththa",
+        email:"Kamal22@gmail.com",
+        nicNo:"965887475V",
+        address:"59,new road,Ampara",
+        mobileNumber:87878,
+        userName:"kamal22",
+        password:"33333",
+        reviewerSalary:25000,
     }).expect(200).then((res) => {
         id = res.body._id;
     });
