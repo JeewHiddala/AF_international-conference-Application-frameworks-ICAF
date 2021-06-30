@@ -12,7 +12,9 @@ const approvedWorkshopProposalAPI = require('./src/api/reviewedWorkshopProposal.
 const reviewedResearchPaperUploadAPI = require('./src/api/reviewedResearchPaperUpload.api');
 
 //import APIs
-
+const adminAPI = require('./src/apis/admin.api');
+const editorAPI = require('./src/apis/editor.api');
+const reviewerAPI = require('./src/apis/reviewer.api');
 
 dotenv.config();
 const app = express();
@@ -46,6 +48,7 @@ app.route('/').get((req, res) => {
 });
 
 //register router
+
 app.use('/presenter', presenterAPI());
 
 app.use('/reviewer', reviewerAPI());
@@ -59,6 +62,7 @@ app.use('/reviewedResearchPaperUpload', reviewedResearchPaperUploadAPI());
 app.use('/workshopProposal', workshopProposalAPI());
 
 app.use('/researchPaper', researchPaperAPI());
+
 
 app.listen(PORT, () => {
   console.log(`Server is up and running on PORT ${PORT}`);
