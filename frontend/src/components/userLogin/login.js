@@ -36,6 +36,21 @@ class UserLogin extends Component {
             pathname: '/presenter/dashboard',
             data: response.data.data
           })
+        } else if (!response.data.Utype.localeCompare("admin")) {
+          this.props.history.push({
+            pathname: '/admin/dashboard',
+            data: response.data.data
+          })
+        }else if (!response.data.Utype.localeCompare("reviewer")) {
+          this.props.history.push({
+            pathname: '/reviewer/dashboard',
+            data: response.data.data
+          })
+        }else if (!response.data.Utype.localeCompare("editor")) {
+          this.props.history.push({
+            pathname: '/editor/dashboard',
+            data: response.data.data
+          })
         }
         console.log("userid log: " + response.data.data);
         console.log("userT log: " + response.data.Utype);

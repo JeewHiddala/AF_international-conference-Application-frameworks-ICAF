@@ -1,19 +1,25 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+//import axios from 'axios';
 
 
 class AttendeeDashboard extends Component {
     constructor(props) {
         super(props);
         this.loadUpdateProfile = this.loadUpdateProfile.bind(this);
+        this.loadAttendeePayment = this.loadAttendeePayment.bind(this);
         this.loadLogin = this.loadLogin.bind(this);
         this.logout = this.logout.bind(this);
     }
 
     loadUpdateProfile(e, userId) {
-        //window.location = `/attendee/${userId}`
         this.props.history.push({
             pathname: `/attendee/${userId}`,
+            data: `${userId}`
+        })
+    }
+    loadAttendeePayment(e, userId) {
+        this.props.history.push({
+            pathname: '/attendee/pay/store',
             data: `${userId}`
         })
     }
@@ -34,8 +40,11 @@ class AttendeeDashboard extends Component {
                     </div>
                     <h2>Attendee Dashboard</h2>
                     <br /><br /><br /><br />
-                    <button type="button" className="btn btn-primary" onClick={e => this.loadUpdateProfile(e, data)} >Update Profile</button>
+                    <button type="button" className="btn btn-primary me-md-2" onClick={e => this.loadUpdateProfile(e, data)} >Update Profile</button>
+                    
+                    <button type="button" className="btn btn-primary me-md-2" onClick={e => this.loadAttendeePayment(e, data)} >Make Payment</button>
                     <br /><br /><br /><br />
+
                 </div>
             )
         } else {

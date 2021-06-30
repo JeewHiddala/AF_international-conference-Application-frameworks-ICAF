@@ -1,6 +1,10 @@
 const dotenv = require('dotenv');       //environmental variables
 const Attendee = require('../models/attendee.model');
 const Presenter = require('../models/presenter.model');
+const Admin = require('../models/admin.model');
+const Reviewer = require('../models/reviewer.model');
+const Editor = require('../models/editor.model');
+
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
@@ -39,12 +43,50 @@ const login = async (req, res) => {
                 data,
                 Utype
             });
+        } else {
+            const userA = await Admin.findOne({ username });
+            if (userA && bcrypt.compareSync(password, userP.password)) {
+                const token = jwt.sign({ id: userA._id }, JWT_SECRET);
+                const data = userA._id;
+                const Utype = "admin";
+                //res.status(200).send({ data: data._id });
+                res.json({
+                    token,
+                    data,
+                    Utype
+                });
+            } else {
+                const userR = await Reviewer.findOne({ username });
+                if (userR && bcrypt.compareSync(password, userP.password)) {
+                    const token = jwt.sign({ id: userR._id }, JWT_SECRET);
+                    const data = userR._id;
+                    const Utype = "reviewer";
+                    //res.status(200).send({ data: data._id });
+                    res.json({
+                        token,
+                        data,
+                        Utype
+                    });
+                } else {
+                    const userE = await Editor.findOne({ username });
+                    if (userE && bcrypt.compareSync(password, userP.password)) {
+                        const token = jwt.sign({ id: userE._id }, JWT_SECRET);
+                        const data = userE._id;
+                        const Utype = "editor";
+                        //res.status(200).send({ data: data._id });
+                        res.json({
+                            token,
+                            data,
+                            Utype
+                        });
+                    }
+                }
+            }
         }
-    }
-    
-    res.status(400).send({ error: 'Username or password is incorrect' });
-}
 
+        res.status(400).send({ error: 'Username or password is incorrect' });
+    }
+}
 module.exports = {
     login
-};
+}

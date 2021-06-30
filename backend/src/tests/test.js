@@ -4,9 +4,14 @@ const dotenv = require('dotenv');       //environmental variables
 const cors = require('cors');           //middleware
 const bodyParser = require('body-parser');
 const request = require('supertest');
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 
 //import APIs
-
+const attendeeAPI = require('./src/apis/attendee.api');
+const presenterAPI = require('./src/apis/presenter.api');
+const loginAPI = require('./src/apis/login.api');
+const attendeePaymentAPI = require('./src/apis/attendeePayment.api');
 
 dotenv.config();
 const app = express();
@@ -19,7 +24,7 @@ const PORT = process.env.TESTPORT || 8067;
 const MONGODB_URI = process.env.TESTMONGODB_URI;
 
 //connect to database
-mongoose.connect(MONGODB_URI || '&w=majority',{
+mongoose.connect(MONGODB_URI || '&w=majority', {
     useCreateIndex: true,
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -45,16 +50,74 @@ app.listen(PORT, () => {
 });
 
 //register router - CHANGEABLE
+app.use('/attendee', attendeeAPI());
+app.use('/presenter', presenterAPI());
+app.use('/login', loginAPI());
+app.use('/attendee/pay', attendeePaymentAPI());
 
+//test case 1
+test('Should register a new attendee', async () => {
+    await request(app).post('/attendee/create').send({
+        name: "Tom Wen",
+        email: "tom@gmail.com",
+        mobileNo: "0778596456",
+        username: "tom",
+        password: "147",
+        workplace: "X Company",
+        jobRole: "CEO",
+        type: "virtual",
+        country: "India",
+        emergencyContactNo: "0778545999",
+        emergencyContactName: "Tim Wen"
+    }).expect(200).then((res) => {
+        id = res.body._id;
+    });
+})
 
-//test case
-// test('should insert a new room', async () => {
-//     await request(app).post('/room/create').send({
-//         code: "Name 22",
-//         amount: 2000,
-//         wing: "English",
-//         pax: 20,
-//     }).expect(200).then((res) => {
-//         id = res.body._id;
-//     });
-// })
+//test case 2
+test('Should register a new presenter', async () => {
+    await request(app).post('/presenter/create').send({
+        name: "Jim Wen",
+        email: "jim@gmail.com",
+        mobileNo: "0778596456",
+        username: "jim",
+        password: "177",
+        workplace: "X Company",
+        presenterType: "Researcher",
+        sessionType: "Virtual",
+        jobRole: "Manager",
+        researchArea: "IT",
+        country: "India"
+    }).expect(200).then((res) => {
+        id = res.body._id;
+    });
+})
+
+//test case 3
+test('Should validate login', async () => {
+    await request(app).post('/login').send({
+        username: "tom",
+        password: "147"
+    }).expect(200).then((res) => {
+        id = res.body._id;
+    });
+})
+
+//test case 4
+test('Should update attendee', async () => {
+    await request(app).patch('/attendee/update/:id').send({
+        name: "Tom Yuan",
+        email: "tom@gmail.com",
+        mobileNo: "0778596456",
+        username: "tom",
+        password: "147",
+        workplace: "X Company",
+        jobRole: "CEO",
+        type: "virtual",
+        country: "India",
+        emergencyContactNo: "0778545999",
+        emergencyContactName: "Tim Yuan"
+    }).expect(200).then((res) => {
+        id = res.body._id;
+    });
+})

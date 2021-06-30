@@ -1,47 +1,29 @@
-var attendeePayment = require('../models/attendeePayment.model');
+//const mongoose = require('mongoose');
+const AttendeePayment = require('../models/attendeePayment.model');
 
-var multer = require('multer');
- 
-var storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, 'uploads')
-    },
-    filename: (req, file, cb) => {
-        cb(null, file.fieldname + '-' + Date.now())
+const addAttendeePayment = async (req, res) => {
+    let attendeePayment = new AttendeePayment({
+        paymentMethod: req.body.paymentMethod,
+        attendeeId: req.body.attendeeId
+    })
+    if (req.file) {
+        attendeePayment.paymentSlip = req.file.path
     }
-});
- 
-var upload = multer({ storage: storage });
+    attendeePayment.save()
+        .then(response => {
+            res.json({
+                message: 'Payment added'
+            })
+        })
+        .catch(error => {
+            res.json({
+                message: 'Payment not added'
+            })
+        })
+}
 
-app.get('/', (req, res) => {
-    attendeePayment.find({}, (err, items) => {
-        if (err) {
-            console.log(err);
-            res.status(500).send('An error occurred', err);
-        }
-        else {
-            res.render('imagesPage', { items: items });
-        }
-    });
-});
 
-app.post('/', upload.single('image'), (req, res, next) => {
- 
-    var obj = {
-        name: req.body.name,
-        desc: req.body.desc,
-        img: {
-            data: fs.readFileSync(path.join(__dirname + '/uploads/' + req.file.filename)),
-            contentType: 'image/png'
-        }
-    }
-    imgModel.create(obj, (err, item) => {
-        if (err) {
-            console.log(err);
-        }
-        else {
-            // item.save();
-            res.redirect('/');
-        }
-    });
-});
+
+module.exports = {
+    addAttendeePayment
+};

@@ -8795,6 +8795,21 @@ var UserLogin = /*#__PURE__*/function (_Component) {
             pathname: '/presenter/dashboard',
             data: response.data.data
           });
+        } else if (!response.data.Utype.localeCompare("admin")) {
+          _this2.props.history.push({
+            pathname: '/admin/dashboard',
+            data: response.data.data
+          });
+        } else if (!response.data.Utype.localeCompare("reviewer")) {
+          _this2.props.history.push({
+            pathname: '/reviewer/dashboard',
+            data: response.data.data
+          });
+        } else if (!response.data.Utype.localeCompare("editor")) {
+          _this2.props.history.push({
+            pathname: '/editor/dashboard',
+            data: response.data.data
+          });
         }
 
         console.log("userid log: " + response.data.data);
@@ -9164,6 +9179,7 @@ var updateAttendee = /*#__PURE__*/function (_Component) {
 
     _this.onSubmit = _this.onSubmit.bind(_assertThisInitialized(_this)); //bind onSubmit function.
 
+    _this.toDashboard = _this.toDashboard.bind(_assertThisInitialized(_this));
     _this.state = initialState; //apply states.
 
     return _this;
@@ -9174,6 +9190,14 @@ var updateAttendee = /*#__PURE__*/function (_Component) {
     value: function onChange(e) {
       //update states when changed
       this.setState(_defineProperty({}, e.target.name, e.target.value));
+    }
+  }, {
+    key: "toDashboard",
+    value: function toDashboard(e, userId) {
+      this.props.history.push({
+        pathname: '/attendee/pay/store',
+        data: "".concat(userId)
+      });
     }
   }, {
     key: "componentDidMount",
@@ -10009,10 +10033,6 @@ exports.default = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _axios = _interopRequireDefault(require("axios"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -10039,6 +10059,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
+//import axios from 'axios';
 var AttendeeDashboard = /*#__PURE__*/function (_Component) {
   _inherits(AttendeeDashboard, _Component);
 
@@ -10051,6 +10072,7 @@ var AttendeeDashboard = /*#__PURE__*/function (_Component) {
 
     _this = _super.call(this, props);
     _this.loadUpdateProfile = _this.loadUpdateProfile.bind(_assertThisInitialized(_this));
+    _this.loadAttendeePayment = _this.loadAttendeePayment.bind(_assertThisInitialized(_this));
     _this.loadLogin = _this.loadLogin.bind(_assertThisInitialized(_this));
     _this.logout = _this.logout.bind(_assertThisInitialized(_this));
     return _this;
@@ -10059,9 +10081,16 @@ var AttendeeDashboard = /*#__PURE__*/function (_Component) {
   _createClass(AttendeeDashboard, [{
     key: "loadUpdateProfile",
     value: function loadUpdateProfile(e, userId) {
-      //window.location = `/attendee/${userId}`
       this.props.history.push({
         pathname: "/attendee/".concat(userId),
+        data: "".concat(userId)
+      });
+    }
+  }, {
+    key: "loadAttendeePayment",
+    value: function loadAttendeePayment(e, userId) {
+      this.props.history.push({
+        pathname: '/attendee/pay/store',
         data: "".concat(userId)
       });
     }
@@ -10096,11 +10125,17 @@ var AttendeeDashboard = /*#__PURE__*/function (_Component) {
           }
         }, "Logout")), /*#__PURE__*/_react.default.createElement("h2", null, "Attendee Dashboard"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("button", {
           type: "button",
-          className: "btn btn-primary",
+          className: "btn btn-primary me-md-2",
           onClick: function onClick(e) {
             return _this2.loadUpdateProfile(e, data);
           }
-        }, "Update Profile"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null));
+        }, "Update Profile"), /*#__PURE__*/_react.default.createElement("button", {
+          type: "button",
+          className: "btn btn-primary me-md-2",
+          onClick: function onClick(e) {
+            return _this2.loadAttendeePayment(e, data);
+          }
+        }, "Make Payment"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null));
       } else {
         return /*#__PURE__*/_react.default.createElement("div", {
           className: "container"
@@ -10120,7 +10155,7 @@ var AttendeeDashboard = /*#__PURE__*/function (_Component) {
 
 var _default = AttendeeDashboard;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js"}],"src/components/presenter/presenterDashboard.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js"}],"src/components/presenter/presenterDashboard.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -10129,10 +10164,6 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
-
-var _axios = _interopRequireDefault(require("axios"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -10160,6 +10191,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
+//import axios from 'axios';
 var PresenterDashboard = /*#__PURE__*/function (_Component) {
   _inherits(PresenterDashboard, _Component);
 
@@ -10217,6 +10249,203 @@ var PresenterDashboard = /*#__PURE__*/function (_Component) {
 
 var _default = PresenterDashboard;
 exports.default = _default;
+},{"react":"node_modules/react/index.js"}],"src/components/attendeePayment/makeAttendeePayment.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _axios = _interopRequireDefault(require("axios"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+var AddAttendeePayment = /*#__PURE__*/function (_Component) {
+  _inherits(AddAttendeePayment, _Component);
+
+  var _super = _createSuper(AddAttendeePayment);
+
+  function AddAttendeePayment(props) {
+    var _this;
+
+    _classCallCheck(this, AddAttendeePayment);
+
+    _this = _super.call(this, props);
+    _this.readSingleFile = _this.readSingleFile.bind(_assertThisInitialized(_this));
+    _this.onChange = _this.onChange.bind(_assertThisInitialized(_this));
+    _this.loadLogin = _this.loadLogin.bind(_assertThisInitialized(_this));
+    _this.toDashboard = _this.toDashboard.bind(_assertThisInitialized(_this));
+    var data = _this.props.location.data;
+    _this.state = {
+      paymentMethod: '',
+      attendeeId: "".concat(data),
+      paymentSlip: null
+    };
+    return _this;
+  }
+
+  _createClass(AddAttendeePayment, [{
+    key: "readSingleFile",
+    value: function readSingleFile(e) {
+      // const name = e.files[0].name;
+      // console.log("filename" + name);
+      // document.getElementById("file-label").textContent = name;
+      // this.state.paymentSlip = name;
+      this.setState({
+        paymentSlip: e.target.files[0]
+      });
+    }
+  }, {
+    key: "loadLogin",
+    value: function loadLogin(e) {
+      window.location = '/login';
+    }
+  }, {
+    key: "onChange",
+    value: function onChange(e) {
+      this.setState(_defineProperty({}, e.target.name, e.target.value));
+    }
+  }, {
+    key: "toDashboard",
+    value: function toDashboard(e, userId) {
+      this.props.history.push({
+        pathname: '/attendee/pay/store',
+        data: "".concat(userId)
+      });
+    }
+  }, {
+    key: "onFormSubmit",
+    value: function onFormSubmit(e) {
+      var _this2 = this;
+
+      e.preventDefault();
+      var attendeePayment = {
+        paymentMethod: this.state.paymentMethod,
+        attendeeId: this.state.attendeeId
+      }; // Create an object of formData 
+
+      var formData = new FormData(); // Update the formData object 
+
+      formData.append("paymentSlip", this.state.paymentSlip, this.state.paymentSlip.name); // Details of the uploaded file 
+
+      console.log(this.state.paymentSlip);
+      console.log(this.state.paymentMethod); // Send formData object 
+
+      _axios.default.post("attendee/pay/store", formData, attendeePayment).then(function (response) {
+        _this2.props.history.push({
+          pathname: '/attendee/dashboard',
+          data: response.data.data
+        });
+
+        console.log("userid reg: " + response.data.data);
+        alert('Payment inserted');
+      }).catch(function (error) {
+        alert('Payment not inserted');
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this3 = this;
+
+      var data = this.props.location.data;
+      console.log("userid: " + data);
+
+      if (data) {
+        return /*#__PURE__*/_react.default.createElement("div", {
+          className: "container"
+        }, /*#__PURE__*/_react.default.createElement("div", {
+          className: "d-grid gap-2 d-md-flex justify-content-md-end"
+        }, /*#__PURE__*/_react.default.createElement("button", {
+          type: "button",
+          className: "btn btn-primary me-md-2",
+          onClick: function onClick(e) {
+            return _this3.toDashboard(e, data);
+          }
+        }, "Dashboard")), /*#__PURE__*/_react.default.createElement("h2", null, "Make Payment"), /*#__PURE__*/_react.default.createElement("form", {
+          onSubmit: function onSubmit(e) {
+            return _this3.onFormSubmit(e);
+          }
+        }, /*#__PURE__*/_react.default.createElement("div", {
+          className: "mb-3"
+        }, /*#__PURE__*/_react.default.createElement("label", {
+          className: "form-label"
+        }, "Payment Method"), /*#__PURE__*/_react.default.createElement("input", {
+          type: "text",
+          className: "form-control",
+          name: "paymentMethod",
+          onChange: function onChange(e) {
+            return _this3.onChange(e);
+          },
+          value: this.state.paymentMethod
+        })), /*#__PURE__*/_react.default.createElement("div", {
+          className: "mb-3"
+        }, /*#__PURE__*/_react.default.createElement("label", {
+          className: "custom-file-label",
+          htmlFor: "file1",
+          id: "file-label"
+        }, "Upload Payment Slip   : "), /*#__PURE__*/_react.default.createElement("input", {
+          type: "file",
+          className: "custom-file-input",
+          name: "paymentSlip",
+          id: "file1",
+          onChange: function onChange(e) {
+            return _this3.readSingleFile(e);
+          }
+        })), /*#__PURE__*/_react.default.createElement("button", {
+          type: "submit",
+          className: "btn btn-primary"
+        }, "Submit"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null)));
+      } else {
+        return /*#__PURE__*/_react.default.createElement("div", {
+          className: "container"
+        }, /*#__PURE__*/_react.default.createElement("h2", null, "Please login to continue"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("button", {
+          type: "button",
+          className: "btn btn-primary",
+          onClick: function onClick(e) {
+            return _this3.loadLogin(e);
+          }
+        }, "Login"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null));
+      }
+    }
+  }]);
+
+  return AddAttendeePayment;
+}(_react.Component);
+
+var _default = AddAttendeePayment;
+exports.default = _default;
 },{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js"}],"src/App.js":[function(require,module,exports) {
 "use strict";
 
@@ -10251,6 +10480,8 @@ var _attendeeDashboard = _interopRequireDefault(require("./components/attendee/a
 
 var _presenterDashboard = _interopRequireDefault(require("./components/presenter/presenterDashboard"));
 
+var _makeAttendeePayment = _interopRequireDefault(require("./components/attendeePayment/makeAttendeePayment"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 //make routes
@@ -10269,6 +10500,9 @@ function App() {
     path: "/login",
     component: _login.default
   }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    path: "/attendee/pay/store",
+    component: _makeAttendeePayment.default
+  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/attendee/dashboard",
     component: _attendeeDashboard.default
   }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
@@ -10285,7 +10519,7 @@ function App() {
 
 var _default = App;
 exports.default = _default;
-},{"./App.css":"src/App.css","react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./components/navBar/navBar":"src/components/navBar/navBar.js","./components/home/home":"src/components/home/home.js","./components/footer/footer":"src/components/footer/footer.js","./components/userLogin/login":"src/components/userLogin/login.js","./components/attendee/attendeeRegister":"src/components/attendee/attendeeRegister.js","./components/attendee/attendeeUpdate":"src/components/attendee/attendeeUpdate.js","./components/presenter/presenterUpdate":"src/components/presenter/presenterUpdate.js","./components/presenter/presenterRegister":"src/components/presenter/presenterRegister.js","./components/attendee/attendeeDashboard":"src/components/attendee/attendeeDashboard.js","./components/presenter/presenterDashboard":"src/components/presenter/presenterDashboard.js"}],"node_modules/scheduler/cjs/scheduler.development.js":[function(require,module,exports) {
+},{"./App.css":"src/App.css","react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./components/navBar/navBar":"src/components/navBar/navBar.js","./components/home/home":"src/components/home/home.js","./components/footer/footer":"src/components/footer/footer.js","./components/userLogin/login":"src/components/userLogin/login.js","./components/attendee/attendeeRegister":"src/components/attendee/attendeeRegister.js","./components/attendee/attendeeUpdate":"src/components/attendee/attendeeUpdate.js","./components/presenter/presenterUpdate":"src/components/presenter/presenterUpdate.js","./components/presenter/presenterRegister":"src/components/presenter/presenterRegister.js","./components/attendee/attendeeDashboard":"src/components/attendee/attendeeDashboard.js","./components/presenter/presenterDashboard":"src/components/presenter/presenterDashboard.js","./components/attendeePayment/makeAttendeePayment":"src/components/attendeePayment/makeAttendeePayment.js"}],"node_modules/scheduler/cjs/scheduler.development.js":[function(require,module,exports) {
 /** @license React v0.20.2
  * scheduler.development.js
  *
@@ -37386,7 +37620,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50090" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61433" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

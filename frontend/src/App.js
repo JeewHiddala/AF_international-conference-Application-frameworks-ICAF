@@ -12,6 +12,8 @@ import CreatePresenter from './components/presenter/presenterRegister';
 import AttendeeDashboard from './components/attendee/attendeeDashboard';
 import PresenterDashboard from './components/presenter/presenterDashboard';
 
+import AddAttendeePayment from './components/attendeePayment/makeAttendeePayment';
+
 
 function App(){
     return(
@@ -23,13 +25,14 @@ function App(){
                     <Route path='/attendee/create' component={CreateAttendee} />
                     <Route path='/presenter/create' component={CreatePresenter} />
                     <Route path='/login' component={Login} />
-                    
+                    <Route path='/attendee/pay/store' component={AddAttendeePayment} />
+
                     <Route path='/attendee/dashboard' component={AttendeeDashboard} />
                     <Route path='/presenter/dashboard' component={PresenterDashboard} />
                     <Route path='/attendee/:id' component={UpdateAttendee} />
                     <Route path='/presenter/:id' component={UpdatePresenter} />
 
-                    
+
 
                 </Switch>
                 <Footer/>

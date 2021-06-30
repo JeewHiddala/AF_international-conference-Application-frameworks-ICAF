@@ -1,11 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const attendeePaymentController = require('../controllers/attendeePayment.controller');
+const upload = require('../middleware/upload')
 
 module.exports = function () {
-    router.post('/create', attendeePaymentController.createAttendee);
-    router.get('/:id', attendeePaymentController.getAttendeeDetails);
-    router.patch('/update/:id', attendeePaymentController.updateAttendee);
-
+    router.post('/store', upload.single('paymentSlip'), attendeePaymentController.addAttendeePayment);
+    
     return router;
 }

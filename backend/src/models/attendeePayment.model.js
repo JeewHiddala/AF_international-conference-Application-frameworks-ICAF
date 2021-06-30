@@ -1,16 +1,19 @@
-const mongoose = require('mongoose');  
+const mongoose = require('mongoose');
 
 const AttendeePaymentSchema = new mongoose.Schema({
-  date: { type : Date, default: Date.now },
-  paymentMethod: { type: String, required: true, trim: true },
-  paymentSlip: {
-    data: Buffer,
-    contentType: String
-  },
-  paymentReason: { type: String, required: true, trim: true },
-  attendeeId: {type: Schema.Types.ObjectId, ref: 'attendees'}
-});
+    paymentMethod: {
+        required: true,
+        type: String
+    },
+    paymentSlip: {
+        required: true,
+        type: String
+    },
+    attendeeId: {
+        required: true,
+        type: mongoose.Schema.Types.ObjectId
+    }
+}, {timestamps: true})
 
-const AttendeePayment = mongoose.model('attendeePayments', AttendeePaymentSchema);
-
-module.exports = AttendeePayment;
+const AttendeePayment = mongoose.model('attendeePayments', AttendeePaymentSchema)
+module.exports = AttendeePayment

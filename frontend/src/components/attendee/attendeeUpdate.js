@@ -20,11 +20,19 @@ class updateAttendee extends Component {
         super(props);
         this.onChange = this.onChange.bind(this);  //bind onChange function.
         this.onSubmit = this.onSubmit.bind(this);   //bind onSubmit function.
+        this.toDashboard = this.toDashboard.bind(this);
         this.state = initialState;      //apply states.
     }
 
     onChange(e) {     //update states when changed
         this.setState({ [e.target.name]: e.target.value })
+    }
+
+    toDashboard(e, userId) {
+        this.props.history.push({
+            pathname: '/attendee/pay/store',
+            data: `${userId}`
+        })
     }
 
     componentDidMount() {
