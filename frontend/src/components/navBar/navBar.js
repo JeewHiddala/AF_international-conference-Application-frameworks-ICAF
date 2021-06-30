@@ -1,12 +1,16 @@
 //import react and react components
 import React, { Component } from 'react';
 
+
 class Navbar extends Component {
     constructor(props) {
         super(props);
     }
 
     render() {   //use to return things when call navbar component.
+        const { data } = this.props
+        if(data)
+        console.log("userid nav: " + data);
         return (
             <div className="header">
                 <nav className="navbar navbar-expand-lg navbar navbar-dark bg-dark">
@@ -28,6 +32,7 @@ class Navbar extends Component {
                                 <li className="nav-item">
                                     <a className="nav-link" href="#">Research</a>
                                 </li>
+                               
                             </ul>
                         </div>
                     </div>

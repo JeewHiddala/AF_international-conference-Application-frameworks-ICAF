@@ -3,15 +3,24 @@ import React, { Component } from 'react';
 class Home extends Component {
     constructor(props) {
         super(props);
+        this.loadLogin = this.loadLogin.bind(this);
+    }
+
+    loadLogin(e) {
+        window.location = '/login'
     }
 
     render() {
         return (
             <div>
+                <div className="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button type="button" className="btn btn-primary me-md-2" onClick={e => this.loadLogin(e)} >Login</button>
+                </div>
                 <h1>International Conference Application Framework</h1>
                 <br />
+                
+                <br />
                 <div className="row">
-
                     <div className="col-sm-6">
                         <div className="card">
                             <div className="card-body">

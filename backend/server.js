@@ -11,7 +11,7 @@ require('dotenv/config');
 //import APIs
 const attendeeAPI = require('./src/apis/attendee.api');
 const presenterAPI = require('./src/apis/presenter.api');
-
+const loginAPI = require('./src/apis/login.api');
 
 dotenv.config();
 const app = express();
@@ -51,6 +51,7 @@ app.route('/').get((req, res) => {
 //register router
 app.use('/attendee', attendeeAPI());
 app.use('/presenter', presenterAPI());
+app.use('/login', loginAPI());
 
 app.listen(PORT, () => {
   console.log(`Server is up and running on PORT ${PORT}`);

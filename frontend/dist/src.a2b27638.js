@@ -6729,6 +6729,8 @@ var Navbar = /*#__PURE__*/function (_Component) {
     key: "render",
     value: function render() {
       //use to return things when call navbar component.
+      var data = this.props.data;
+      if (data) console.log("userid nav: " + data);
       return /*#__PURE__*/_react.default.createElement("div", {
         className: "header"
       }, /*#__PURE__*/_react.default.createElement("nav", {
@@ -6820,15 +6822,34 @@ var Home = /*#__PURE__*/function (_Component) {
   var _super = _createSuper(Home);
 
   function Home(props) {
+    var _this;
+
     _classCallCheck(this, Home);
 
-    return _super.call(this, props);
+    _this = _super.call(this, props);
+    _this.loadLogin = _this.loadLogin.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(Home, [{
+    key: "loadLogin",
+    value: function loadLogin(e) {
+      window.location = '/login';
+    }
+  }, {
     key: "render",
     value: function render() {
-      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "International Conference Application Framework"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+      var _this2 = this;
+
+      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
+        className: "d-grid gap-2 d-md-flex justify-content-md-end"
+      }, /*#__PURE__*/_react.default.createElement("button", {
+        type: "button",
+        className: "btn btn-primary me-md-2",
+        onClick: function onClick(e) {
+          return _this2.loadLogin(e);
+        }
+      }, "Login")), /*#__PURE__*/_react.default.createElement("h1", null, "International Conference Application Framework"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
         className: "row"
       }, /*#__PURE__*/_react.default.createElement("div", {
         className: "col-sm-6"
@@ -8685,7 +8706,144 @@ module.exports.default = axios;
 
 },{"./utils":"node_modules/axios/lib/utils.js","./helpers/bind":"node_modules/axios/lib/helpers/bind.js","./core/Axios":"node_modules/axios/lib/core/Axios.js","./core/mergeConfig":"node_modules/axios/lib/core/mergeConfig.js","./defaults":"node_modules/axios/lib/defaults.js","./cancel/Cancel":"node_modules/axios/lib/cancel/Cancel.js","./cancel/CancelToken":"node_modules/axios/lib/cancel/CancelToken.js","./cancel/isCancel":"node_modules/axios/lib/cancel/isCancel.js","./helpers/spread":"node_modules/axios/lib/helpers/spread.js","./helpers/isAxiosError":"node_modules/axios/lib/helpers/isAxiosError.js"}],"node_modules/axios/index.js":[function(require,module,exports) {
 module.exports = require('./lib/axios');
-},{"./lib/axios":"node_modules/axios/lib/axios.js"}],"src/components/attendee/attendeeRegister.js":[function(require,module,exports) {
+},{"./lib/axios":"node_modules/axios/lib/axios.js"}],"src/components/userLogin/login.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _axios = _interopRequireDefault(require("axios"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+var UserLogin = /*#__PURE__*/function (_Component) {
+  _inherits(UserLogin, _Component);
+
+  var _super = _createSuper(UserLogin);
+
+  function UserLogin(props) {
+    var _this;
+
+    _classCallCheck(this, UserLogin);
+
+    _this = _super.call(this, props);
+    _this.onChange = _this.onChange.bind(_assertThisInitialized(_this));
+    _this.onFormSubmit = _this.onFormSubmit.bind(_assertThisInitialized(_this));
+    _this.state = {
+      username: '',
+      password: ''
+    };
+    return _this;
+  }
+
+  _createClass(UserLogin, [{
+    key: "onChange",
+    value: function onChange(e) {
+      this.setState(_defineProperty({}, e.target.name, e.target.value));
+    }
+  }, {
+    key: "onFormSubmit",
+    value: function onFormSubmit(e) {
+      var _this2 = this;
+
+      e.preventDefault();
+      var user = {
+        username: this.state.username,
+        password: this.state.password
+      };
+
+      _axios.default.post('http://localhost:7000/login', user).then(function (response) {
+        if (!response.data.Utype.localeCompare("attendee")) {
+          _this2.props.history.push({
+            pathname: '/attendee/dashboard',
+            data: response.data.data
+          });
+        } else if (!response.data.Utype.localeCompare("presenter")) {
+          _this2.props.history.push({
+            pathname: '/presenter/dashboard',
+            data: response.data.data
+          });
+        }
+
+        console.log("userid log: " + response.data.data);
+        console.log("userT log: " + response.data.Utype);
+      }).catch(function (error) {
+        console.log("error: " + error.response.status);
+        if (error.response.status === 500) alert('Fill all the fields');else if (error.response.status === 400) alert('Username or password is incorrect');
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/_react.default.createElement("div", {
+        className: "container"
+      }, /*#__PURE__*/_react.default.createElement("h2", null, "Login"), /*#__PURE__*/_react.default.createElement("form", {
+        onSubmit: this.onFormSubmit
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        className: "mb-3"
+      }, /*#__PURE__*/_react.default.createElement("label", {
+        className: "form-label"
+      }, "Username"), /*#__PURE__*/_react.default.createElement("input", {
+        type: "text",
+        className: "form-control",
+        name: "username",
+        onChange: this.onChange,
+        value: this.state.username
+      })), /*#__PURE__*/_react.default.createElement("div", {
+        className: "mb-3"
+      }, /*#__PURE__*/_react.default.createElement("label", {
+        className: "form-label"
+      }, "Password"), /*#__PURE__*/_react.default.createElement("input", {
+        type: "password",
+        className: "form-control",
+        name: "password",
+        onChange: this.onChange,
+        value: this.state.password
+      })), /*#__PURE__*/_react.default.createElement("button", {
+        type: "submit",
+        className: "btn btn-primary"
+      }, "Login"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null)));
+    }
+  }]);
+
+  return UserLogin;
+}(_react.Component);
+
+var _default = UserLogin;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js"}],"src/components/attendee/attendeeRegister.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -8790,17 +8948,16 @@ var CreateAttendee = /*#__PURE__*/function (_Component) {
       };
 
       _axios.default.post('http://localhost:7000/attendee/create', attendee).then(function (response) {
-        //this.props.history.push('/login')
-        console.log("userid reg: " + response.data.data);
+        _this2.props.history.push('/login');
 
-        _this2.props.history.push({
-          pathname: '/attendee/dashboard',
-          data: response.data.data
-        });
+        console.log("userid reg: " + response.data.data); // this.props.history.push({
+        //   pathname: '/login',
+        //   data: response.data.data 
+        // })
 
         alert('Data successfully inserted');
       }).catch(function (error) {
-        alert(error.message);
+        if (error.response.status === 500) alert('Username is already taken');else if (error.response.status === 400) alert('Data not inserted');
       });
     }
   }, {
@@ -9106,127 +9263,152 @@ var updateAttendee = /*#__PURE__*/function (_Component) {
           data: response.data.data
         });
 
-        console.log("zhan" + response.data.data);
+        console.log("resA" + response.data.data);
         alert('Attendee Data successfully updated');
       }).catch(function (error) {
         console.log(error.message);
-        alert(error.message);
+        if (error.response.status === 500) alert('Username is already taken');else if (error.response.status === 404) alert('Error: Details not found');
       });
     }
   }, {
     key: "render",
     value: function render() {
+      var _this4 = this;
+
       //use to return html when calling component.
-      return /*#__PURE__*/_react.default.createElement("div", {
-        className: "container"
-      }, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("h1", null, "Update Profile"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("form", {
-        onSubmit: this.onSubmit
-      }, /*#__PURE__*/_react.default.createElement("div", {
-        className: "mb-3"
-      }, /*#__PURE__*/_react.default.createElement("label", {
-        className: "form-label"
-      }, "Name"), /*#__PURE__*/_react.default.createElement("input", {
-        type: "text",
-        className: "form-control",
-        name: "name",
-        onChange: this.onChange,
-        value: this.state.name
-      })), /*#__PURE__*/_react.default.createElement("div", {
-        className: "mb-3"
-      }, /*#__PURE__*/_react.default.createElement("label", {
-        className: "form-label"
-      }, "Email address"), /*#__PURE__*/_react.default.createElement("input", {
-        type: "text",
-        className: "form-control",
-        name: "email",
-        onChange: this.onChange,
-        value: this.state.email
-      })), /*#__PURE__*/_react.default.createElement("div", {
-        className: "mb-3"
-      }, /*#__PURE__*/_react.default.createElement("label", {
-        className: "form-label"
-      }, "Mobile number"), /*#__PURE__*/_react.default.createElement("input", {
-        type: "text",
-        className: "form-control",
-        name: "mobileNo",
-        onChange: this.onChange,
-        value: this.state.mobileNo
-      })), /*#__PURE__*/_react.default.createElement("div", {
-        className: "mb-3"
-      }, /*#__PURE__*/_react.default.createElement("label", {
-        className: "form-label"
-      }, "Username"), /*#__PURE__*/_react.default.createElement("input", {
-        type: "text",
-        className: "form-control",
-        name: "username",
-        onChange: this.onChange,
-        value: this.state.username
-      })), /*#__PURE__*/_react.default.createElement("div", {
-        className: "mb-3"
-      }, /*#__PURE__*/_react.default.createElement("label", {
-        className: "form-label"
-      }, "Password"), /*#__PURE__*/_react.default.createElement("input", {
-        type: "password",
-        className: "form-control",
-        name: "password",
-        onChange: this.onChange,
-        value: this.state.password
-      })), /*#__PURE__*/_react.default.createElement("div", {
-        className: "mb-3"
-      }, /*#__PURE__*/_react.default.createElement("label", {
-        className: "form-label"
-      }, "Work place"), /*#__PURE__*/_react.default.createElement("input", {
-        type: "text",
-        className: "form-control",
-        name: "workplace",
-        onChange: this.onChange,
-        value: this.state.workplace
-      })), /*#__PURE__*/_react.default.createElement("div", {
-        className: "mb-3"
-      }, /*#__PURE__*/_react.default.createElement("label", {
-        className: "form-label"
-      }, "Job role"), /*#__PURE__*/_react.default.createElement("input", {
-        type: "text",
-        className: "form-control",
-        name: "jobRole",
-        onChange: this.onChange,
-        value: this.state.jobRole
-      })), /*#__PURE__*/_react.default.createElement("div", {
-        className: "mb-3"
-      }, /*#__PURE__*/_react.default.createElement("label", {
-        className: "form-label"
-      }, "Country"), /*#__PURE__*/_react.default.createElement("input", {
-        type: "text",
-        className: "form-control",
-        name: "country",
-        onChange: this.onChange,
-        value: this.state.country
-      })), /*#__PURE__*/_react.default.createElement("div", {
-        className: "mb-3"
-      }, /*#__PURE__*/_react.default.createElement("label", {
-        className: "form-label"
-      }, "Emergency contact number"), /*#__PURE__*/_react.default.createElement("input", {
-        type: "text",
-        className: "form-control",
-        name: "emergencyContactNo",
-        onChange: this.onChange,
-        value: this.state.emergencyContactNo
-      })), /*#__PURE__*/_react.default.createElement("div", {
-        className: "mb-3"
-      }, /*#__PURE__*/_react.default.createElement("label", {
-        className: "form-label"
-      }, "Emergency contact name"), /*#__PURE__*/_react.default.createElement("input", {
-        type: "text",
-        className: "form-control",
-        name: "emergencyContactName",
-        onChange: this.onChange,
-        value: this.state.emergencyContactName
-      })), /*#__PURE__*/_react.default.createElement("div", {
-        className: "mb-3"
-      }, /*#__PURE__*/_react.default.createElement("button", {
-        type: "submit",
-        className: "btn btn-primary"
-      }, "Update")), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null)));
+      var data = this.props.location.data;
+      console.log("userid: " + data);
+
+      if (data) {
+        return /*#__PURE__*/_react.default.createElement("div", {
+          className: "container"
+        }, /*#__PURE__*/_react.default.createElement("div", {
+          className: "d-grid gap-2 d-md-flex justify-content-md-end"
+        }, /*#__PURE__*/_react.default.createElement("button", {
+          type: "button",
+          className: "btn btn-primary me-md-2",
+          onClick: function onClick(e) {
+            return _this4.toDashboard(e, data);
+          }
+        }, "Dashboard")), /*#__PURE__*/_react.default.createElement("h1", null, "Update Profile"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("form", {
+          onSubmit: this.onSubmit
+        }, /*#__PURE__*/_react.default.createElement("div", {
+          className: "mb-3"
+        }, /*#__PURE__*/_react.default.createElement("label", {
+          className: "form-label"
+        }, "Name"), /*#__PURE__*/_react.default.createElement("input", {
+          type: "text",
+          className: "form-control",
+          name: "name",
+          onChange: this.onChange,
+          value: this.state.name
+        })), /*#__PURE__*/_react.default.createElement("div", {
+          className: "mb-3"
+        }, /*#__PURE__*/_react.default.createElement("label", {
+          className: "form-label"
+        }, "Email address"), /*#__PURE__*/_react.default.createElement("input", {
+          type: "text",
+          className: "form-control",
+          name: "email",
+          onChange: this.onChange,
+          value: this.state.email
+        })), /*#__PURE__*/_react.default.createElement("div", {
+          className: "mb-3"
+        }, /*#__PURE__*/_react.default.createElement("label", {
+          className: "form-label"
+        }, "Mobile number"), /*#__PURE__*/_react.default.createElement("input", {
+          type: "text",
+          className: "form-control",
+          name: "mobileNo",
+          onChange: this.onChange,
+          value: this.state.mobileNo
+        })), /*#__PURE__*/_react.default.createElement("div", {
+          className: "mb-3"
+        }, /*#__PURE__*/_react.default.createElement("label", {
+          className: "form-label"
+        }, "Username"), /*#__PURE__*/_react.default.createElement("input", {
+          type: "text",
+          className: "form-control",
+          name: "username",
+          onChange: this.onChange,
+          value: this.state.username
+        })), /*#__PURE__*/_react.default.createElement("div", {
+          className: "mb-3"
+        }, /*#__PURE__*/_react.default.createElement("label", {
+          className: "form-label"
+        }, "Password"), /*#__PURE__*/_react.default.createElement("input", {
+          type: "password",
+          className: "form-control",
+          name: "password",
+          onChange: this.onChange,
+          value: this.state.password
+        })), /*#__PURE__*/_react.default.createElement("div", {
+          className: "mb-3"
+        }, /*#__PURE__*/_react.default.createElement("label", {
+          className: "form-label"
+        }, "Work place"), /*#__PURE__*/_react.default.createElement("input", {
+          type: "text",
+          className: "form-control",
+          name: "workplace",
+          onChange: this.onChange,
+          value: this.state.workplace
+        })), /*#__PURE__*/_react.default.createElement("div", {
+          className: "mb-3"
+        }, /*#__PURE__*/_react.default.createElement("label", {
+          className: "form-label"
+        }, "Job role"), /*#__PURE__*/_react.default.createElement("input", {
+          type: "text",
+          className: "form-control",
+          name: "jobRole",
+          onChange: this.onChange,
+          value: this.state.jobRole
+        })), /*#__PURE__*/_react.default.createElement("div", {
+          className: "mb-3"
+        }, /*#__PURE__*/_react.default.createElement("label", {
+          className: "form-label"
+        }, "Country"), /*#__PURE__*/_react.default.createElement("input", {
+          type: "text",
+          className: "form-control",
+          name: "country",
+          onChange: this.onChange,
+          value: this.state.country
+        })), /*#__PURE__*/_react.default.createElement("div", {
+          className: "mb-3"
+        }, /*#__PURE__*/_react.default.createElement("label", {
+          className: "form-label"
+        }, "Emergency contact number"), /*#__PURE__*/_react.default.createElement("input", {
+          type: "text",
+          className: "form-control",
+          name: "emergencyContactNo",
+          onChange: this.onChange,
+          value: this.state.emergencyContactNo
+        })), /*#__PURE__*/_react.default.createElement("div", {
+          className: "mb-3"
+        }, /*#__PURE__*/_react.default.createElement("label", {
+          className: "form-label"
+        }, "Emergency contact name"), /*#__PURE__*/_react.default.createElement("input", {
+          type: "text",
+          className: "form-control",
+          name: "emergencyContactName",
+          onChange: this.onChange,
+          value: this.state.emergencyContactName
+        })), /*#__PURE__*/_react.default.createElement("div", {
+          className: "mb-3"
+        }, /*#__PURE__*/_react.default.createElement("button", {
+          type: "submit",
+          className: "btn btn-primary"
+        }, "Update")), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null)));
+      } else {
+        return /*#__PURE__*/_react.default.createElement("div", {
+          className: "container"
+        }, /*#__PURE__*/_react.default.createElement("h2", null, "Please login to continue"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("button", {
+          type: "button",
+          className: "btn btn-primary",
+          onClick: function onClick(e) {
+            return _this4.loadLogin(e);
+          }
+        }, "Login"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null));
+      }
     }
   }]);
 
@@ -9234,6 +9416,335 @@ var updateAttendee = /*#__PURE__*/function (_Component) {
 }(_react.Component);
 
 var _default = updateAttendee;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js"}],"src/components/presenter/presenterUpdate.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _axios = _interopRequireDefault(require("axios"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+var initialState = {
+  //initiate states
+  name: '',
+  email: '',
+  mobileNo: '',
+  username: '',
+  password: '',
+  workplace: '',
+  presenterType: 'Researcher',
+  sessionType: 'Physical',
+  jobRole: '',
+  researchArea: '',
+  country: ''
+};
+
+var updatePresenter = /*#__PURE__*/function (_Component) {
+  _inherits(updatePresenter, _Component);
+
+  var _super = _createSuper(updatePresenter);
+
+  function updatePresenter(props) {
+    var _this;
+
+    _classCallCheck(this, updatePresenter);
+
+    _this = _super.call(this, props);
+    _this.onChange = _this.onChange.bind(_assertThisInitialized(_this)); //bind onChange function.
+
+    _this.onSubmit = _this.onSubmit.bind(_assertThisInitialized(_this)); //bind onSubmit function.
+
+    _this.state = initialState; //apply states.
+
+    return _this;
+  }
+
+  _createClass(updatePresenter, [{
+    key: "onChange",
+    value: function onChange(e) {
+      //update states when changed
+      this.setState(_defineProperty({}, e.target.name, e.target.value));
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      var presenter = this.props.match.params.id;
+      console.log("obj: " + presenter);
+
+      _axios.default.get("http://localhost:7000/presenter/".concat(presenter)).then(function (response) {
+        _this2.setState({
+          id: response.data.data._id
+        });
+
+        _this2.setState({
+          name: response.data.data.name
+        });
+
+        _this2.setState({
+          email: response.data.data.email
+        });
+
+        _this2.setState({
+          mobileNo: response.data.data.mobileNo
+        });
+
+        _this2.setState({
+          username: response.data.data.username
+        }); //this.setState({ password: response.data.data.password })
+
+
+        _this2.setState({
+          workplace: response.data.data.workplace
+        });
+
+        _this2.setState({
+          jobRole: response.data.data.jobRole
+        });
+
+        _this2.setState({
+          researchArea: response.data.data.researchArea
+        });
+
+        _this2.setState({
+          country: response.data.data.country
+        });
+
+        _this2.setState({
+          presenterType: response.data.data.presenterType
+        });
+
+        _this2.setState({
+          sessionType: response.data.data.sessionType
+        });
+
+        console.log(response.data.data);
+      }).catch(function (error) {
+        alert(error.message);
+      });
+    }
+  }, {
+    key: "onSubmit",
+    value: function onSubmit(e) {
+      var _this3 = this;
+
+      //submit details
+      e.preventDefault(); //avoid browser refresh. Since if the browser refreshes, it will erase all typed info in form automatically.
+
+      var presenter = {
+        name: this.state.name,
+        email: this.state.email,
+        mobileNo: this.state.mobileNo,
+        username: this.state.username,
+        password: this.state.password,
+        workplace: this.state.workplace,
+        jobRole: this.state.jobRole,
+        researchArea: this.state.researchArea,
+        country: this.state.country,
+        presenterType: this.state.presenterType,
+        sessionType: this.state.sessionType
+      };
+      console.log('DATA TO SEND', presenter);
+
+      _axios.default.patch("http://localhost:7000/presenter/update/".concat(this.state.id), presenter).then(function (response) {
+        _this3.props.history.push({
+          pathname: '/presenter/dashboard',
+          data: response.data.data
+        });
+
+        console.log("resP" + response.data.data);
+        alert('Presenter Data successfully updated');
+      }).catch(function (error) {
+        console.log(error.message);
+        if (error.response.status === 500) alert('Username is already taken');else if (error.response.status === 404) alert('Error: Details not found');
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this4 = this;
+
+      //use to return html when calling component.
+      var data = this.props.location.data;
+      console.log("userid: " + data);
+
+      if (data) {
+        return /*#__PURE__*/_react.default.createElement("div", {
+          className: "container"
+        }, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("h1", null, "Update Profile"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("form", {
+          onSubmit: this.onSubmit
+        }, /*#__PURE__*/_react.default.createElement("div", {
+          className: "mb-3"
+        }, /*#__PURE__*/_react.default.createElement("label", {
+          className: "form-label"
+        }, "Name"), /*#__PURE__*/_react.default.createElement("input", {
+          type: "text",
+          className: "form-control",
+          name: "name",
+          onChange: this.onChange,
+          value: this.state.name
+        })), /*#__PURE__*/_react.default.createElement("div", {
+          className: "mb-3"
+        }, /*#__PURE__*/_react.default.createElement("label", {
+          className: "form-label"
+        }, "Email address"), /*#__PURE__*/_react.default.createElement("input", {
+          type: "text",
+          className: "form-control",
+          name: "email",
+          onChange: this.onChange,
+          value: this.state.email
+        })), /*#__PURE__*/_react.default.createElement("div", {
+          className: "mb-3"
+        }, /*#__PURE__*/_react.default.createElement("label", {
+          className: "form-label"
+        }, "Mobile number"), /*#__PURE__*/_react.default.createElement("input", {
+          type: "text",
+          className: "form-control",
+          name: "mobileNo",
+          onChange: this.onChange,
+          value: this.state.mobileNo
+        })), /*#__PURE__*/_react.default.createElement("div", {
+          className: "mb-3"
+        }, /*#__PURE__*/_react.default.createElement("label", {
+          className: "form-label"
+        }, "Username"), /*#__PURE__*/_react.default.createElement("input", {
+          type: "text",
+          className: "form-control",
+          name: "username",
+          onChange: this.onChange,
+          value: this.state.username
+        })), /*#__PURE__*/_react.default.createElement("div", {
+          className: "mb-3"
+        }, /*#__PURE__*/_react.default.createElement("label", {
+          className: "form-label"
+        }, "Password"), /*#__PURE__*/_react.default.createElement("input", {
+          type: "password",
+          className: "form-control",
+          name: "password",
+          onChange: this.onChange,
+          value: this.state.password
+        })), /*#__PURE__*/_react.default.createElement("div", {
+          className: "mb-3"
+        }, /*#__PURE__*/_react.default.createElement("label", {
+          className: "form-label"
+        }, "Work place"), /*#__PURE__*/_react.default.createElement("input", {
+          type: "text",
+          className: "form-control",
+          name: "workplace",
+          onChange: this.onChange,
+          value: this.state.workplace
+        })), /*#__PURE__*/_react.default.createElement("div", {
+          className: "mb-3"
+        }, /*#__PURE__*/_react.default.createElement("label", {
+          className: "form-label"
+        }, "Presenter Type"), /*#__PURE__*/_react.default.createElement("select", {
+          className: "form-select",
+          value: this.state.presenterType,
+          onChange: this.handlePresenterChange
+        }, /*#__PURE__*/_react.default.createElement("option", {
+          value: "Researcher"
+        }, "Researcher"), /*#__PURE__*/_react.default.createElement("option", {
+          value: "Workshop Conductor"
+        }, "Workshop Conductor"))), /*#__PURE__*/_react.default.createElement("div", {
+          className: "mb-3"
+        }, /*#__PURE__*/_react.default.createElement("label", {
+          className: "form-label"
+        }, "Session Type"), /*#__PURE__*/_react.default.createElement("select", {
+          className: "form-select",
+          value: this.state.sessionType,
+          onChange: this.handleSessionChange
+        }, /*#__PURE__*/_react.default.createElement("option", {
+          value: "Physical"
+        }, "Physical session"), /*#__PURE__*/_react.default.createElement("option", {
+          value: "Virtual"
+        }, "Virtual session"))), /*#__PURE__*/_react.default.createElement("div", {
+          className: "mb-3"
+        }, /*#__PURE__*/_react.default.createElement("label", {
+          className: "form-label"
+        }, "Job role"), /*#__PURE__*/_react.default.createElement("input", {
+          type: "text",
+          className: "form-control",
+          name: "jobRole",
+          onChange: this.onChange,
+          value: this.state.jobRole
+        })), /*#__PURE__*/_react.default.createElement("div", {
+          className: "mb-3"
+        }, /*#__PURE__*/_react.default.createElement("label", {
+          className: "form-label"
+        }, "Research Area"), /*#__PURE__*/_react.default.createElement("input", {
+          type: "text",
+          className: "form-control",
+          name: "researchArea",
+          onChange: this.onChange,
+          value: this.state.researchArea
+        })), /*#__PURE__*/_react.default.createElement("div", {
+          className: "mb-3"
+        }, /*#__PURE__*/_react.default.createElement("label", {
+          className: "form-label"
+        }, "Country"), /*#__PURE__*/_react.default.createElement("input", {
+          type: "text",
+          className: "form-control",
+          name: "country",
+          onChange: this.onChange,
+          value: this.state.country
+        })), /*#__PURE__*/_react.default.createElement("button", {
+          type: "submit",
+          className: "btn btn-primary"
+        }, "Submit"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null)));
+      } else {
+        return /*#__PURE__*/_react.default.createElement("div", {
+          className: "container"
+        }, /*#__PURE__*/_react.default.createElement("h2", null, "Please login to continue"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("button", {
+          type: "button",
+          className: "btn btn-primary",
+          onClick: function onClick(e) {
+            return _this4.loadLogin(e);
+          }
+        }, "Login"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null));
+      }
+    }
+  }]);
+
+  return updatePresenter;
+}(_react.Component);
+
+var _default = updatePresenter;
 exports.default = _default;
 },{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js"}],"src/components/presenter/presenterRegister.js":[function(require,module,exports) {
 "use strict";
@@ -9348,11 +9859,11 @@ var CreatePresenter = /*#__PURE__*/function (_Component) {
       };
 
       _axios.default.post('http://localhost:7000/presenter/create', presenter).then(function (data) {
-        _this2.props.history.push('/login');
+        _this2.props.history.push('/dashboard');
 
         alert('Data successfully inserted');
       }).catch(function (error) {
-        alert(error.message);
+        if (error.response.status === 500) alert('Username is already taken');else if (error.response.status === 400) alert('Data not inserted');
       });
     }
   }, {
@@ -9540,13 +10051,29 @@ var AttendeeDashboard = /*#__PURE__*/function (_Component) {
 
     _this = _super.call(this, props);
     _this.loadUpdateProfile = _this.loadUpdateProfile.bind(_assertThisInitialized(_this));
+    _this.loadLogin = _this.loadLogin.bind(_assertThisInitialized(_this));
+    _this.logout = _this.logout.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(AttendeeDashboard, [{
     key: "loadUpdateProfile",
     value: function loadUpdateProfile(e, userId) {
-      window.location = "/attendee/".concat(userId);
+      //window.location = `/attendee/${userId}`
+      this.props.history.push({
+        pathname: "/attendee/".concat(userId),
+        data: "".concat(userId)
+      });
+    }
+  }, {
+    key: "loadLogin",
+    value: function loadLogin(e) {
+      window.location = '/login';
+    }
+  }, {
+    key: "logout",
+    value: function logout(e) {
+      window.location = '/';
     }
   }, {
     key: "render",
@@ -9555,15 +10082,36 @@ var AttendeeDashboard = /*#__PURE__*/function (_Component) {
 
       var data = this.props.location.data;
       console.log("userid: " + data);
-      return /*#__PURE__*/_react.default.createElement("div", {
-        className: "container"
-      }, /*#__PURE__*/_react.default.createElement("h2", null, "Attendee Dashboard"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("button", {
-        type: "button",
-        className: "btn btn-primary",
-        onClick: function onClick(e) {
-          return _this2.loadUpdateProfile(e, data);
-        }
-      }, "Update Profile"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null));
+
+      if (data) {
+        return /*#__PURE__*/_react.default.createElement("div", {
+          className: "container"
+        }, /*#__PURE__*/_react.default.createElement("div", {
+          className: "d-grid gap-2 d-md-flex justify-content-md-end"
+        }, /*#__PURE__*/_react.default.createElement("button", {
+          type: "button",
+          className: "btn btn-primary me-md-2",
+          onClick: function onClick(e) {
+            return _this2.logout(e);
+          }
+        }, "Logout")), /*#__PURE__*/_react.default.createElement("h2", null, "Attendee Dashboard"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("button", {
+          type: "button",
+          className: "btn btn-primary",
+          onClick: function onClick(e) {
+            return _this2.loadUpdateProfile(e, data);
+          }
+        }, "Update Profile"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null));
+      } else {
+        return /*#__PURE__*/_react.default.createElement("div", {
+          className: "container"
+        }, /*#__PURE__*/_react.default.createElement("h2", null, "Please login to continue"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("button", {
+          type: "button",
+          className: "btn btn-primary",
+          onClick: function onClick(e) {
+            return _this2.loadLogin(e);
+          }
+        }, "Login"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null));
+      }
     }
   }]);
 
@@ -9571,6 +10119,103 @@ var AttendeeDashboard = /*#__PURE__*/function (_Component) {
 }(_react.Component);
 
 var _default = AttendeeDashboard;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js"}],"src/components/presenter/presenterDashboard.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _axios = _interopRequireDefault(require("axios"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+var PresenterDashboard = /*#__PURE__*/function (_Component) {
+  _inherits(PresenterDashboard, _Component);
+
+  var _super = _createSuper(PresenterDashboard);
+
+  function PresenterDashboard(props) {
+    var _this;
+
+    _classCallCheck(this, PresenterDashboard);
+
+    _this = _super.call(this, props);
+    _this.loadUpdateProfile = _this.loadUpdateProfile.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(PresenterDashboard, [{
+    key: "loadUpdateProfile",
+    value: function loadUpdateProfile(e, userId) {
+      window.location = "/presenter/".concat(userId);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      var data = this.props.location.data;
+      console.log("userid: " + data);
+
+      if (data) {
+        return /*#__PURE__*/_react.default.createElement("div", {
+          className: "container"
+        }, /*#__PURE__*/_react.default.createElement("h2", null, "Presenter Dashboard"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("button", {
+          type: "button",
+          className: "btn btn-primary",
+          onClick: function onClick(e) {
+            return _this2.loadUpdateProfile(e, data);
+          }
+        }, "Update Profile"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null));
+      } else {
+        return /*#__PURE__*/_react.default.createElement("div", {
+          className: "container"
+        }, /*#__PURE__*/_react.default.createElement("h2", null, "Please login to continue"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("button", {
+          type: "button",
+          className: "btn btn-primary",
+          onClick: function onClick(e) {
+            return _this2.loadLogin(e);
+          }
+        }, "Login"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null));
+      }
+    }
+  }]);
+
+  return PresenterDashboard;
+}(_react.Component);
+
+var _default = PresenterDashboard;
 exports.default = _default;
 },{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js"}],"src/App.js":[function(require,module,exports) {
 "use strict";
@@ -9592,13 +10237,19 @@ var _home = _interopRequireDefault(require("./components/home/home"));
 
 var _footer = _interopRequireDefault(require("./components/footer/footer"));
 
+var _login = _interopRequireDefault(require("./components/userLogin/login"));
+
 var _attendeeRegister = _interopRequireDefault(require("./components/attendee/attendeeRegister"));
 
 var _attendeeUpdate = _interopRequireDefault(require("./components/attendee/attendeeUpdate"));
 
+var _presenterUpdate = _interopRequireDefault(require("./components/presenter/presenterUpdate"));
+
 var _presenterRegister = _interopRequireDefault(require("./components/presenter/presenterRegister"));
 
 var _attendeeDashboard = _interopRequireDefault(require("./components/attendee/attendeeDashboard"));
+
+var _presenterDashboard = _interopRequireDefault(require("./components/presenter/presenterDashboard"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -9609,24 +10260,32 @@ function App() {
     path: "/",
     component: _home.default
   }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
-    exact: true,
-    path: "/attendee/dashboard",
-    component: _attendeeDashboard.default
-  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/attendee/create",
     component: _attendeeRegister.default
   }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/presenter/create",
     component: _presenterRegister.default
   }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    path: "/login",
+    component: _login.default
+  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    path: "/attendee/dashboard",
+    component: _attendeeDashboard.default
+  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    path: "/presenter/dashboard",
+    component: _presenterDashboard.default
+  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/attendee/:id",
     component: _attendeeUpdate.default
+  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    path: "/presenter/:id",
+    component: _presenterUpdate.default
   })), /*#__PURE__*/_react.default.createElement(_footer.default, null)));
 }
 
 var _default = App;
 exports.default = _default;
-},{"./App.css":"src/App.css","react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./components/navBar/navBar":"src/components/navBar/navBar.js","./components/home/home":"src/components/home/home.js","./components/footer/footer":"src/components/footer/footer.js","./components/attendee/attendeeRegister":"src/components/attendee/attendeeRegister.js","./components/attendee/attendeeUpdate":"src/components/attendee/attendeeUpdate.js","./components/presenter/presenterRegister":"src/components/presenter/presenterRegister.js","./components/attendee/attendeeDashboard":"src/components/attendee/attendeeDashboard.js"}],"node_modules/scheduler/cjs/scheduler.development.js":[function(require,module,exports) {
+},{"./App.css":"src/App.css","react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./components/navBar/navBar":"src/components/navBar/navBar.js","./components/home/home":"src/components/home/home.js","./components/footer/footer":"src/components/footer/footer.js","./components/userLogin/login":"src/components/userLogin/login.js","./components/attendee/attendeeRegister":"src/components/attendee/attendeeRegister.js","./components/attendee/attendeeUpdate":"src/components/attendee/attendeeUpdate.js","./components/presenter/presenterUpdate":"src/components/presenter/presenterUpdate.js","./components/presenter/presenterRegister":"src/components/presenter/presenterRegister.js","./components/attendee/attendeeDashboard":"src/components/attendee/attendeeDashboard.js","./components/presenter/presenterDashboard":"src/components/presenter/presenterDashboard.js"}],"node_modules/scheduler/cjs/scheduler.development.js":[function(require,module,exports) {
 /** @license React v0.20.2
  * scheduler.development.js
  *
@@ -36727,7 +37386,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62406" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50090" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

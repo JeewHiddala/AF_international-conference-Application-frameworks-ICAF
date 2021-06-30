@@ -50,17 +50,20 @@ class CreateAttendee extends Component {
 
     axios.post('http://localhost:7000/attendee/create', attendee)
       .then((response) => {
-        //this.props.history.push('/login')
+        this.props.history.push('/login')
         console.log("userid reg: "+response.data.data );
-        this.props.history.push({
-          pathname: '/attendee/dashboard',
-          data: response.data.data 
-        })
+        // this.props.history.push({
+        //   pathname: '/login',
+        //   data: response.data.data 
+        // })
         
         alert('Data successfully inserted')
       })
       .catch((error) => {
-        alert(error.message)
+        if (error.response.status === 500)
+          alert('Username is already taken')
+        else if (error.response.status === 400)
+        alert('Data not inserted')
       })
 
   }

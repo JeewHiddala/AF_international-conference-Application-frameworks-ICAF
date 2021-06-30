@@ -2,26 +2,15 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 
-class AttendeeDashboard extends Component {
+class PresenterDashboard extends Component {
     constructor(props) {
         super(props);
         this.loadUpdateProfile = this.loadUpdateProfile.bind(this);
-        this.loadLogin = this.loadLogin.bind(this);
-        this.logout = this.logout.bind(this);
+
     }
 
     loadUpdateProfile(e, userId) {
-        //window.location = `/attendee/${userId}`
-        this.props.history.push({
-            pathname: `/attendee/${userId}`,
-            data: `${userId}`
-        })
-    }
-    loadLogin(e) {
-        window.location = '/login'
-    }
-    logout(e) {
-        window.location = '/'
+        window.location = `/presenter/${userId}`
     }
     render() {
         const { data } = this.props.location
@@ -29,10 +18,7 @@ class AttendeeDashboard extends Component {
         if (data) {
             return (
                 <div className="container">
-                    <div className="d-grid gap-2 d-md-flex justify-content-md-end">
-                        <button type="button" className="btn btn-primary me-md-2" onClick={e => this.logout(e)} >Logout</button>
-                    </div>
-                    <h2>Attendee Dashboard</h2>
+                    <h2>Presenter Dashboard</h2>
                     <br /><br /><br /><br />
                     <button type="button" className="btn btn-primary" onClick={e => this.loadUpdateProfile(e, data)} >Update Profile</button>
                     <br /><br /><br /><br />
@@ -51,4 +37,4 @@ class AttendeeDashboard extends Component {
     }
 }
 
-export default AttendeeDashboard;
+export default PresenterDashboard;

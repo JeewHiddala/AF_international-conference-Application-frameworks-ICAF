@@ -17,7 +17,7 @@ class CreatePresenter extends Component {
       password: '',
       workplace: '',
       presenterType: 'Researcher',
-      sessionType: 'Physical', 
+      sessionType: 'Physical',
       jobRole: '',
       researchArea: '',
       country: ''
@@ -54,11 +54,14 @@ class CreatePresenter extends Component {
 
     axios.post('http://localhost:7000/presenter/create', presenter)
       .then((data) => {
-        this.props.history.push('/login')
+        this.props.history.push('/dashboard')
         alert('Data successfully inserted')
       })
       .catch((error) => {
-        alert(error.message)
+        if (error.response.status === 500)
+          alert('Username is already taken')
+        else if (error.response.status === 400)
+          alert('Data not inserted')
       })
 
   }

@@ -4,10 +4,13 @@ import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';    //m
 import Navbar from './components/navBar/navBar';
 import Home from './components/home/home';
 import Footer from './components/footer/footer';
+import Login from './components/userLogin/login';
 import CreateAttendee from './components/attendee/attendeeRegister';
 import UpdateAttendee from './components/attendee/attendeeUpdate';
+import UpdatePresenter from './components/presenter/presenterUpdate';
 import CreatePresenter from './components/presenter/presenterRegister';
 import AttendeeDashboard from './components/attendee/attendeeDashboard';
+import PresenterDashboard from './components/presenter/presenterDashboard';
 
 
 function App(){
@@ -17,11 +20,17 @@ function App(){
                 <Navbar/>
                 <Switch>
                     <Route exact path='/' component={Home} />
-                    <Route exact path='/attendee/dashboard' component={AttendeeDashboard} />
                     <Route path='/attendee/create' component={CreateAttendee} />
                     <Route path='/presenter/create' component={CreatePresenter} />
-                    <Route path='/attendee/:id' component={UpdateAttendee} />
+                    <Route path='/login' component={Login} />
                     
+                    <Route path='/attendee/dashboard' component={AttendeeDashboard} />
+                    <Route path='/presenter/dashboard' component={PresenterDashboard} />
+                    <Route path='/attendee/:id' component={UpdateAttendee} />
+                    <Route path='/presenter/:id' component={UpdatePresenter} />
+
+                    
+
                 </Switch>
                 <Footer/>
             </Router>

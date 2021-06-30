@@ -9,7 +9,7 @@ const createAttendee = async (req, res) => {
 
         //check for existing username
         if (await Attendee.findOne({ username: req.body.username })) {
-            res.status(500).send({ error: 'Username "' + req.body.username + '" is already taken' });
+            res.status(500).send({ error: 'Username is already taken' });
         }
         console.log("uname: " + req.body.username);
 
@@ -24,7 +24,7 @@ const createAttendee = async (req, res) => {
                 res.status(200).send({ data: data._id });
             })
             .catch(error => {
-                res.status(500).send({ error: error.message });
+                res.status(400).send({ error: error.message });
             });
     }
 }
@@ -50,8 +50,8 @@ const updateAttendee = async (req, res) => {
         if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send('Error: Details not found');
         
         //check uniqueness of username if changed
-        if (user.username !== req.body.username && await User.findOne({ username: req.body.username })) {
-            res.status(500).send({ error: 'Username "' + req.body.username + '" is already taken' });
+        if (user.username !== req.body.username && await Attendee.findOne({ username: req.body.username })) {
+            res.status(500).send({ error: 'Username is already taken' });
         }
 
         // hash password if it was changed

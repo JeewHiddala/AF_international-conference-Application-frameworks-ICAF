@@ -2,20 +2,19 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 const initialState = {      //initiate states
-    id: '',
     name: '',
     email: '',
     mobileNo: '',
     username: '',
     password: '',
     workplace: '',
+    presenterType: 'Researcher',
+    sessionType: 'Physical',
     jobRole: '',
-    type: '',
-    country: '',
-    emergencyContactNo: '',
-    emergencyContactName: ''
+    researchArea: '',
+    country: ''
 }
-class updateAttendee extends Component {
+class updatePresenter extends Component {
     constructor(props) {
         super(props);
         this.onChange = this.onChange.bind(this);  //bind onChange function.
@@ -28,9 +27,9 @@ class updateAttendee extends Component {
     }
 
     componentDidMount() {
-        const attendee = this.props.match.params.id;
-        console.log("obj: " + attendee);
-        axios.get(`http://localhost:7000/attendee/${attendee}`)
+        const presenter = this.props.match.params.id;
+        console.log("obj: " + presenter);
+        axios.get(`http://localhost:7000/presenter/${presenter}`)
             .then(response => {
                 this.setState({ id: response.data.data._id })
                 this.setState({ name: response.data.data.name })
@@ -40,10 +39,10 @@ class updateAttendee extends Component {
                 //this.setState({ password: response.data.data.password })
                 this.setState({ workplace: response.data.data.workplace })
                 this.setState({ jobRole: response.data.data.jobRole })
-                this.setState({ type: response.data.data.type })
+                this.setState({ researchArea: response.data.data.researchArea })
                 this.setState({ country: response.data.data.country })
-                this.setState({ emergencyContactNo: response.data.data.emergencyContactNo })
-                this.setState({ emergencyContactName: response.data.data.emergencyContactName })
+                this.setState({ presenterType: response.data.data.presenterType })
+                this.setState({ sessionType: response.data.data.sessionType })
 
                 console.log(response.data.data)
             })
@@ -55,7 +54,7 @@ class updateAttendee extends Component {
 
     onSubmit(e) {      //submit details
         e.preventDefault();     //avoid browser refresh. Since if the browser refreshes, it will erase all typed info in form automatically.
-        let attendee = {
+        let presenter = {
             name: this.state.name,
             email: this.state.email,
             mobileNo: this.state.mobileNo,
@@ -63,20 +62,20 @@ class updateAttendee extends Component {
             password: this.state.password,
             workplace: this.state.workplace,
             jobRole: this.state.jobRole,
-            type: this.state.type,
+            researchArea: this.state.researchArea,
             country: this.state.country,
-            emergencyContactNo: this.state.emergencyContactNo,
-            emergencyContactName: this.state.emergencyContactName
+            presenterType: this.state.presenterType,
+            sessionType: this.state.sessionType
         }
-        console.log('DATA TO SEND', attendee);
-        axios.patch(`http://localhost:7000/attendee/update/${this.state.id}`, attendee)
+        console.log('DATA TO SEND', presenter);
+        axios.patch(`http://localhost:7000/presenter/update/${this.state.id}`, presenter)
             .then(response => {
                 this.props.history.push({
-                    pathname: '/attendee/dashboard',
+                    pathname: '/presenter/dashboard',
                     data: response.data.data
                 })
-                console.log("resA" + response.data.data);
-                alert('Attendee Data successfully updated')
+                console.log("resP" + response.data.data);
+                alert('Presenter Data successfully updated')
 
             })
             .catch(error => {
@@ -95,9 +94,7 @@ class updateAttendee extends Component {
         if (data) {
             return (
                 <div className="container">
-                    <div className="d-grid gap-2 d-md-flex justify-content-md-end">
-                        <button type="button" className="btn btn-primary me-md-2" onClick={e => this.toDashboard(e, data)} >Dashboard</button>
-                    </div>                    
+                    <br />
                     <h1>Update Profile</h1><br />
                     <form onSubmit={this.onSubmit}>
                         <div className="mb-3">
@@ -125,24 +122,32 @@ class updateAttendee extends Component {
                             <input type="text" className="form-control" name="workplace" onChange={this.onChange} value={this.state.workplace} />
                         </div>
                         <div className="mb-3">
+                            <label className="form-label">Presenter Type</label>
+                            <select className="form-select" value={this.state.presenterType} onChange={this.handlePresenterChange}>
+                                <option value="Researcher">Researcher</option>
+                                <option value="Workshop Conductor">Workshop Conductor</option>
+                            </select>
+                        </div>
+                        <div className="mb-3">
+                            <label className="form-label">Session Type</label>
+                            <select className="form-select" value={this.state.sessionType} onChange={this.handleSessionChange}>
+                                <option value="Physical">Physical session</option>
+                                <option value="Virtual">Virtual session</option>
+                            </select>
+                        </div>
+                        <div className="mb-3">
                             <label className="form-label">Job role</label>
                             <input type="text" className="form-control" name="jobRole" onChange={this.onChange} value={this.state.jobRole} />
+                        </div>
+                        <div className="mb-3">
+                            <label className="form-label">Research Area</label>
+                            <input type="text" className="form-control" name="researchArea" onChange={this.onChange} value={this.state.researchArea} />
                         </div>
                         <div className="mb-3">
                             <label className="form-label">Country</label>
                             <input type="text" className="form-control" name="country" onChange={this.onChange} value={this.state.country} />
                         </div>
-                        <div className="mb-3">
-                            <label className="form-label">Emergency contact number</label>
-                            <input type="text" className="form-control" name="emergencyContactNo" onChange={this.onChange} value={this.state.emergencyContactNo} />
-                        </div>
-                        <div className="mb-3">
-                            <label className="form-label">Emergency contact name</label>
-                            <input type="text" className="form-control" name="emergencyContactName" onChange={this.onChange} value={this.state.emergencyContactName} />
-                        </div>
-                        <div className="mb-3">
-                            <button type="submit" className="btn btn-primary">Update</button>
-                        </div>
+                        <button type="submit" className="btn btn-primary">Submit</button>
                         <br /><br /><br /><br />
                     </form>
                 </div>
@@ -157,8 +162,7 @@ class updateAttendee extends Component {
                 </div>
             )
         }
-
     }
 }
 
-export default updateAttendee;
+export default updatePresenter;

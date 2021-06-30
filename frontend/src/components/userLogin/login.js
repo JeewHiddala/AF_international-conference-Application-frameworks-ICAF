@@ -6,7 +6,6 @@ class UserLogin extends Component {
   constructor(props) {
     super(props);
     this.onChange = this.onChange.bind(this);
-    this.handleChange = this.handleChange.bind(this);
     this.onFormSubmit = this.onFormSubmit.bind(this);
     this.state = {
       username: '',
@@ -20,20 +19,36 @@ class UserLogin extends Component {
 
   onFormSubmit(e) {
     e.preventDefault();
-    let attendee = {
+    let user = {
       username: this.state.username,
       password: this.state.password
     }
-    
-    axios.get('http://localhost:7000/attendee/create', attendee)
-    .then((data) => {
-      this.props.history.push('/dashboard')
-      alert('Data successfully inserted')
-    })
-    .catch((error) => {
-      alert(error.message)
-    })
-    
+
+    axios.post('http://localhost:7000/login', user)
+      .then((response) => {
+        if (!response.data.Utype.localeCompare("attendee")) {
+          this.props.history.push({
+            pathname: '/attendee/dashboard',
+            data: response.data.data
+          })
+        } else if (!response.data.Utype.localeCompare("presenter")) {
+          this.props.history.push({
+            pathname: '/presenter/dashboard',
+            data: response.data.data
+          })
+        }
+        console.log("userid log: " + response.data.data);
+        console.log("userT log: " + response.data.Utype);
+
+      })
+      .catch((error) => {
+        console.log("error: " + error.response.status);
+        if (error.response.status === 500)
+          alert('Fill all the fields')
+        else if (error.response.status === 400)
+          alert('Username or password is incorrect')
+      })
+
   }
 
   render() {
@@ -50,7 +65,7 @@ class UserLogin extends Component {
             <input type="password" className="form-control" name="password" onChange={this.onChange} value={this.state.password} />
           </div>
           <button type="submit" className="btn btn-primary">Login</button>
-          <br/><br/><br/><br/>
+          <br /><br /><br /><br />
         </form>
       </div>
     )

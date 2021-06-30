@@ -1,11 +1,12 @@
-import bcrypt from 'bcryptjs';
-//import config from '../../config';
-import jwt from 'jsonwebtoken';
-//import auth from '../../middleware/auth';
+const dotenv = require('dotenv');       //environmental variables
 const Attendee = require('../models/attendee.model');
 const Presenter = require('../models/presenter.model');
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 
-//const mongoose = require("mongoose");
+
+//get jwt secret key
+const JWT_SECRET = process.env.JWT_SECRET;
 
 const login = async (req, res) => {
     const { username, password } = req.body;
@@ -18,16 +19,30 @@ const login = async (req, res) => {
     const user = await Attendee.findOne({ username });
 
     if (user && bcrypt.compareSync(password, user.password)) {
-        const token = jwt.sign({ sub: user.id }, config.secret, { expiresIn: '7d' });
-        res.json(user);
+        const token = jwt.sign({ id: user._id }, JWT_SECRET);
+        const data = user._id;
+        const Utype = "attendee";
+        res.json({
+            token,
+            data,
+            Utype
+        });
     } else {
         const userP = await Presenter.findOne({ username });
         if (userP && bcrypt.compareSync(password, userP.password)) {
-            const token = jwt.sign({ sub: userP.id }, config.secret, { expiresIn: '7d' });
-            res.json(userP);
+            const token = jwt.sign({ id: userP._id }, JWT_SECRET);
+            const data = userP._id;
+            const Utype = "presenter";
+            //res.status(200).send({ data: data._id });
+            res.json({
+                token,
+                data,
+                Utype
+            });
         }
     }
-    res.status(400).json({ message: 'Username or password is incorrect' });
+    
+    res.status(400).send({ error: 'Username or password is incorrect' });
 }
 
 module.exports = {
