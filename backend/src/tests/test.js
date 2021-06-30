@@ -9,7 +9,10 @@ const WorkshopProposal = require('../models/workshopProposalModel');
 const Reviewer = require('../models/reviewerModel');
 
 //import APIs
+const adminAPI = require('../apis/admin.api');
 
+
+const reviewerAPI = require('../apis/reviewer.api');
 
 dotenv.config();
 const app = express();
@@ -47,22 +50,43 @@ app.listen(PORT, () => {
     console.log(`Server is up and running on PORT ${PORT}`);
 });
 
-//register router - CHANGEABLE
+//register router - testcase 1
+app.use('/admin', adminAPI());
 
+//test case 1- Hiddalarachchi J. - IT19007502
+test('should insert a new administrator', async () => {
+    await request(app).post('/admin/create').send({
+        name:"Kamal22 Hettiwaththa",
+        email:"Kamal22@gmail.com",
+        nicNo:"965887475V",
+        address:"59,new road,Ampara",
+        mobileNumber:87878,
+        userName:"kamal22",
+        password:"33333",
+        salary:25000,
+    }).expect(200).then((res) => {
+        id = res.body._id;
+    });
+})
 
-//test case
-// test('should insert a new room', async () => {
-//     await request(app).post('/room/create').send({
-//         code: "Name 22",
-//         amount: 2000,
-//         wing: "English",
-//         pax: 20,
-//     }).expect(200).then((res) => {
-//         id = res.body._id;
-//     });
-// })
+//register router - testcase 2
+app.use('/reviewer', reviewerAPI());
 
-
+//test case 2- Hiddalarachchi J. - IT19007502
+test('should insert a new administrator', async () => {
+    await request(app).post('/reviewer/create').send({
+        name:"Kamal22 Hettiwaththa",
+        email:"Kamal22@gmail.com",
+        nicNo:"965887475V",
+        address:"59,new road,Ampara",
+        mobileNumber:87878,
+        userName:"kamal22",
+        password:"33333",
+        reviewerSalary:25000,
+    }).expect(200).then((res) => {
+        id = res.body._id;
+    });
+})
 
 //IT19051826 Test Case1
 
@@ -165,5 +189,4 @@ test('should get all reviewer profile details', async () => {
         id = res.body._id;
     });
 })
-
 

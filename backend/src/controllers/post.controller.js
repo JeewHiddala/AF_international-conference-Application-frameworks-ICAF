@@ -16,7 +16,6 @@ const createPost = async (req, res) => {       //create a post to db.
 
 const getAllPostsDetails = async (req, res) => {       //get all posts 
     await Post.find({})
-    .populate('admins','name')
     .populate('editor','name')
         .then(data => {
             res.status(200).send({ data: data });
@@ -28,7 +27,6 @@ const getAllPostsDetails = async (req, res) => {       //get all posts
 const getSelectedPostDetails = async (req, res) => {          //get selected post details.
     if (req.params && req.params.id) {
         await Post.findById(req.params.id)
-        .populate('admins','name')
         .populate('editor','name')
             .then(data => {
                 res.status(200).send({ data : data });

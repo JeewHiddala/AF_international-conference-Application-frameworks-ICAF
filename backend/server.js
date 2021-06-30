@@ -17,7 +17,6 @@ const editorAPI = require('./src/apis/editor.api');
 const reviewerAPI = require('./src/apis/reviewer.api');
 const postAPI = require('./src/apis/post.api');
 
-
 dotenv.config();
 const app = express();
 app.use(cors());

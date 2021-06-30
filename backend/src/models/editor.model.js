@@ -11,6 +11,7 @@ const EditorSchema = new mongoose.Schema({    //make schema
     editorSalary: { type: Number, required: true },
     posts: [{ type: mongoose.Schema.Types.ObjectId, required: false, ref: 'posts'}],
     admins: [{ type: mongoose.Schema.Types.ObjectId, required: false, ref: 'admins'}]
+    
 });
 
 const Editor = mongoose.model('editors', EditorSchema);        //give name for collection

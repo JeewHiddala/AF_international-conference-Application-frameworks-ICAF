@@ -12,6 +12,16 @@
     color: #f08000;
   }
 
+<<<<<<< HEAD
+  .checkouts{
+    text-decoration: none;
+    color: #f08000;
+  }
+
+  .checkouts:hover{
+    color: #ff3333;
+  }
+=======
 .checkouts{
   text-decoration: none;
   color: #f08000;
@@ -20,3 +30,4 @@
 .checkouts:hover{
   color: #ff3333;
 }
+>>>>>>> master
