@@ -170,17 +170,14 @@ class AllAttendeeDetails extends Component {
                                     onChange={this.onChange}
                                 />
                             </div>
-                            
-                            </div>
-                            </div>
-                            <br>
-                            </br>
-                            <br></br>
-                            <br></br>
-                            </form>
-                        
-                            </div>
-                            </div>
+                         </div>
+                       </div>
+                     <br> </br>
+                  <br></br>
+              <br></br>
+          </form>
+       </div>
+    </div>
     )
   }                         
 }

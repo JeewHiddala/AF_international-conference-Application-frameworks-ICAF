@@ -104,10 +104,9 @@ class ResearchPaperUpload extends Component {
                         </tbody>
                     </table>
                 </div>
+            </div>
         </div>
-        </div>
-    )
-}
-
+     )
+  }
 }
 export default ResearchPaperUpload;

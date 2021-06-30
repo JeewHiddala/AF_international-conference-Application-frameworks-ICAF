@@ -1,4 +1,3 @@
-//import react and react components
 import React, { Component } from 'react';
 
 class Navbar extends Component {
@@ -6,7 +5,7 @@ class Navbar extends Component {
         super(props);
     }
 
-    render() {   //use to return things when call navbar component.
+    render() {   
         return (
             <div>
                 <nav className="navbar navbar-expand-lg navbar navbar-dark bg-dark">

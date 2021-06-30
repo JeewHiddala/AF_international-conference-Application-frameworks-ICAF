@@ -153,14 +153,13 @@ class editResearchPaperUpload extends Component {
     
                             
                             </div>
-                            </div>
-                            <br>
-                            </br>
-                            <br></br>
-                            <br></br>
-                            </form>
-                            </div>
-                            </div>
+                          </div>
+                        <br></br>
+                      <br></br>
+                    <br></br>
+                </form>
+            </div>
+        </div>
     )
   }                         
 }

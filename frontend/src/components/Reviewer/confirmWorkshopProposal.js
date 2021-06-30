@@ -24,11 +24,11 @@ const initialState = {
 class ConfirmApproveWorkshopProposals extends Component {
   constructor(props) {
     super(props);
-        this.onChange = this.onChange.bind(this);
-        this.onSubmit = this.onSubmit.bind(this);
-        this.onReviewerSelect = this.onReviewerSelect.bind(this);
-        this.onPresenterSelect = this.onPresenterSelect.bind(this);
-        this.state = initialState;
+          this.onChange = this.onChange.bind(this);
+          this.onSubmit = this.onSubmit.bind(this);
+          this.onReviewerSelect = this.onReviewerSelect.bind(this);
+          this.onPresenterSelect = this.onPresenterSelect.bind(this);
+          this.state = initialState;
       }
     
 
@@ -68,33 +68,25 @@ class ConfirmApproveWorkshopProposals extends Component {
         const { data } = this.props.location
  
         console.log("userid: "+data);
-    axios.get(`http://localhost:7000/workshopProposal/${data}`)
-    .then(response => {
-      this.setState({workshopProposal: response.data.data});
-      this.setState({ title: response.data.data.title });
-      console.log( "abc"+response.data.data.title);
-    })
-    
+        axios.get(`http://localhost:7000/workshopProposal/${data}`)
+        .then(response => {
+        this.setState({workshopProposal: response.data.data});
+        this.setState({ title: response.data.data.title });
+        console.log( "abc"+response.data.data.title);
+        })
       }
-    
-
-    
     
       onChange(e) {
-        this.setState({ [e.target.name]: e.target.value });
-        
+        this.setState({ [e.target.name]: e.target.value });      
       }
     
-      
       onReviewerSelect(e) {
         this.setState({ selectedReviewers: e ? e.map(item => item.value) : [] });
       }
 
-    
       onPresenterSelect(e) {
         this.setState({ selectedPresenters: e ? e.map(item => item.value) : [] });
       }
-    
     
       onSubmit(e) {
         e.preventDefault();
@@ -134,10 +126,9 @@ class ConfirmApproveWorkshopProposals extends Component {
               'Declined!',
               'Workshop Proposal has been declined.',
               'warning'
-      )
-      }
-        })
-   
+              )
+            }
+          })
         })
         .catch(error => {
           console.log(error.message);
@@ -147,9 +138,7 @@ class ConfirmApproveWorkshopProposals extends Component {
 
 
   render(){
-    return (
-
-
+       return (
         <div className="container"><br/>
             <div className={"card p-4"}>
             
@@ -162,7 +151,6 @@ class ConfirmApproveWorkshopProposals extends Component {
                     <div className={"row"}>
                         <div className={"col-md-6"}>
 
-
                         <div className="mb-3" style={{textAlign:"left"}}>
                                 <label htmlFor="title"  className="form-label">Workshop Proposal Title</label>
                                 <input
@@ -170,8 +158,7 @@ class ConfirmApproveWorkshopProposals extends Component {
                                     className="form-control"
                                     id="title"
                                     name="title"
-                                    value={this.state.title}
-                                    
+                                    value={this.state.title}       
                                 />
                             </div>
 
@@ -187,7 +174,6 @@ class ConfirmApproveWorkshopProposals extends Component {
                                 />
                             </div>
                        
-                          
                             <Select 
                                 placeholder="Select Presenter Email"
                                 options={this.state.options2}
@@ -224,15 +210,13 @@ class ConfirmApproveWorkshopProposals extends Component {
                             
                             <button type="submit" className="btn btn-primary">Submit</button>
                             </div>
-                            </div>
-                            <br>
-                            </br>
-                            <br></br>
-                            <br></br>
-                            </form>
-                        
-                            </div>
-                            </div>
+                          </div>
+                          <br></br>
+                        <br></br>
+                     <br></br>
+                </form>         
+             </div>
+        </div>
     )
   }                         
 }

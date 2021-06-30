@@ -10,18 +10,17 @@ class viewAttendees extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      attendee: []
+         attendee: []
       
     }
     this.deleteAttendee = this.deleteAttendee.bind(this);
-    //this.viewProposal = this.viewProposal.bind(this);
     this.viewAttendee = this.viewAttendee.bind(this);
 
   }
   componentDidMount() {
     axios.get('http://localhost:7000/attendee/')
     .then(response => {
-      this.setState({ attendee: response.data.data });
+         this.setState({ attendee: response.data.data });
     })
   }
 
@@ -105,8 +104,8 @@ class viewAttendees extends Component {
                         </tbody>
                     </table>
                 </div>
-        </div>
-        </div>
+          </div>
+      </div>
      )
   }
 }

@@ -158,16 +158,14 @@ class EditWorkshopProposals extends Component {
                             <button type="button" className="btn btn-success"  onClick={e => this.confirmWorkshopProposal(e,this.props.match.params.id)} >Approve / Decline</button>
                             
     
+                                </div>
                             </div>
-                            </div>
-                            <br>
-                            </br>
                             <br></br>
-                            <br></br>
-                            </form>
-                        
-                            </div>
-                            </div>
+                      <br></br>
+                 <br></br>
+              </form>         
+          </div>
+      </div>
     )
   }                         
 }

@@ -8,7 +8,6 @@ module.exports = function () {
     router.get('/', workshopProposalController.getAllWorkshopProposalsDetails);       
     router.get('/:id', workshopProposalController.getSelectedWorkshopProposalDetails);        
     router.delete('/:id', workshopProposalController.deleteWorkshopProposal);         
-    router.put('/update/:id', workshopProposalController.updateSelectedWorkshopProposal);  
-
+    
     return router;
 }

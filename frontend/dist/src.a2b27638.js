@@ -6728,7 +6728,6 @@ var Navbar = /*#__PURE__*/function (_Component) {
   _createClass(Navbar, [{
     key: "render",
     value: function render() {
-      //use to return things when call navbar component.
       return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("nav", {
         className: "navbar navbar-expand-lg navbar navbar-dark bg-dark"
       }, /*#__PURE__*/_react.default.createElement("div", {
@@ -48551,8 +48550,7 @@ var viewAttendees = /*#__PURE__*/function (_Component) {
     _this.state = {
       attendee: []
     };
-    _this.deleteAttendee = _this.deleteAttendee.bind(_assertThisInitialized(_this)); //this.viewProposal = this.viewProposal.bind(this);
-
+    _this.deleteAttendee = _this.deleteAttendee.bind(_assertThisInitialized(_this));
     _this.viewAttendee = _this.viewAttendee.bind(_assertThisInitialized(_this));
     return _this;
   }
@@ -48958,7 +48956,7 @@ var AllAttendeeDetails = /*#__PURE__*/function (_Component) {
         name: "emergencyContactName",
         value: this.state.emergencyContactName,
         onChange: this.onChange
-      })))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null))));
+      })))), /*#__PURE__*/_react.default.createElement("br", null, " "), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null))));
     }
   }]);
 

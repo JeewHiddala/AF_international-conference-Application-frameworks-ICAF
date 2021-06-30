@@ -6,7 +6,6 @@ module.exports = function () {
     router.post('/create', reviewedResearchPaperUploadController.createReviewedResearchPaper);    
     router.get('/', reviewedResearchPaperUploadController.getAllreviewedResearchPapersDetails); 
     router.get('/:id', reviewedResearchPaperUploadController.getSelectedReviewedResearchPaperDetails);      
-     
-
+    
     return router;
 }

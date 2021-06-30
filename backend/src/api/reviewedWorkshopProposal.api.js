@@ -7,6 +7,5 @@ module.exports = function () {
     router.get('/', reviewedWorkshopProposalController.getAllReviewedWorkshopProposalsDetails); 
     router.get('/:id', reviewedWorkshopProposalController.getSelectedReviewerDetails);      
      
-
     return router;
 }

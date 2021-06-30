@@ -6,7 +6,6 @@ class Home extends Component {
     super(props);
 
   }
-
   render() {
     return (
       <div className="container">
@@ -16,4 +15,4 @@ class Home extends Component {
   }
 }
 
-  export default Home;
+export default Home;

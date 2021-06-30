@@ -107,7 +107,7 @@ class workshopProposal extends Component {
                         </tbody>
                     </table>
                 </div>
-        </div>
+            </div>
         </div>
      )
   }

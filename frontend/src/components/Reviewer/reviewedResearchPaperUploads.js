@@ -229,15 +229,13 @@ class ReviewedResearchPaperUpload extends Component {
                             
                             <button type="submit" className="btn btn-primary">Submit</button>
                             </div>
-                            </div>
-                            <br>
-                            </br>
-                            <br></br>
-                            <br></br>
-                            </form>
-                        
-                            </div>
-                            </div>
+                          </div>
+                        <br></br>
+                      <br></br>
+                    <br></br>
+                </form>          
+            </div>
+       </div>
     )
   }                         
 }

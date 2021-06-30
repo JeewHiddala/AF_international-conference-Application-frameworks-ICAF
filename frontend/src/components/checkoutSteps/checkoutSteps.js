@@ -8,8 +8,6 @@ export default function CheckoutSteps(props){
             <div className={props.step2 ? 'active': ''}><a href="/paperupload" className="checkouts">Research Paper Uploads</a></div>
             <div className={props.step2 ? 'active': ''}><a href="/attendee" className="checkouts">Attendee Details</a></div>
             <div className={props.step3 ? 'active': ''}><a href="/profile" className="checkouts">Edit Profile</a></div>
-
-
         </div>
     )
 }
