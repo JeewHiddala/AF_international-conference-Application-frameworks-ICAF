@@ -6737,7 +6737,7 @@ var Navbar = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/_react.default.createElement("a", {
         className: "navbar-brand",
         href: "#"
-      }, "Navbar"), /*#__PURE__*/_react.default.createElement("button", {
+      }, "International Conference Application"), /*#__PURE__*/_react.default.createElement("button", {
         className: "navbar-toggler",
         type: "button",
         "data-bs-toggle": "collapse",
@@ -6779,18 +6779,8 @@ var Navbar = /*#__PURE__*/function (_Component) {
         className: "nav-item"
       }, /*#__PURE__*/_react.default.createElement("a", {
         className: "nav-link",
-        href: "/admin"
-      }, "Administrator")), /*#__PURE__*/_react.default.createElement("li", {
-        className: "nav-item"
-      }, /*#__PURE__*/_react.default.createElement("a", {
-        className: "nav-link",
-        href: "/editor"
-      }, "Editor")), /*#__PURE__*/_react.default.createElement("li", {
-        className: "nav-item"
-      }, /*#__PURE__*/_react.default.createElement("a", {
-        className: "nav-link",
-        href: "/reviewer"
-      }, "Reviewer")))))));
+        href: "/adminDashboard"
+      }, "Administrator Dashboards")))))));
     }
   }]);
 
@@ -11707,7 +11697,46 @@ var global = arguments[3];
 if (typeof this !== 'undefined' && this.Sweetalert2){  this.swal = this.sweetAlert = this.Swal = this.SweetAlert = this.Sweetalert2}
 
 "undefined"!=typeof document&&function(e,t){var n=e.createElement("style");if(e.getElementsByTagName("head")[0].appendChild(n),n.styleSheet)n.styleSheet.disabled||(n.styleSheet.cssText=t);else try{n.innerHTML=t}catch(e){n.innerText=t}}(document,".swal2-popup.swal2-toast{box-sizing:border-box;grid-column:1/4!important;grid-row:1/4!important;grid-template-columns:1fr 99fr 1fr;padding:1em;overflow-y:hidden;background:#fff;box-shadow:0 0 .625em #d9d9d9;pointer-events:all}.swal2-popup.swal2-toast>*{grid-column:2}.swal2-popup.swal2-toast .swal2-title{margin:1em;padding:0;font-size:1em;text-align:initial}.swal2-popup.swal2-toast .swal2-loading{justify-content:center}.swal2-popup.swal2-toast .swal2-input{height:2em;margin:.5em;font-size:1em}.swal2-popup.swal2-toast .swal2-validation-message{font-size:1em}.swal2-popup.swal2-toast .swal2-footer{margin:.5em 0 0;padding:.5em 0 0;font-size:.8em}.swal2-popup.swal2-toast .swal2-close{grid-column:3/3;grid-row:1/99;align-self:center;width:.8em;height:.8em;margin:0;font-size:2em}.swal2-popup.swal2-toast .swal2-html-container{margin:1em;padding:0;font-size:1em;text-align:initial}.swal2-popup.swal2-toast .swal2-html-container:empty{padding:0}.swal2-popup.swal2-toast .swal2-loader{grid-column:1;grid-row:1/99;align-self:center;width:2em;height:2em;margin:.25em}.swal2-popup.swal2-toast .swal2-icon{grid-column:1;grid-row:1/99;align-self:center;width:2em;min-width:2em;height:2em;margin:0 .5em 0 0}.swal2-popup.swal2-toast .swal2-icon .swal2-icon-content{display:flex;align-items:center;font-size:1.8em;font-weight:700}.swal2-popup.swal2-toast .swal2-icon.swal2-success .swal2-success-ring{width:2em;height:2em}.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line]{top:.875em;width:1.375em}.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=left]{left:.3125em}.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=right]{right:.3125em}.swal2-popup.swal2-toast .swal2-actions{justify-content:flex-start;height:auto;margin:0;margin-top:.3125em;padding:0}.swal2-popup.swal2-toast .swal2-styled{margin:.25em .5em;padding:.4em .6em;font-size:1em}.swal2-popup.swal2-toast .swal2-styled:focus{box-shadow:0 0 0 1px #fff,0 0 0 3px rgba(100,150,200,.5)}.swal2-popup.swal2-toast .swal2-success{border-color:#a5dc86}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line]{position:absolute;width:1.6em;height:3em;transform:rotate(45deg);border-radius:50%}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line][class$=left]{top:-.8em;left:-.5em;transform:rotate(-45deg);transform-origin:2em 2em;border-radius:4em 0 0 4em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line][class$=right]{top:-.25em;left:.9375em;transform-origin:0 1.5em;border-radius:0 4em 4em 0}.swal2-popup.swal2-toast .swal2-success .swal2-success-ring{width:2em;height:2em}.swal2-popup.swal2-toast .swal2-success .swal2-success-fix{top:0;left:.4375em;width:.4375em;height:2.6875em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line]{height:.3125em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line][class$=tip]{top:1.125em;left:.1875em;width:.75em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line][class$=long]{top:.9375em;right:.1875em;width:1.375em}.swal2-popup.swal2-toast .swal2-success.swal2-icon-show .swal2-success-line-tip{-webkit-animation:swal2-toast-animate-success-line-tip .75s;animation:swal2-toast-animate-success-line-tip .75s}.swal2-popup.swal2-toast .swal2-success.swal2-icon-show .swal2-success-line-long{-webkit-animation:swal2-toast-animate-success-line-long .75s;animation:swal2-toast-animate-success-line-long .75s}.swal2-popup.swal2-toast.swal2-show{-webkit-animation:swal2-toast-show .5s;animation:swal2-toast-show .5s}.swal2-popup.swal2-toast.swal2-hide{-webkit-animation:swal2-toast-hide .1s forwards;animation:swal2-toast-hide .1s forwards}.swal2-container{display:grid;position:fixed;z-index:1060;top:0;right:0;bottom:0;left:0;box-sizing:border-box;grid-template-areas:\"top-start     top            top-end\" \"center-start  center         center-end\" \"bottom-start  bottom-center  bottom-end\" \"gap gap gap\";grid-template-rows:auto auto auto .625em;height:100%;padding:.625em .625em 0;overflow-x:hidden;transition:background-color .1s;-webkit-overflow-scrolling:touch}.swal2-container::after{content:\"\";grid-column:1/4;grid-row:4;height:.625em}.swal2-container.swal2-backdrop-show,.swal2-container.swal2-noanimation{background:rgba(0,0,0,.4)}.swal2-container.swal2-backdrop-hide{background:0 0!important}.swal2-container.swal2-bottom-start,.swal2-container.swal2-center-start,.swal2-container.swal2-top-start{grid-template-columns:minmax(0,1fr) auto auto}.swal2-container.swal2-bottom,.swal2-container.swal2-center,.swal2-container.swal2-top{grid-template-columns:auto minmax(0,1fr) auto}.swal2-container.swal2-bottom-end,.swal2-container.swal2-center-end,.swal2-container.swal2-top-end{grid-template-columns:auto auto minmax(0,1fr)}.swal2-container.swal2-top-start>.swal2-popup{align-self:start}.swal2-container.swal2-top>.swal2-popup{grid-column:2;align-self:start;justify-self:center}.swal2-container.swal2-top-end>.swal2-popup,.swal2-container.swal2-top-right>.swal2-popup{grid-column:3;align-self:start;justify-self:end}.swal2-container.swal2-center-left>.swal2-popup,.swal2-container.swal2-center-start>.swal2-popup{grid-row:2;align-self:center}.swal2-container.swal2-center>.swal2-popup{grid-column:2;grid-row:2;align-self:center;justify-self:center}.swal2-container.swal2-center-end>.swal2-popup,.swal2-container.swal2-center-right>.swal2-popup{grid-column:3;grid-row:2;align-self:center;justify-self:end}.swal2-container.swal2-bottom-left>.swal2-popup,.swal2-container.swal2-bottom-start>.swal2-popup{grid-column:1;grid-row:3;align-self:end}.swal2-container.swal2-bottom>.swal2-popup{grid-column:2;grid-row:3;justify-self:center;align-self:end}.swal2-container.swal2-bottom-end>.swal2-popup,.swal2-container.swal2-bottom-right>.swal2-popup{grid-column:3;grid-row:3;align-self:end;justify-self:end}.swal2-container.swal2-grow-fullscreen>.swal2-popup,.swal2-container.swal2-grow-row>.swal2-popup{grid-column:1/4;width:100%}.swal2-container.swal2-grow-column>.swal2-popup,.swal2-container.swal2-grow-fullscreen>.swal2-popup{grid-row:1/4;align-self:stretch}.swal2-container.swal2-no-transition{transition:none!important}.swal2-popup{display:none;position:relative;box-sizing:border-box;width:32em;max-width:100%;padding:0 0 1.25em;border:none;border-radius:5px;background:#fff;font-family:inherit;font-size:1rem}.swal2-popup:focus{outline:0}.swal2-popup.swal2-loading{overflow-y:hidden}.swal2-title{position:relative;max-width:100%;margin:0;padding:.8em 1em 0;color:#595959;font-size:1.875em;font-weight:600;text-align:center;text-transform:none;word-wrap:break-word}.swal2-actions{display:flex;z-index:1;box-sizing:border-box;flex-wrap:wrap;align-items:center;justify-content:center;width:100%;margin:1.25em auto 0;padding:0}.swal2-actions:not(.swal2-loading) .swal2-styled[disabled]{opacity:.4}.swal2-actions:not(.swal2-loading) .swal2-styled:hover{background-image:linear-gradient(rgba(0,0,0,.1),rgba(0,0,0,.1))}.swal2-actions:not(.swal2-loading) .swal2-styled:active{background-image:linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.2))}.swal2-loader{display:none;align-items:center;justify-content:center;width:2.2em;height:2.2em;margin:0 1.875em;-webkit-animation:swal2-rotate-loading 1.5s linear 0s infinite normal;animation:swal2-rotate-loading 1.5s linear 0s infinite normal;border-width:.25em;border-style:solid;border-radius:100%;border-color:#2778c4 transparent #2778c4 transparent}.swal2-styled{margin:.3125em;padding:.625em 1.1em;transition:box-shadow .1s;box-shadow:0 0 0 3px transparent;font-weight:500}.swal2-styled:not([disabled]){cursor:pointer}.swal2-styled.swal2-confirm{border:0;border-radius:.25em;background:initial;background-color:#7367f0;color:#fff;font-size:1em}.swal2-styled.swal2-confirm:focus{box-shadow:0 0 0 3px rgba(115,103,240,.5)}.swal2-styled.swal2-deny{border:0;border-radius:.25em;background:initial;background-color:#ea5455;color:#fff;font-size:1em}.swal2-styled.swal2-deny:focus{box-shadow:0 0 0 3px rgba(234,84,85,.5)}.swal2-styled.swal2-cancel{border:0;border-radius:.25em;background:initial;background-color:#6e7d88;color:#fff;font-size:1em}.swal2-styled.swal2-cancel:focus{box-shadow:0 0 0 3px rgba(110,125,136,.5)}.swal2-styled.swal2-default-outline:focus{box-shadow:0 0 0 3px rgba(100,150,200,.5)}.swal2-styled:focus{outline:0}.swal2-styled::-moz-focus-inner{border:0}.swal2-footer{justify-content:center;margin:1em 0 0;padding:1em 1em 0;border-top:1px solid #eee;color:#545454;font-size:1em}.swal2-timer-progress-bar-container{position:absolute;right:0;bottom:0;left:0;grid-column:auto!important;height:.25em;overflow:hidden;border-bottom-right-radius:5px;border-bottom-left-radius:5px}.swal2-timer-progress-bar{width:100%;height:.25em;background:rgba(0,0,0,.2)}.swal2-image{max-width:100%;margin:2em auto 1em}.swal2-close{z-index:2;align-items:center;justify-content:center;width:1.2em;height:1.2em;margin-top:0;margin-right:0;margin-bottom:-1.2em;padding:0;overflow:hidden;transition:color .1s,box-shadow .1s;border:none;border-radius:5px;background:0 0;color:#ccc;font-family:serif;font-family:monospace;font-size:2.5em;cursor:pointer;justify-self:end}.swal2-close:hover{transform:none;background:0 0;color:#f27474}.swal2-close:focus{outline:0;box-shadow:inset 0 0 0 3px rgba(100,150,200,.5)}.swal2-close::-moz-focus-inner{border:0}.swal2-html-container{z-index:1;justify-content:center;margin:0;padding:1em 1.6em .3em;color:#545454;font-size:1.125em;font-weight:400;line-height:normal;text-align:center;word-wrap:break-word;word-break:break-word}.swal2-checkbox,.swal2-file,.swal2-input,.swal2-radio,.swal2-select,.swal2-textarea{margin:1em 2em 0}.swal2-file,.swal2-input,.swal2-textarea{box-sizing:border-box;width:auto;transition:border-color .1s,box-shadow .1s;border:1px solid #d9d9d9;border-radius:.1875em;background:inherit;box-shadow:inset 0 1px 1px rgba(0,0,0,.06),0 0 0 3px transparent;color:inherit;font-size:1.125em}.swal2-file.swal2-inputerror,.swal2-input.swal2-inputerror,.swal2-textarea.swal2-inputerror{border-color:#f27474!important;box-shadow:0 0 2px #f27474!important}.swal2-file:focus,.swal2-input:focus,.swal2-textarea:focus{border:1px solid #b4dbed;outline:0;box-shadow:inset 0 1px 1px rgba(0,0,0,.06),0 0 0 3px rgba(100,150,200,.5)}.swal2-file::-moz-placeholder,.swal2-input::-moz-placeholder,.swal2-textarea::-moz-placeholder{color:#ccc}.swal2-file:-ms-input-placeholder,.swal2-input:-ms-input-placeholder,.swal2-textarea:-ms-input-placeholder{color:#ccc}.swal2-file::placeholder,.swal2-input::placeholder,.swal2-textarea::placeholder{color:#ccc}.swal2-range{margin:1em 2em 0;background:#fff}.swal2-range input{width:80%}.swal2-range output{width:20%;color:inherit;font-weight:600;text-align:center}.swal2-range input,.swal2-range output{height:2.625em;padding:0;font-size:1.125em;line-height:2.625em}.swal2-input{height:2.625em;padding:0 .75em}.swal2-input[type=number]{max-width:10em}.swal2-file{width:75%;margin-right:auto;margin-left:auto;background:inherit;font-size:1.125em}.swal2-textarea{height:6.75em;padding:.75em}.swal2-select{min-width:50%;max-width:100%;padding:.375em .625em;background:inherit;color:inherit;font-size:1.125em}.swal2-checkbox,.swal2-radio{align-items:center;justify-content:center;background:#fff;color:inherit}.swal2-checkbox label,.swal2-radio label{margin:0 .6em;font-size:1.125em}.swal2-checkbox input,.swal2-radio input{flex-shrink:0;margin:0 .4em}.swal2-input-label{display:flex;justify-content:center;margin:1em auto 0}.swal2-validation-message{align-items:center;justify-content:center;margin:1em 0 0;padding:.625em;overflow:hidden;background:#f0f0f0;color:#666;font-size:1em;font-weight:300}.swal2-validation-message::before{content:\"!\";display:inline-block;width:1.5em;min-width:1.5em;height:1.5em;margin:0 .625em;border-radius:50%;background-color:#f27474;color:#fff;font-weight:600;line-height:1.5em;text-align:center}.swal2-icon{position:relative;box-sizing:content-box;justify-content:center;width:5em;height:5em;margin:2.5em auto .6em;border:.25em solid transparent;border-radius:50%;border-color:#000;font-family:inherit;line-height:5em;cursor:default;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.swal2-icon .swal2-icon-content{display:flex;align-items:center;font-size:3.75em}.swal2-icon.swal2-error{border-color:#f27474;color:#f27474}.swal2-icon.swal2-error .swal2-x-mark{position:relative;flex-grow:1}.swal2-icon.swal2-error [class^=swal2-x-mark-line]{display:block;position:absolute;top:2.3125em;width:2.9375em;height:.3125em;border-radius:.125em;background-color:#f27474}.swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=left]{left:1.0625em;transform:rotate(45deg)}.swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=right]{right:1em;transform:rotate(-45deg)}.swal2-icon.swal2-error.swal2-icon-show{-webkit-animation:swal2-animate-error-icon .5s;animation:swal2-animate-error-icon .5s}.swal2-icon.swal2-error.swal2-icon-show .swal2-x-mark{-webkit-animation:swal2-animate-error-x-mark .5s;animation:swal2-animate-error-x-mark .5s}.swal2-icon.swal2-warning{border-color:#facea8;color:#f8bb86}.swal2-icon.swal2-info{border-color:#9de0f6;color:#3fc3ee}.swal2-icon.swal2-question{border-color:#c9dae1;color:#87adbd}.swal2-icon.swal2-success{border-color:#a5dc86;color:#a5dc86}.swal2-icon.swal2-success [class^=swal2-success-circular-line]{position:absolute;width:3.75em;height:7.5em;transform:rotate(45deg);border-radius:50%}.swal2-icon.swal2-success [class^=swal2-success-circular-line][class$=left]{top:-.4375em;left:-2.0635em;transform:rotate(-45deg);transform-origin:3.75em 3.75em;border-radius:7.5em 0 0 7.5em}.swal2-icon.swal2-success [class^=swal2-success-circular-line][class$=right]{top:-.6875em;left:1.875em;transform:rotate(-45deg);transform-origin:0 3.75em;border-radius:0 7.5em 7.5em 0}.swal2-icon.swal2-success .swal2-success-ring{position:absolute;z-index:2;top:-.25em;left:-.25em;box-sizing:content-box;width:100%;height:100%;border:.25em solid rgba(165,220,134,.3);border-radius:50%}.swal2-icon.swal2-success .swal2-success-fix{position:absolute;z-index:1;top:.5em;left:1.625em;width:.4375em;height:5.625em;transform:rotate(-45deg)}.swal2-icon.swal2-success [class^=swal2-success-line]{display:block;position:absolute;z-index:2;height:.3125em;border-radius:.125em;background-color:#a5dc86}.swal2-icon.swal2-success [class^=swal2-success-line][class$=tip]{top:2.875em;left:.8125em;width:1.5625em;transform:rotate(45deg)}.swal2-icon.swal2-success [class^=swal2-success-line][class$=long]{top:2.375em;right:.5em;width:2.9375em;transform:rotate(-45deg)}.swal2-icon.swal2-success.swal2-icon-show .swal2-success-line-tip{-webkit-animation:swal2-animate-success-line-tip .75s;animation:swal2-animate-success-line-tip .75s}.swal2-icon.swal2-success.swal2-icon-show .swal2-success-line-long{-webkit-animation:swal2-animate-success-line-long .75s;animation:swal2-animate-success-line-long .75s}.swal2-icon.swal2-success.swal2-icon-show .swal2-success-circular-line-right{-webkit-animation:swal2-rotate-success-circular-line 4.25s ease-in;animation:swal2-rotate-success-circular-line 4.25s ease-in}.swal2-progress-steps{flex-wrap:wrap;align-items:center;max-width:100%;margin:1.25em auto;padding:0;background:inherit;font-weight:600}.swal2-progress-steps li{display:inline-block;position:relative}.swal2-progress-steps .swal2-progress-step{z-index:20;flex-shrink:0;width:2em;height:2em;border-radius:2em;background:#2778c4;color:#fff;line-height:2em;text-align:center}.swal2-progress-steps .swal2-progress-step.swal2-active-progress-step{background:#2778c4}.swal2-progress-steps .swal2-progress-step.swal2-active-progress-step~.swal2-progress-step{background:#add8e6;color:#fff}.swal2-progress-steps .swal2-progress-step.swal2-active-progress-step~.swal2-progress-step-line{background:#add8e6}.swal2-progress-steps .swal2-progress-step-line{z-index:10;flex-shrink:0;width:2.5em;height:.4em;margin:0 -1px;background:#2778c4}[class^=swal2]{-webkit-tap-highlight-color:transparent}.swal2-show{-webkit-animation:swal2-show .3s;animation:swal2-show .3s}.swal2-hide{-webkit-animation:swal2-hide .15s forwards;animation:swal2-hide .15s forwards}.swal2-noanimation{transition:none}.swal2-scrollbar-measure{position:absolute;top:-9999px;width:50px;height:50px;overflow:scroll}.swal2-rtl .swal2-close{margin-right:initial;margin-left:0}.swal2-rtl .swal2-timer-progress-bar{right:0;left:auto}@-webkit-keyframes swal2-toast-show{0%{transform:translateY(-.625em) rotateZ(2deg)}33%{transform:translateY(0) rotateZ(-2deg)}66%{transform:translateY(.3125em) rotateZ(2deg)}100%{transform:translateY(0) rotateZ(0)}}@keyframes swal2-toast-show{0%{transform:translateY(-.625em) rotateZ(2deg)}33%{transform:translateY(0) rotateZ(-2deg)}66%{transform:translateY(.3125em) rotateZ(2deg)}100%{transform:translateY(0) rotateZ(0)}}@-webkit-keyframes swal2-toast-hide{100%{transform:rotateZ(1deg);opacity:0}}@keyframes swal2-toast-hide{100%{transform:rotateZ(1deg);opacity:0}}@-webkit-keyframes swal2-toast-animate-success-line-tip{0%{top:.5625em;left:.0625em;width:0}54%{top:.125em;left:.125em;width:0}70%{top:.625em;left:-.25em;width:1.625em}84%{top:1.0625em;left:.75em;width:.5em}100%{top:1.125em;left:.1875em;width:.75em}}@keyframes swal2-toast-animate-success-line-tip{0%{top:.5625em;left:.0625em;width:0}54%{top:.125em;left:.125em;width:0}70%{top:.625em;left:-.25em;width:1.625em}84%{top:1.0625em;left:.75em;width:.5em}100%{top:1.125em;left:.1875em;width:.75em}}@-webkit-keyframes swal2-toast-animate-success-line-long{0%{top:1.625em;right:1.375em;width:0}65%{top:1.25em;right:.9375em;width:0}84%{top:.9375em;right:0;width:1.125em}100%{top:.9375em;right:.1875em;width:1.375em}}@keyframes swal2-toast-animate-success-line-long{0%{top:1.625em;right:1.375em;width:0}65%{top:1.25em;right:.9375em;width:0}84%{top:.9375em;right:0;width:1.125em}100%{top:.9375em;right:.1875em;width:1.375em}}@-webkit-keyframes swal2-show{0%{transform:scale(.7)}45%{transform:scale(1.05)}80%{transform:scale(.95)}100%{transform:scale(1)}}@keyframes swal2-show{0%{transform:scale(.7)}45%{transform:scale(1.05)}80%{transform:scale(.95)}100%{transform:scale(1)}}@-webkit-keyframes swal2-hide{0%{transform:scale(1);opacity:1}100%{transform:scale(.5);opacity:0}}@keyframes swal2-hide{0%{transform:scale(1);opacity:1}100%{transform:scale(.5);opacity:0}}@-webkit-keyframes swal2-animate-success-line-tip{0%{top:1.1875em;left:.0625em;width:0}54%{top:1.0625em;left:.125em;width:0}70%{top:2.1875em;left:-.375em;width:3.125em}84%{top:3em;left:1.3125em;width:1.0625em}100%{top:2.8125em;left:.8125em;width:1.5625em}}@keyframes swal2-animate-success-line-tip{0%{top:1.1875em;left:.0625em;width:0}54%{top:1.0625em;left:.125em;width:0}70%{top:2.1875em;left:-.375em;width:3.125em}84%{top:3em;left:1.3125em;width:1.0625em}100%{top:2.8125em;left:.8125em;width:1.5625em}}@-webkit-keyframes swal2-animate-success-line-long{0%{top:3.375em;right:2.875em;width:0}65%{top:3.375em;right:2.875em;width:0}84%{top:2.1875em;right:0;width:3.4375em}100%{top:2.375em;right:.5em;width:2.9375em}}@keyframes swal2-animate-success-line-long{0%{top:3.375em;right:2.875em;width:0}65%{top:3.375em;right:2.875em;width:0}84%{top:2.1875em;right:0;width:3.4375em}100%{top:2.375em;right:.5em;width:2.9375em}}@-webkit-keyframes swal2-rotate-success-circular-line{0%{transform:rotate(-45deg)}5%{transform:rotate(-45deg)}12%{transform:rotate(-405deg)}100%{transform:rotate(-405deg)}}@keyframes swal2-rotate-success-circular-line{0%{transform:rotate(-45deg)}5%{transform:rotate(-45deg)}12%{transform:rotate(-405deg)}100%{transform:rotate(-405deg)}}@-webkit-keyframes swal2-animate-error-x-mark{0%{margin-top:1.625em;transform:scale(.4);opacity:0}50%{margin-top:1.625em;transform:scale(.4);opacity:0}80%{margin-top:-.375em;transform:scale(1.15)}100%{margin-top:0;transform:scale(1);opacity:1}}@keyframes swal2-animate-error-x-mark{0%{margin-top:1.625em;transform:scale(.4);opacity:0}50%{margin-top:1.625em;transform:scale(.4);opacity:0}80%{margin-top:-.375em;transform:scale(1.15)}100%{margin-top:0;transform:scale(1);opacity:1}}@-webkit-keyframes swal2-animate-error-icon{0%{transform:rotateX(100deg);opacity:0}100%{transform:rotateX(0);opacity:1}}@keyframes swal2-animate-error-icon{0%{transform:rotateX(100deg);opacity:0}100%{transform:rotateX(0);opacity:1}}@-webkit-keyframes swal2-rotate-loading{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}@keyframes swal2-rotate-loading{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown){overflow:hidden}body.swal2-height-auto{height:auto!important}body.swal2-no-backdrop .swal2-container{background-color:transparent!important;pointer-events:none}body.swal2-no-backdrop .swal2-container .swal2-popup{pointer-events:all}body.swal2-no-backdrop .swal2-container .swal2-modal{box-shadow:0 0 10px rgba(0,0,0,.4)}@media print{body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown){overflow-y:scroll!important}body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown)>[aria-hidden=true]{display:none}body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) .swal2-container{position:static!important}}body.swal2-toast-shown .swal2-container{box-sizing:border-box;width:360px;max-width:100%;background-color:transparent;pointer-events:none}body.swal2-toast-shown .swal2-container.swal2-top{top:0;right:auto;bottom:auto;left:50%;transform:translateX(-50%)}body.swal2-toast-shown .swal2-container.swal2-top-end,body.swal2-toast-shown .swal2-container.swal2-top-right{top:0;right:0;bottom:auto;left:auto}body.swal2-toast-shown .swal2-container.swal2-top-left,body.swal2-toast-shown .swal2-container.swal2-top-start{top:0;right:auto;bottom:auto;left:0}body.swal2-toast-shown .swal2-container.swal2-center-left,body.swal2-toast-shown .swal2-container.swal2-center-start{top:50%;right:auto;bottom:auto;left:0;transform:translateY(-50%)}body.swal2-toast-shown .swal2-container.swal2-center{top:50%;right:auto;bottom:auto;left:50%;transform:translate(-50%,-50%)}body.swal2-toast-shown .swal2-container.swal2-center-end,body.swal2-toast-shown .swal2-container.swal2-center-right{top:50%;right:0;bottom:auto;left:auto;transform:translateY(-50%)}body.swal2-toast-shown .swal2-container.swal2-bottom-left,body.swal2-toast-shown .swal2-container.swal2-bottom-start{top:auto;right:auto;bottom:0;left:0}body.swal2-toast-shown .swal2-container.swal2-bottom{top:auto;right:auto;bottom:0;left:50%;transform:translateX(-50%)}body.swal2-toast-shown .swal2-container.swal2-bottom-end,body.swal2-toast-shown .swal2-container.swal2-bottom-right{top:auto;right:0;bottom:0;left:auto}");
-},{}],"src/components/views/editor.view.js":[function(require,module,exports) {
+},{}],"src/components/checkoutSteps/checkoutSteps.css":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/components/checkoutSteps/checkoutSteps.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = CheckoutSteps;
+
+require("./checkoutSteps.css");
+
+var _react = _interopRequireDefault(require("react"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function CheckoutSteps(props) {
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "row checkout-steps"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: props.step1 ? 'active' : ''
+  }, /*#__PURE__*/_react.default.createElement("a", {
+    href: "/admin",
+    className: "checkouts"
+  }, "Administrator Details List")), /*#__PURE__*/_react.default.createElement("div", {
+    className: props.step2 ? 'active' : ''
+  }, /*#__PURE__*/_react.default.createElement("a", {
+    href: "/editor",
+    className: "checkouts"
+  }, "Editor Details List")), /*#__PURE__*/_react.default.createElement("div", {
+    className: props.step3 ? 'active' : ''
+  }, /*#__PURE__*/_react.default.createElement("a", {
+    href: "/reviewer",
+    className: "checkouts"
+  }, "Reviewer Details List")));
+}
+},{"./checkoutSteps.css":"src/components/checkoutSteps/checkoutSteps.css","react":"node_modules/react/index.js"}],"src/components/views/editor.view.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -11720,6 +11749,8 @@ var _react = _interopRequireWildcard(require("react"));
 var _axios = _interopRequireDefault(require("axios"));
 
 var _sweetalert = _interopRequireDefault(require("sweetalert2"));
+
+var _checkoutSteps = _interopRequireDefault(require("../checkoutSteps/checkoutSteps"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -11764,6 +11795,8 @@ var viewEditors = /*#__PURE__*/function (_Component) {
       editors: []
     };
     _this.deleteEditor = _this.deleteEditor.bind(_assertThisInitialized(_this));
+    _this.navigateCreateEditorPage = _this.navigateCreateEditorPage.bind(_assertThisInitialized(_this));
+    _this.back = _this.back.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -11778,6 +11811,21 @@ var viewEditors = /*#__PURE__*/function (_Component) {
           editors: response.data.data
         });
       });
+    }
+  }, {
+    key: "navigateEditEditorPage",
+    value: function navigateEditEditorPage(e, editorId) {
+      window.location = "/updateEditor/".concat(editorId);
+    }
+  }, {
+    key: "navigateCreateEditorPage",
+    value: function navigateCreateEditorPage(e) {
+      window.location = '/editorRegistration';
+    }
+  }, {
+    key: "back",
+    value: function back(e) {
+      window.location = '/adminSubcategories';
     }
   }, {
     key: "deleteEditor",
@@ -11805,28 +11853,31 @@ var viewEditors = /*#__PURE__*/function (_Component) {
     value: function render() {
       var _this3 = this;
 
-      return /*#__PURE__*/_react.default.createElement("div", {
+      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_checkoutSteps.default, {
+        step2: true
+      }), /*#__PURE__*/_react.default.createElement("div", {
         className: "container"
       }, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
         className: "row"
       }, /*#__PURE__*/_react.default.createElement("div", {
         className: "col-8"
       }, /*#__PURE__*/_react.default.createElement("h1", null, "Editors")), /*#__PURE__*/_react.default.createElement("div", {
-        className: "col-4"
+        className: "col-2"
       }, /*#__PURE__*/_react.default.createElement("button", {
         type: "button",
-        className: "btn btn-outline-primary"
-      }, /*#__PURE__*/_react.default.createElement("a", {
-        href: "/editorRegistration"
-      }, "Create Editor")))), /*#__PURE__*/_react.default.createElement("div", {
-        className: "row"
-      }, /*#__PURE__*/_react.default.createElement("div", {
-        className: "col-4"
-      }), /*#__PURE__*/_react.default.createElement("div", {
-        className: "card col-4"
-      }, /*#__PURE__*/_react.default.createElement("h6", null, "Total Salary of Editors")), /*#__PURE__*/_react.default.createElement("div", {
-        className: "card col-2"
-      })), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+        className: "btn btn-outline-primary",
+        onClick: function onClick(e) {
+          return _this3.navigateCreateEditorPage(e);
+        }
+      }, "Create Editor")), /*#__PURE__*/_react.default.createElement("div", {
+        className: "col-2"
+      }, /*#__PURE__*/_react.default.createElement("button", {
+        type: "button",
+        className: "btn btn-outline-primary",
+        onClick: function onClick(e) {
+          return _this3.back(e);
+        }
+      }, " back"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
         className: "container"
       }, /*#__PURE__*/_react.default.createElement("table", {
         className: "table table-hover"
@@ -11855,7 +11906,7 @@ var viewEditors = /*#__PURE__*/function (_Component) {
           type: "button",
           className: "btn btn-outline-warning",
           onClick: function onClick(e) {
-            return _this3.deleteProduct(e, item._id);
+            return _this3.navigateEditEditorPage(e, item._id);
           }
         }, "Edit")), /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("button", {
           type: "button",
@@ -11864,7 +11915,7 @@ var viewEditors = /*#__PURE__*/function (_Component) {
             return _this3.deleteEditor(e, item._id);
           }
         }, "Delete")));
-      })))));
+      }))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null))));
     }
   }]);
 
@@ -11873,7 +11924,7 @@ var viewEditors = /*#__PURE__*/function (_Component) {
 
 var _default = viewEditors;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js","sweetalert2":"node_modules/sweetalert2/dist/sweetalert2.all.js"}],"src/components/views/reviewer.view.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js","sweetalert2":"node_modules/sweetalert2/dist/sweetalert2.all.js","../checkoutSteps/checkoutSteps":"src/components/checkoutSteps/checkoutSteps.js"}],"src/components/views/reviewer.view.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -11886,6 +11937,8 @@ var _react = _interopRequireWildcard(require("react"));
 var _axios = _interopRequireDefault(require("axios"));
 
 var _sweetalert = _interopRequireDefault(require("sweetalert2"));
+
+var _checkoutSteps = _interopRequireDefault(require("../checkoutSteps/checkoutSteps"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -11930,6 +11983,8 @@ var viewReviewer = /*#__PURE__*/function (_Component) {
       reviewers: []
     };
     _this.deleteReviewer = _this.deleteReviewer.bind(_assertThisInitialized(_this));
+    _this.navigateCreateReviewerPage = _this.navigateCreateReviewerPage.bind(_assertThisInitialized(_this));
+    _this.back = _this.back.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -11944,6 +11999,21 @@ var viewReviewer = /*#__PURE__*/function (_Component) {
           reviewers: response.data.data
         });
       });
+    }
+  }, {
+    key: "navigateEditReviewerPage",
+    value: function navigateEditReviewerPage(e, reviewerId) {
+      window.location = "/updateReviewer/".concat(reviewerId);
+    }
+  }, {
+    key: "navigateCreateReviewerPage",
+    value: function navigateCreateReviewerPage(e) {
+      window.location = '/reviewerRegistration';
+    }
+  }, {
+    key: "back",
+    value: function back(e) {
+      window.location = '/adminSubcategories';
     }
   }, {
     key: "deleteReviewer",
@@ -11971,28 +12041,33 @@ var viewReviewer = /*#__PURE__*/function (_Component) {
     value: function render() {
       var _this3 = this;
 
-      return /*#__PURE__*/_react.default.createElement("div", {
+      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_checkoutSteps.default, {
+        step3: true
+      }), /*#__PURE__*/_react.default.createElement("div", {
         className: "container"
       }, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
         className: "row"
       }, /*#__PURE__*/_react.default.createElement("div", {
         className: "col-8"
       }, /*#__PURE__*/_react.default.createElement("h1", null, "Reviewers")), /*#__PURE__*/_react.default.createElement("div", {
-        className: "col-4"
+        className: "col-2"
       }, /*#__PURE__*/_react.default.createElement("button", {
         type: "button",
-        className: "btn btn-outline-primary"
-      }, /*#__PURE__*/_react.default.createElement("a", {
+        className: "btn btn-outline-primary",
+        onClick: function onClick(e) {
+          return _this3.navigateCreateReviewerPage(e);
+        }
+      }, " ", /*#__PURE__*/_react.default.createElement("a", {
         href: "/reviewerRegistration"
-      }, "Create Reviewer")))), /*#__PURE__*/_react.default.createElement("div", {
-        className: "row"
-      }, /*#__PURE__*/_react.default.createElement("div", {
-        className: "col-4"
-      }), /*#__PURE__*/_react.default.createElement("div", {
-        className: "card col-4"
-      }, /*#__PURE__*/_react.default.createElement("h6", null, "Total Salary of Reviewers")), /*#__PURE__*/_react.default.createElement("div", {
-        className: "card col-2"
-      })), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+      }, "Create Reviewer"))), /*#__PURE__*/_react.default.createElement("div", {
+        className: "col-2"
+      }, /*#__PURE__*/_react.default.createElement("button", {
+        type: "button",
+        className: "btn btn-outline-primary",
+        onClick: function onClick(e) {
+          return _this3.back(e);
+        }
+      }, " back"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
         className: "container"
       }, /*#__PURE__*/_react.default.createElement("table", {
         className: "table table-hover"
@@ -12021,7 +12096,7 @@ var viewReviewer = /*#__PURE__*/function (_Component) {
           type: "button",
           className: "btn btn-outline-warning",
           onClick: function onClick(e) {
-            return _this3.deleteProduct(e, item._id);
+            return _this3.navigateEditReviewerPage(e, item._id);
           }
         }, "Edit")), /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("button", {
           type: "button",
@@ -12030,7 +12105,7 @@ var viewReviewer = /*#__PURE__*/function (_Component) {
             return _this3.deleteReviewer(e, item._id);
           }
         }, "Delete")));
-      })))));
+      }))))));
     }
   }]);
 
@@ -12039,7 +12114,7 @@ var viewReviewer = /*#__PURE__*/function (_Component) {
 
 var _default = viewReviewer;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js","sweetalert2":"node_modules/sweetalert2/dist/sweetalert2.all.js"}],"src/components/views/admin.view.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js","sweetalert2":"node_modules/sweetalert2/dist/sweetalert2.all.js","../checkoutSteps/checkoutSteps":"src/components/checkoutSteps/checkoutSteps.js"}],"src/components/views/admin.view.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -12052,6 +12127,8 @@ var _react = _interopRequireWildcard(require("react"));
 var _axios = _interopRequireDefault(require("axios"));
 
 var _sweetalert = _interopRequireDefault(require("sweetalert2"));
+
+var _checkoutSteps = _interopRequireDefault(require("../checkoutSteps/checkoutSteps"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -12096,15 +12173,22 @@ var viewAdmins = /*#__PURE__*/function (_Component) {
       admins: []
     };
     _this.deleteAdmin = _this.deleteAdmin.bind(_assertThisInitialized(_this));
+    _this.navigateCreateAdminPage = _this.navigateCreateAdminPage.bind(_assertThisInitialized(_this));
+    _this.back = _this.back.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(viewAdmins, [{
     key: "componentDidMount",
     value: function componentDidMount() {
+      //inbuild function
+      this.fetchAdmin();
+    }
+  }, {
+    key: "fetchAdmin",
+    value: function fetchAdmin() {
       var _this2 = this;
 
-      //inbuild function
       _axios.default.get('http://localhost:7000/admin/').then(function (response) {
         _this2.setState({
           admins: response.data.data
@@ -12117,10 +12201,21 @@ var viewAdmins = /*#__PURE__*/function (_Component) {
       window.location = "/updateAdmin/".concat(adminId);
     }
   }, {
+    key: "navigateCreateAdminPage",
+    value: function navigateCreateAdminPage(e) {
+      window.location = '/adminRegistration';
+    }
+  }, {
+    key: "back",
+    value: function back(e) {
+      window.location = '/adminSubcategories';
+    }
+  }, {
     key: "deleteAdmin",
     value: function deleteAdmin(e, adminId) {
-      console.log("I am on Delete", adminId);
+      var _this3 = this;
 
+      console.log("I am on Delete", adminId);
       _sweetalert.default.fire({
         title: 'Are you sure?',
         text: "You won't be able to revert this!",
@@ -12133,37 +12228,44 @@ var viewAdmins = /*#__PURE__*/function (_Component) {
         if (result.isConfirmed) {
           _axios.default.delete("http://localhost:7000/admin/".concat(adminId));
 
+          console.log(_this3.state.admins);
+
           _sweetalert.default.fire('Deleted!', 'Product has been deleted.', 'success');
         }
-      });
+
+        console.log("a");
+      }), this.fetchAdmin();
     }
   }, {
     key: "render",
     value: function render() {
-      var _this3 = this;
+      var _this4 = this;
 
-      return /*#__PURE__*/_react.default.createElement("div", {
+      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_checkoutSteps.default, {
+        step1: true
+      }), /*#__PURE__*/_react.default.createElement("div", {
         className: "container"
       }, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
         className: "row"
       }, /*#__PURE__*/_react.default.createElement("div", {
         className: "col-8"
       }, /*#__PURE__*/_react.default.createElement("h1", null, "Administrators")), /*#__PURE__*/_react.default.createElement("div", {
-        className: "col-4"
+        className: "col-2"
       }, /*#__PURE__*/_react.default.createElement("button", {
         type: "button",
-        className: "btn btn-outline-primary"
-      }, /*#__PURE__*/_react.default.createElement("a", {
-        href: "/adminRegistration"
-      }, "Create Administrator")))), /*#__PURE__*/_react.default.createElement("div", {
-        className: "row"
-      }, /*#__PURE__*/_react.default.createElement("div", {
-        className: "col-4"
-      }), /*#__PURE__*/_react.default.createElement("div", {
-        className: "card col-4"
-      }, /*#__PURE__*/_react.default.createElement("h6", null, "Total Salary of Administrators")), /*#__PURE__*/_react.default.createElement("div", {
-        className: "card col-2"
-      })), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+        className: "btn btn-outline-primary",
+        onClick: function onClick(e) {
+          return _this4.navigateCreateAdminPage(e);
+        }
+      }, " Create Administrator")), /*#__PURE__*/_react.default.createElement("div", {
+        className: "col-2"
+      }, /*#__PURE__*/_react.default.createElement("button", {
+        type: "button",
+        className: "btn btn-outline-primary",
+        onClick: function onClick(e) {
+          return _this4.back(e);
+        }
+      }, " back"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
         className: "container"
       }, /*#__PURE__*/_react.default.createElement("table", {
         className: "table table-hover"
@@ -12173,7 +12275,7 @@ var viewAdmins = /*#__PURE__*/function (_Component) {
         scope: "col"
       }, "Email"), /*#__PURE__*/_react.default.createElement("th", {
         scope: "col"
-      }, "Date of Birth"), /*#__PURE__*/_react.default.createElement("th", {
+      }, "NIC No"), /*#__PURE__*/_react.default.createElement("th", {
         scope: "col"
       }, "Address"), /*#__PURE__*/_react.default.createElement("th", {
         scope: "col"
@@ -12184,20 +12286,20 @@ var viewAdmins = /*#__PURE__*/function (_Component) {
       }, "Admin Salary"))), /*#__PURE__*/_react.default.createElement("tbody", null, this.state.admins.length > 0 && this.state.admins.map(function (item, index) {
         return /*#__PURE__*/_react.default.createElement("tr", {
           key: index
-        }, /*#__PURE__*/_react.default.createElement("td", null, item.name), /*#__PURE__*/_react.default.createElement("td", null, item.email), /*#__PURE__*/_react.default.createElement("td", null, item.dateOfBirth), /*#__PURE__*/_react.default.createElement("td", null, item.address), /*#__PURE__*/_react.default.createElement("td", null, item.mobileNumber), /*#__PURE__*/_react.default.createElement("td", null, item.userName), /*#__PURE__*/_react.default.createElement("td", null, item.salary), /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("button", {
+        }, /*#__PURE__*/_react.default.createElement("td", null, item.name), /*#__PURE__*/_react.default.createElement("td", null, item.email), /*#__PURE__*/_react.default.createElement("td", null, item.nicNo), /*#__PURE__*/_react.default.createElement("td", null, item.address), /*#__PURE__*/_react.default.createElement("td", null, item.mobileNumber), /*#__PURE__*/_react.default.createElement("td", null, item.userName), /*#__PURE__*/_react.default.createElement("td", null, item.salary), /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("button", {
           type: "button",
           className: "btn btn-outline-warning",
           onClick: function onClick(e) {
-            return _this3.navigateEditAdminPage(e, item._id);
+            return _this4.navigateEditAdminPage(e, item._id);
           }
         }, "Edit")), /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("button", {
           type: "button",
           className: "btn btn-outline-danger",
           onClick: function onClick(e) {
-            return _this3.deleteAdmin(e, item._id);
+            return _this4.deleteAdmin(e, item._id);
           }
         }, "Delete")));
-      })))));
+      }))))));
     }
   }]);
 
@@ -12206,7 +12308,7 @@ var viewAdmins = /*#__PURE__*/function (_Component) {
 
 var _default = viewAdmins;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js","sweetalert2":"node_modules/sweetalert2/dist/sweetalert2.all.js"}],"src/components/registrationViews/admin.registrationView.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js","sweetalert2":"node_modules/sweetalert2/dist/sweetalert2.all.js","../checkoutSteps/checkoutSteps":"src/components/checkoutSteps/checkoutSteps.js"}],"src/components/registrationViews/admin.registrationView.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -12254,7 +12356,7 @@ var initialState = {
   //initiate states
   name: '',
   email: '',
-  dateOfBirth: '',
+  nicNo: '',
   address: '',
   mobileNumber: 0,
   userName: '',
@@ -12277,6 +12379,7 @@ var adminRegistration = /*#__PURE__*/function (_Component) {
 
     _this.onSubmit = _this.onSubmit.bind(_assertThisInitialized(_this)); //bind onSubmit function.
 
+    _this.back = _this.back.bind(_assertThisInitialized(_this));
     _this.state = initialState; //apply states.
 
     return _this;
@@ -12289,6 +12392,11 @@ var adminRegistration = /*#__PURE__*/function (_Component) {
       this.setState(_defineProperty({}, e.target.name, e.target.value));
     }
   }, {
+    key: "back",
+    value: function back(e) {
+      window.location = '/admin';
+    }
+  }, {
     key: "onSubmit",
     value: function onSubmit(e) {
       var _this2 = this;
@@ -12299,7 +12407,7 @@ var adminRegistration = /*#__PURE__*/function (_Component) {
       var admin = {
         name: this.state.name,
         email: this.state.email,
-        dateOfBirth: this.state.dateOfBirth,
+        nicNo: this.state.nicNo,
         address: this.state.address,
         mobileNumber: this.state.mobileNumber,
         userName: this.state.userName,
@@ -12313,7 +12421,7 @@ var adminRegistration = /*#__PURE__*/function (_Component) {
         _this2.setState({
           name: '',
           email: '',
-          dateOfBirth: '',
+          nicNo: '',
           address: '',
           mobileNumber: 0,
           userName: '',
@@ -12336,6 +12444,8 @@ var adminRegistration = /*#__PURE__*/function (_Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this3 = this;
+
       //use to return things when call createSubject component.
       return /*#__PURE__*/_react.default.createElement("div", {
         className: "container"
@@ -12388,15 +12498,16 @@ var adminRegistration = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/_react.default.createElement("div", {
         className: "col"
       }, /*#__PURE__*/_react.default.createElement("label", {
-        htmlFor: "dateOfBirth",
+        htmlFor: "nicNo",
         className: "form-label"
-      }, "Date Of Birth"), /*#__PURE__*/_react.default.createElement("input", {
-        type: "date",
+      }, "National Identity Card Number"), /*#__PURE__*/_react.default.createElement("input", {
+        type: "text",
         className: "form-control",
-        id: "dateOfBirth",
-        name: "dateOfBirth" //give state name
+        placeholder: "Enter National Identity Card Number",
+        id: "nicNo",
+        name: "nicNo" //give state name
         ,
-        value: this.state.dateOfBirth //bind state value
+        value: this.state.nicNo //bind state value
         ,
         onChange: this.onChange //don't call function. only give a reference.
 
@@ -12457,7 +12568,15 @@ var adminRegistration = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/_react.default.createElement("button", {
         type: "submit",
         className: "btn btn-outline-success"
-      }, "Submit"))));
+      }, "Submit"))), /*#__PURE__*/_react.default.createElement("div", {
+        className: "col-2"
+      }, /*#__PURE__*/_react.default.createElement("button", {
+        type: "button",
+        className: "btn btn-outline-primary",
+        onClick: function onClick(e) {
+          return _this3.back(e);
+        }
+      }, " Back")));
     }
   }]);
 
@@ -47327,6 +47446,7 @@ var editorRegistration = /*#__PURE__*/function (_Component) {
     _this.onSubmit = _this.onSubmit.bind(_assertThisInitialized(_this)); //bind onSubmit function.
 
     _this.onAdminSelect = _this.onAdminSelect.bind(_assertThisInitialized(_this));
+    _this.back = _this.back.bind(_assertThisInitialized(_this));
     _this.state = initialState; //apply states.
 
     return _this;
@@ -47366,6 +47486,11 @@ var editorRegistration = /*#__PURE__*/function (_Component) {
     value: function onChange(e) {
       //update states
       this.setState(_defineProperty({}, e.target.name, e.target.value));
+    }
+  }, {
+    key: "back",
+    value: function back(e) {
+      window.location = '/editor';
     }
   }, {
     key: "onAdminSelect",
@@ -47429,6 +47554,8 @@ var editorRegistration = /*#__PURE__*/function (_Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this4 = this;
+
       //use to return things when call createSubject component.
       return /*#__PURE__*/_react.default.createElement("div", {
         className: "container"
@@ -47484,7 +47611,7 @@ var editorRegistration = /*#__PURE__*/function (_Component) {
         htmlFor: "nicNo",
         className: "form-label"
       }, "National Identity Card Number "), /*#__PURE__*/_react.default.createElement("input", {
-        type: "number",
+        type: "text",
         className: "form-control",
         id: "nicNo",
         name: "nicNo" //give state name
@@ -47560,7 +47687,15 @@ var editorRegistration = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/_react.default.createElement("button", {
         type: "submit",
         className: "btn btn-outline-success"
-      }, "Submit"))));
+      }, "Submit"))), /*#__PURE__*/_react.default.createElement("div", {
+        className: "col-2"
+      }, /*#__PURE__*/_react.default.createElement("button", {
+        type: "button",
+        className: "btn btn-outline-primary",
+        onClick: function onClick(e) {
+          return _this4.back(e);
+        }
+      }, " Back")));
     }
   }]);
 
@@ -47647,6 +47782,7 @@ var reviewerRegistration = /*#__PURE__*/function (_Component) {
     _this.onSubmit = _this.onSubmit.bind(_assertThisInitialized(_this)); //bind onSubmit function.
 
     _this.onAdminSelect = _this.onAdminSelect.bind(_assertThisInitialized(_this));
+    _this.back = _this.back.bind(_assertThisInitialized(_this));
     _this.state = initialState; //apply states.
 
     return _this;
@@ -47696,6 +47832,11 @@ var reviewerRegistration = /*#__PURE__*/function (_Component) {
           return item.value;
         }) : []
       });
+    }
+  }, {
+    key: "back",
+    value: function back(e) {
+      window.location = '/reviewer';
     }
   }, {
     key: "onSubmit",
@@ -47749,6 +47890,8 @@ var reviewerRegistration = /*#__PURE__*/function (_Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this4 = this;
+
       //use to return things when call createSubject component.
       return /*#__PURE__*/_react.default.createElement("div", {
         className: "container"
@@ -47804,7 +47947,7 @@ var reviewerRegistration = /*#__PURE__*/function (_Component) {
         htmlFor: "nicNo",
         className: "form-label"
       }, "National Identity Card Number "), /*#__PURE__*/_react.default.createElement("input", {
-        type: "number",
+        type: "text",
         className: "form-control",
         id: "nicNo",
         name: "nicNo" //give state name
@@ -47880,7 +48023,15 @@ var reviewerRegistration = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/_react.default.createElement("button", {
         type: "submit",
         className: "btn btn-outline-success"
-      }, "Submit"))));
+      }, "Submit"))), /*#__PURE__*/_react.default.createElement("div", {
+        className: "col-2"
+      }, /*#__PURE__*/_react.default.createElement("button", {
+        type: "button",
+        className: "btn btn-outline-primary",
+        onClick: function onClick(e) {
+          return _this4.back(e);
+        }
+      }, " Back")));
     }
   }]);
 
@@ -47889,7 +48040,7 @@ var reviewerRegistration = /*#__PURE__*/function (_Component) {
 
 var _default = reviewerRegistration;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js","sweetalert2":"node_modules/sweetalert2/dist/sweetalert2.all.js","react-select":"node_modules/react-select/dist/react-select.esm.js"}],"src/components/updateViews/admin.updateViews.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js","sweetalert2":"node_modules/sweetalert2/dist/sweetalert2.all.js","react-select":"node_modules/react-select/dist/react-select.esm.js"}],"src/components/updateViews/admin.updateView.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -47938,7 +48089,7 @@ var initialState = {
   id: '',
   name: '',
   email: '',
-  dateOfBirth: '',
+  nicNo: '',
   address: '',
   mobileNumber: 0,
   userName: '',
@@ -47961,6 +48112,7 @@ var updateAdmin = /*#__PURE__*/function (_Component) {
 
     _this.onSubmit = _this.onSubmit.bind(_assertThisInitialized(_this)); //bind onSubmit function.
 
+    _this.back = _this.back.bind(_assertThisInitialized(_this));
     _this.state = initialState; //apply states.
     // this.state = { disabled: true }
 
@@ -47972,6 +48124,11 @@ var updateAdmin = /*#__PURE__*/function (_Component) {
     value: function onChange(e) {
       //update states
       this.setState(_defineProperty({}, e.target.name, e.target.value));
+    }
+  }, {
+    key: "back",
+    value: function back(e) {
+      window.location = '/admin';
     }
   }, {
     key: "componentDidMount",
@@ -47996,7 +48153,7 @@ var updateAdmin = /*#__PURE__*/function (_Component) {
         });
 
         _this2.setState({
-          dateOfBirth: response.data.data.dateOfBirth
+          nicNo: response.data.data.nicNo
         });
 
         _this2.setState({
@@ -48033,7 +48190,7 @@ var updateAdmin = /*#__PURE__*/function (_Component) {
       var admin = {
         name: this.state.name,
         email: this.state.email,
-        dateOfBirth: this.state.dateOfBirth,
+        nicNo: this.state.nicNo,
         address: this.state.address,
         mobileNumber: this.state.mobileNumber,
         userName: this.state.userName,
@@ -48059,6 +48216,8 @@ var updateAdmin = /*#__PURE__*/function (_Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this3 = this;
+
       //use to return things when call createSubject component.
       return /*#__PURE__*/_react.default.createElement("div", {
         className: "container"
@@ -48111,15 +48270,15 @@ var updateAdmin = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/_react.default.createElement("div", {
         className: "col"
       }, /*#__PURE__*/_react.default.createElement("label", {
-        htmlFor: "dateOfBirth",
+        htmlFor: "nicNo",
         className: "form-label"
-      }, "Date Of Birth"), /*#__PURE__*/_react.default.createElement("input", {
-        type: "date",
+      }, "National Identity Card No"), /*#__PURE__*/_react.default.createElement("input", {
+        type: "text",
         className: "form-control",
-        id: "dateOfBirth",
-        name: "dateOfBirth" //give state name
+        id: "nicNo",
+        name: "nicNo" //give state name
         ,
-        value: this.state.dateOfBirth //bind state value
+        value: this.state.nicNo //bind state value
         ,
         onChange: this.onChange //don't call function. only give a reference.
 
@@ -48180,7 +48339,13 @@ var updateAdmin = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/_react.default.createElement("button", {
         type: "submit",
         className: "btn btn-outline-success"
-      }, "Update"))));
+      }, "Update"), /*#__PURE__*/_react.default.createElement("button", {
+        type: "button",
+        className: "btn btn-outline-primary",
+        onClick: function onClick(e) {
+          return _this3.back(e);
+        }
+      }, " Cancel"))));
     }
   }]);
 
@@ -48188,6 +48353,1562 @@ var updateAdmin = /*#__PURE__*/function (_Component) {
 }(_react.Component);
 
 var _default = updateAdmin;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js","sweetalert2":"node_modules/sweetalert2/dist/sweetalert2.all.js"}],"src/components/updateViews/editor.updateView.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _axios = _interopRequireDefault(require("axios"));
+
+var _sweetalert = _interopRequireDefault(require("sweetalert2"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+// import Select from 'react-select';    //import react select
+var initialState = {
+  //initiate states
+  id: '',
+  name: '',
+  email: '',
+  nicNo: '',
+  address: '',
+  mobileNumber: 0,
+  userName: '',
+  password: '',
+  editorSalary: 0,
+  admins: [],
+  options: [],
+  selectedAdmins: [],
+  displayAdmins: []
+};
+
+var updateEditor = /*#__PURE__*/function (_Component) {
+  _inherits(updateEditor, _Component);
+
+  var _super = _createSuper(updateEditor);
+
+  function updateEditor(props) {
+    var _this;
+
+    _classCallCheck(this, updateEditor);
+
+    _this = _super.call(this, props);
+    _this.onChange = _this.onChange.bind(_assertThisInitialized(_this)); //bind onChange function.
+
+    _this.onSubmit = _this.onSubmit.bind(_assertThisInitialized(_this)); //bind onSubmit function.
+
+    _this.onAdminSelect = _this.onAdminSelect.bind(_assertThisInitialized(_this));
+    _this.state = initialState; //apply states.
+
+    _this.back = _this.back.bind(_assertThisInitialized(_this)); // this.state = { disabled: true }
+
+    return _this;
+  }
+
+  _createClass(updateEditor, [{
+    key: "onChange",
+    value: function onChange(e) {
+      //update states
+      this.setState(_defineProperty({}, e.target.name, e.target.value));
+    }
+  }, {
+    key: "back",
+    value: function back(e) {
+      window.location = '/editor';
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      // const admin = admins._id;
+      _axios.default.get('http://localhost:7000/admin/') //get admins details to frontend from backend when component mount
+      .then(function (response) {
+        _this2.setState({
+          admins: response.data.data
+        }, function () {
+          var data = [];
+
+          _this2.state.admins.map(function (item, index) {
+            //map used to loop until array end.
+            var admins = {
+              value: item._id,
+              label: item.name
+            };
+            data.push(admins);
+          });
+
+          _this2.setState({
+            options: data
+          });
+
+          console.log(data);
+        });
+      });
+
+      var editor = this.props.match.params.id;
+      console.log("rrrr" + editor);
+
+      _axios.default.get("http://localhost:7000/editor/".concat(editor)).then(function (response) {
+        _this2.setState({
+          id: response.data.data._id
+        });
+
+        _this2.setState({
+          name: response.data.data.name
+        });
+
+        _this2.setState({
+          email: response.data.data.email
+        });
+
+        _this2.setState({
+          nicNo: response.data.data.nicNo
+        });
+
+        _this2.setState({
+          address: response.data.data.address
+        });
+
+        _this2.setState({
+          mobileNumber: response.data.data.mobileNumber
+        });
+
+        _this2.setState({
+          userName: response.data.data.userName
+        });
+
+        _this2.setState({
+          password: response.data.data.password
+        });
+
+        _this2.setState({
+          editorSalary: response.data.data.editorSalary
+        }); //    this.setState({selectedAdmins:response.data.data.admins.name})
+
+
+        _this2.setState({
+          selectedAdmins: response.data.data.admins
+        }, function () {
+          var data = [];
+
+          _this2.state.selectedAdmins.map(function (item, index) {
+            //map used to loop until array end.
+            var selectedAdmins = {
+              value: item._id,
+              label: item.name
+            }; // console.log(item.name);
+
+            data.push(selectedAdmins);
+            console.log(data);
+          });
+
+          _this2.setState({
+            displayAdmins: data
+          }); // console.log(data);
+
+        });
+
+        console.log(response.data.data);
+      }).catch(function (error) {
+        alert(error.message);
+      });
+    }
+  }, {
+    key: "onAdminSelect",
+    value: function onAdminSelect(e) {
+      //push select admin array
+      console.log(e);
+      this.setState({
+        selectedAdmins: e ? e.map(function (item) {
+          return item.value;
+        }) : []
+      });
+      console.log("mine" + selectedAdmins);
+    } // handleChange = (selectedAdmins) => {
+    //     this.setState({ selectedAdmins });
+    //   }
+
+  }, {
+    key: "onSubmit",
+    value: function onSubmit(e) {
+      //submit details
+      e.preventDefault(); //avoid browser refresh. because if browser refresh, erase all typed info in form automatically.
+
+      var editor = {
+        name: this.state.name,
+        email: this.state.email,
+        nicNo: this.state.nicNo,
+        address: this.state.address,
+        mobileNumber: this.state.mobileNumber,
+        userName: this.state.userName,
+        password: this.state.password,
+        editorSalary: this.state.editorSalary,
+        admins: this.state.selectedAdmins
+      };
+      console.log('DATA TO SEND', editor);
+
+      _axios.default.patch("http://localhost:7000/editor/update/".concat(this.state.id), editor).then(function (response) {
+        // alert('Editor Data successfully inserted')
+        _sweetalert.default.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Updated Editor details has been saved',
+          showConfirmButton: false,
+          timer: 1500
+        });
+      }).catch(function (error) {
+        console.log(error.message);
+        alert(error.message);
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this3 = this;
+
+      //use to return things when call createSubject component.
+      return /*#__PURE__*/_react.default.createElement("div", {
+        className: "container"
+      }, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("h1", null, "Edit Editor"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("form", {
+        onSubmit: this.onSubmit
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        className: "mb-3"
+      }, /*#__PURE__*/_react.default.createElement("label", {
+        htmlFor: "name",
+        className: "form-label"
+      }, "Editor Name"), /*#__PURE__*/_react.default.createElement("input", {
+        type: "text",
+        className: "form-control",
+        placeholder: "Enter administrator name",
+        id: "name",
+        name: "name" //give state name
+        ,
+        value: this.state.name //bind state value
+        ,
+        onChange: this.onChange //don't call function. only give a reference.
+
+      })), /*#__PURE__*/_react.default.createElement("div", {
+        className: "mb-3"
+      }, /*#__PURE__*/_react.default.createElement("label", {
+        htmlFor: "email",
+        className: "form-label"
+      }, "Email"), /*#__PURE__*/_react.default.createElement("input", {
+        type: "email",
+        className: "form-control",
+        placeholder: "Enter email",
+        id: "email",
+        name: "email",
+        value: this.state.email,
+        onChange: this.onChange
+      })), /*#__PURE__*/_react.default.createElement("div", {
+        className: "mb-3"
+      }, /*#__PURE__*/_react.default.createElement("label", {
+        htmlFor: "address",
+        className: "form-label"
+      }, "Address"), /*#__PURE__*/_react.default.createElement("input", {
+        type: "address",
+        className: "form-control",
+        placeholder: "Enter address",
+        id: "address",
+        name: "address",
+        value: this.state.address,
+        onChange: this.onChange
+      })), /*#__PURE__*/_react.default.createElement("div", {
+        className: "row mb-3"
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        className: "col"
+      }, /*#__PURE__*/_react.default.createElement("label", {
+        htmlFor: "nicNo",
+        className: "form-label"
+      }, "National Identity Card Number "), /*#__PURE__*/_react.default.createElement("input", {
+        type: "text",
+        className: "form-control",
+        id: "nicNo",
+        name: "nicNo" //give state name
+        ,
+        value: this.state.nicNo //bind state value
+        ,
+        onChange: this.onChange //don't call function. only give a reference.
+
+      })), /*#__PURE__*/_react.default.createElement("div", {
+        className: "col"
+      }, /*#__PURE__*/_react.default.createElement("label", {
+        htmlFor: "mobileNumber",
+        className: "form-label"
+      }, "Mobile Number"), /*#__PURE__*/_react.default.createElement("input", {
+        type: "mobileNumber",
+        className: "form-control",
+        id: "mobileNumber",
+        name: "mobileNumber",
+        value: this.state.mobileNumber,
+        onChange: this.onChange
+      })), /*#__PURE__*/_react.default.createElement("div", {
+        className: "col"
+      }, /*#__PURE__*/_react.default.createElement("label", {
+        htmlFor: "editorSalary",
+        className: "form-label"
+      }, "Salary"), /*#__PURE__*/_react.default.createElement("input", {
+        type: "salary",
+        className: "form-control",
+        id: "editorSalary",
+        name: "editorSalary",
+        value: this.state.editorSalary,
+        onChange: this.onChange
+      }))), /*#__PURE__*/_react.default.createElement("div", {
+        className: "row mb-3"
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        className: "col"
+      }, /*#__PURE__*/_react.default.createElement("label", {
+        htmlFor: "userName",
+        className: "form-label"
+      }, "Username"), /*#__PURE__*/_react.default.createElement("input", {
+        type: "text",
+        className: "form-control",
+        placeholder: "Enter username",
+        id: "userName",
+        name: "userName",
+        value: this.state.userName,
+        onChange: this.onChange
+      })), /*#__PURE__*/_react.default.createElement("div", {
+        className: "col"
+      }, /*#__PURE__*/_react.default.createElement("label", {
+        htmlFor: "password",
+        className: "form-label"
+      }, "Password"), /*#__PURE__*/_react.default.createElement("input", {
+        type: "password",
+        className: "form-control",
+        placeholder: "Enter password",
+        id: "password",
+        name: "password",
+        value: this.state.password,
+        onChange: this.onChange
+      }))), /*#__PURE__*/_react.default.createElement("div", {
+        className: "mb-3"
+      }, /*#__PURE__*/_react.default.createElement("button", {
+        type: "submit",
+        className: "btn btn-outline-primary"
+      }, "Update"), /*#__PURE__*/_react.default.createElement("button", {
+        type: "button",
+        className: "btn btn-outline-primary",
+        onClick: function onClick(e) {
+          return _this3.back(e);
+        }
+      }, " Cancel"))));
+    }
+  }]);
+
+  return updateEditor;
+}(_react.Component);
+
+var _default = updateEditor;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js","sweetalert2":"node_modules/sweetalert2/dist/sweetalert2.all.js"}],"src/components/updateViews/reviewer.updateViews.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _axios = _interopRequireDefault(require("axios"));
+
+var _sweetalert = _interopRequireDefault(require("sweetalert2"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+// import Select from 'react-select';    //import react select
+var initialState = {
+  //initiate states
+  id: '',
+  name: '',
+  email: '',
+  nicNo: '',
+  address: '',
+  mobileNumber: 0,
+  userName: '',
+  password: '',
+  reviewerSalary: 0,
+  admins: [],
+  options: [],
+  selectedAdmins: [],
+  displayAdmins: []
+};
+
+var updateReviewer = /*#__PURE__*/function (_Component) {
+  _inherits(updateReviewer, _Component);
+
+  var _super = _createSuper(updateReviewer);
+
+  function updateReviewer(props) {
+    var _this;
+
+    _classCallCheck(this, updateReviewer);
+
+    _this = _super.call(this, props);
+    _this.onChange = _this.onChange.bind(_assertThisInitialized(_this)); //bind onChange function.
+
+    _this.onSubmit = _this.onSubmit.bind(_assertThisInitialized(_this)); //bind onSubmit function.
+
+    _this.onAdminSelect = _this.onAdminSelect.bind(_assertThisInitialized(_this));
+    _this.back = _this.back.bind(_assertThisInitialized(_this));
+    _this.state = initialState; //apply states.
+    // this.state = { disabled: true }
+
+    return _this;
+  }
+
+  _createClass(updateReviewer, [{
+    key: "onChange",
+    value: function onChange(e) {
+      //update states
+      this.setState(_defineProperty({}, e.target.name, e.target.value));
+    }
+  }, {
+    key: "back",
+    value: function back(e) {
+      window.location = '/reviewer';
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      // const admin = admins._id;
+      _axios.default.get('http://localhost:7000/admin/') //get admins details to frontend from backend when component mount
+      .then(function (response) {
+        _this2.setState({
+          admins: response.data.data
+        }, function () {
+          var data = [];
+
+          _this2.state.admins.map(function (item, index) {
+            //map used to loop until array end.
+            var admins = {
+              value: item._id,
+              label: item.name
+            };
+            data.push(admins);
+          });
+
+          _this2.setState({
+            options: data
+          });
+
+          console.log(data);
+        });
+      });
+
+      var reviewer = this.props.match.params.id;
+      console.log("rrrr" + reviewer);
+
+      _axios.default.get("http://localhost:7000/reviewer/".concat(reviewer)).then(function (response) {
+        _this2.setState({
+          id: response.data.data._id
+        });
+
+        _this2.setState({
+          name: response.data.data.name
+        });
+
+        _this2.setState({
+          email: response.data.data.email
+        });
+
+        _this2.setState({
+          nicNo: response.data.data.nicNo
+        });
+
+        _this2.setState({
+          address: response.data.data.address
+        });
+
+        _this2.setState({
+          mobileNumber: response.data.data.mobileNumber
+        });
+
+        _this2.setState({
+          userName: response.data.data.userName
+        });
+
+        _this2.setState({
+          password: response.data.data.password
+        });
+
+        _this2.setState({
+          reviewerSalary: response.data.data.reviewerSalary
+        }); //    this.setState({selectedAdmins:response.data.data.admins.name})
+
+
+        _this2.setState({
+          selectedAdmins: response.data.data.admins
+        }, function () {
+          var data = [];
+
+          _this2.state.selectedAdmins.map(function (item, index) {
+            //map used to loop until array end.
+            var selectedAdmins = {
+              value: item._id,
+              label: item.name
+            }; // console.log(item.name);
+
+            data.push(selectedAdmins);
+            console.log(data);
+          });
+
+          _this2.setState({
+            displayAdmins: data
+          }); // console.log(data);
+
+        });
+
+        console.log(response.data.data);
+      }).catch(function (error) {
+        alert(error.message);
+      });
+    }
+  }, {
+    key: "onAdminSelect",
+    value: function onAdminSelect(e) {
+      //push select admin array
+      console.log(e);
+      this.setState({
+        selectedAdmins: e ? e.map(function (item) {
+          return item.value;
+        }) : []
+      });
+      console.log("mine" + selectedAdmins);
+    } // handleChange = (selectedAdmins) => {
+    //     this.setState({ selectedAdmins });
+    //   }
+
+  }, {
+    key: "onSubmit",
+    value: function onSubmit(e) {
+      //submit details
+      e.preventDefault(); //avoid browser refresh. because if browser refresh, erase all typed info in form automatically.
+
+      var reviewer = {
+        name: this.state.name,
+        email: this.state.email,
+        nicNo: this.state.nicNo,
+        address: this.state.address,
+        mobileNumber: this.state.mobileNumber,
+        userName: this.state.userName,
+        password: this.state.password,
+        reviewerSalary: this.state.reviewerSalary,
+        admins: this.state.selectedAdmins
+      };
+      console.log('DATA TO SEND', reviewer);
+
+      _axios.default.patch("http://localhost:7000/reviewer/update/".concat(this.state.id), reviewer).then(function (response) {
+        // alert('Editor Data successfully inserted')
+        _sweetalert.default.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Updated Editor details has been saved',
+          showConfirmButton: false,
+          timer: 1500
+        });
+      }).catch(function (error) {
+        console.log(error.message);
+        alert(error.message);
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this3 = this;
+
+      //use to return things when call createSubject component.
+      return /*#__PURE__*/_react.default.createElement("div", {
+        className: "container"
+      }, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("h1", null, "Edit Editor"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("form", {
+        onSubmit: this.onSubmit
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        className: "mb-3"
+      }, /*#__PURE__*/_react.default.createElement("label", {
+        htmlFor: "name",
+        className: "form-label"
+      }, "Editor Name"), /*#__PURE__*/_react.default.createElement("input", {
+        type: "text",
+        className: "form-control",
+        placeholder: "Enter administrator name",
+        id: "name",
+        name: "name" //give state name
+        ,
+        value: this.state.name //bind state value
+        ,
+        onChange: this.onChange //don't call function. only give a reference.
+
+      })), /*#__PURE__*/_react.default.createElement("div", {
+        className: "mb-3"
+      }, /*#__PURE__*/_react.default.createElement("label", {
+        htmlFor: "email",
+        className: "form-label"
+      }, "Email"), /*#__PURE__*/_react.default.createElement("input", {
+        type: "email",
+        className: "form-control",
+        placeholder: "Enter email",
+        id: "email",
+        name: "email",
+        value: this.state.email,
+        onChange: this.onChange
+      })), /*#__PURE__*/_react.default.createElement("div", {
+        className: "mb-3"
+      }, /*#__PURE__*/_react.default.createElement("label", {
+        htmlFor: "address",
+        className: "form-label"
+      }, "Address"), /*#__PURE__*/_react.default.createElement("input", {
+        type: "address",
+        className: "form-control",
+        placeholder: "Enter address",
+        id: "address",
+        name: "address",
+        value: this.state.address,
+        onChange: this.onChange
+      })), /*#__PURE__*/_react.default.createElement("div", {
+        className: "row mb-3"
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        className: "col"
+      }, /*#__PURE__*/_react.default.createElement("label", {
+        htmlFor: "nicNo",
+        className: "form-label"
+      }, "National Identity Card Number "), /*#__PURE__*/_react.default.createElement("input", {
+        type: "text",
+        className: "form-control",
+        id: "nicNo",
+        name: "nicNo" //give state name
+        ,
+        value: this.state.nicNo //bind state value
+        ,
+        onChange: this.onChange //don't call function. only give a reference.
+
+      })), /*#__PURE__*/_react.default.createElement("div", {
+        className: "col"
+      }, /*#__PURE__*/_react.default.createElement("label", {
+        htmlFor: "mobileNumber",
+        className: "form-label"
+      }, "Mobile Number"), /*#__PURE__*/_react.default.createElement("input", {
+        type: "mobileNumber",
+        className: "form-control",
+        id: "mobileNumber",
+        name: "mobileNumber",
+        value: this.state.mobileNumber,
+        onChange: this.onChange
+      })), /*#__PURE__*/_react.default.createElement("div", {
+        className: "col"
+      }, /*#__PURE__*/_react.default.createElement("label", {
+        htmlFor: "reviewerSalary",
+        className: "form-label"
+      }, "Salary"), /*#__PURE__*/_react.default.createElement("input", {
+        type: "salary",
+        className: "form-control",
+        id: "reviewerSalary",
+        name: "reviewerSalary",
+        value: this.state.reviewerSalary,
+        onChange: this.onChange
+      }))), /*#__PURE__*/_react.default.createElement("div", {
+        className: "row mb-3"
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        className: "col"
+      }, /*#__PURE__*/_react.default.createElement("label", {
+        htmlFor: "userName",
+        className: "form-label"
+      }, "Username"), /*#__PURE__*/_react.default.createElement("input", {
+        type: "text",
+        className: "form-control",
+        placeholder: "Enter username",
+        id: "userName",
+        name: "userName",
+        value: this.state.userName,
+        onChange: this.onChange
+      })), /*#__PURE__*/_react.default.createElement("div", {
+        className: "col"
+      }, /*#__PURE__*/_react.default.createElement("label", {
+        htmlFor: "password",
+        className: "form-label"
+      }, "Password"), /*#__PURE__*/_react.default.createElement("input", {
+        type: "password",
+        className: "form-control",
+        placeholder: "Enter password",
+        id: "password",
+        name: "password",
+        value: this.state.password,
+        onChange: this.onChange
+      }))), /*#__PURE__*/_react.default.createElement("div", {
+        className: "mb-3"
+      }, /*#__PURE__*/_react.default.createElement("button", {
+        type: "submit",
+        className: "btn btn-outline-primary"
+      }, "Update"), /*#__PURE__*/_react.default.createElement("button", {
+        type: "button",
+        className: "btn btn-outline-primary",
+        onClick: function onClick(e) {
+          return _this3.back(e);
+        }
+      }, " Cancel"))));
+    }
+  }]);
+
+  return updateReviewer;
+}(_react.Component);
+
+var _default = updateReviewer;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js","sweetalert2":"node_modules/sweetalert2/dist/sweetalert2.all.js"}],"src/components/subCategorizedViews/admin.subCategory.css":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/components/images/admin.png":[function(require,module,exports) {
+module.exports = "/admin.77857d3f.png";
+},{}],"src/components/images/editor.png":[function(require,module,exports) {
+module.exports = "/editor.b78e6d4c.png";
+},{}],"src/components/images/reviewer.png":[function(require,module,exports) {
+module.exports = "/reviewer.6a7ddd2a.png";
+},{}],"src/components/subCategorizedViews/administrational.subCategory.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+require("./admin.subCategory.css");
+
+var _admin = _interopRequireDefault(require("../images/admin.png"));
+
+var _editor = _interopRequireDefault(require("../images/editor.png"));
+
+var _reviewer = _interopRequireDefault(require("../images/reviewer.png"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function AdminSubcategories() {
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
+    className: "topic"
+  }, /*#__PURE__*/_react.default.createElement("h2", null, " System Administrational Users Categories ")), /*#__PURE__*/_react.default.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "row"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "col-4"
+  }, /*#__PURE__*/_react.default.createElement("a", {
+    href: "/admin"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "card-sub"
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    src: _admin.default,
+    className: "card-img-top",
+    alt: "admin"
+  }), /*#__PURE__*/_react.default.createElement("div", {
+    className: "card-body"
+  }, /*#__PURE__*/_react.default.createElement("h3", {
+    className: "card-text"
+  }, "Administrators Registration Details"), /*#__PURE__*/_react.default.createElement("p", {
+    className: "card-text"
+  }, "You can manage all Administrators Registration Details from here"))))), /*#__PURE__*/_react.default.createElement("div", {
+    className: "col-4"
+  }, /*#__PURE__*/_react.default.createElement("a", {
+    href: "/editor"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "card-sub"
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    src: _editor.default,
+    className: "card-img-top",
+    alt: "editor"
+  }), /*#__PURE__*/_react.default.createElement("div", {
+    className: "card-body"
+  }, /*#__PURE__*/_react.default.createElement("h3", {
+    className: "card-text"
+  }, "Editors Registration Details"), /*#__PURE__*/_react.default.createElement("p", {
+    className: "card-text"
+  }, "You can manage all Editors Registration Details from here"))))), /*#__PURE__*/_react.default.createElement("div", {
+    className: "col-4"
+  }, /*#__PURE__*/_react.default.createElement("a", {
+    href: "/reviewer"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "card-sub"
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    src: _reviewer.default,
+    className: "card-img-top",
+    alt: "reviewer"
+  }), /*#__PURE__*/_react.default.createElement("div", {
+    className: "card-body"
+  }, /*#__PURE__*/_react.default.createElement("h3", {
+    className: "card-text"
+  }, "Reviewers Registration Details"), /*#__PURE__*/_react.default.createElement("p", {
+    className: "card-text"
+  }, "You can manage all Researchers Registration Details from here")))))), /*#__PURE__*/_react.default.createElement("div", {
+    className: "row center"
+  }, /*#__PURE__*/_react.default.createElement("a", {
+    href: "/adminDashboard"
+  }, /*#__PURE__*/_react.default.createElement("button", {
+    className: "btn btn-outline-primary"
+  }, "Back")))));
+}
+
+var _default = AdminSubcategories;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","./admin.subCategory.css":"src/components/subCategorizedViews/admin.subCategory.css","../images/admin.png":"src/components/images/admin.png","../images/editor.png":"src/components/images/editor.png","../images/reviewer.png":"src/components/images/reviewer.png"}],"src/components/images/attendees.png":[function(require,module,exports) {
+module.exports = "/attendees.12653d8e.png";
+},{}],"src/components/images/presenter.png":[function(require,module,exports) {
+module.exports = "/presenter.324299c9.png";
+},{}],"src/components/subCategorizedViews/nonAdministrational.subCategory.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+require("./admin.subCategory.css");
+
+var _attendees = _interopRequireDefault(require("../images/attendees.png"));
+
+var _presenter = _interopRequireDefault(require("../images/presenter.png"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function AdminSubcategories() {
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
+    className: "topic"
+  }, /*#__PURE__*/_react.default.createElement("h2", null, " Non Administrational Users Categories ")), /*#__PURE__*/_react.default.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "row"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "col-4 wd-5 "
+  }, /*#__PURE__*/_react.default.createElement("a", {
+    href: "/attendee"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "card-sub"
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    src: _attendees.default,
+    className: "card-img-top",
+    alt: "admin"
+  }), /*#__PURE__*/_react.default.createElement("div", {
+    className: "card-body"
+  }, /*#__PURE__*/_react.default.createElement("h3", {
+    className: "card-text"
+  }, "Attendees Registration Details"), /*#__PURE__*/_react.default.createElement("p", {
+    className: "card-text"
+  }, "You can see all Attendees Registration Details from here")))))), /*#__PURE__*/_react.default.createElement("div", {
+    className: "row center"
+  }, /*#__PURE__*/_react.default.createElement("a", {
+    href: "/adminDashboard"
+  }, /*#__PURE__*/_react.default.createElement("button", {
+    className: "btn btn-outline-primary"
+  }, "Back")))));
+}
+
+var _default = AdminSubcategories;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","./admin.subCategory.css":"src/components/subCategorizedViews/admin.subCategory.css","../images/attendees.png":"src/components/images/attendees.png","../images/presenter.png":"src/components/images/presenter.png"}],"src/components/dashboards/admin.dashboard.css":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/components/images/admin-dashboard.png":[function(require,module,exports) {
+module.exports = "/admin-dashboard.e16067ae.png";
+},{}],"src/components/images/nonAdmin- dashboards.png":[function(require,module,exports) {
+module.exports = "/nonAdmin- dashboards.e84f8583.png";
+},{}],"src/components/images/innovation.png":[function(require,module,exports) {
+module.exports = "/innovation.78e7433b.png";
+},{}],"src/components/dashboards/admin.dashboard.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+require("../dashboards/admin.dashboard.css");
+
+var _adminDashboard2 = _interopRequireDefault(require("../images/admin-dashboard.png"));
+
+var _nonAdminDashboards = _interopRequireDefault(require("../images/nonAdmin- dashboards.png"));
+
+var _innovation = _interopRequireDefault(require("../images/innovation.png"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function AdminDashboard() {
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
+    className: "topic"
+  }, /*#__PURE__*/_react.default.createElement("h2", null, " System Users and System administrational functions Categories ")), /*#__PURE__*/_react.default.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "row"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "col-4"
+  }, /*#__PURE__*/_react.default.createElement("a", {
+    href: "/adminSubcategories"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "card-sub"
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    src: _adminDashboard2.default,
+    className: "card-img-top",
+    alt: "admin"
+  }), /*#__PURE__*/_react.default.createElement("div", {
+    className: "card-body"
+  }, /*#__PURE__*/_react.default.createElement("h3", {
+    className: "card-text"
+  }, "Administrators Registration Details"), /*#__PURE__*/_react.default.createElement("p", {
+    className: "card-text"
+  }, "You can manage all Administrational Registration Details from here"))))), /*#__PURE__*/_react.default.createElement("div", {
+    className: "col-4"
+  }, /*#__PURE__*/_react.default.createElement("a", {
+    href: "/nonAdminSubcategories"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "card-sub"
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    src: _nonAdminDashboards.default,
+    className: "card-img-top",
+    alt: "editor"
+  }), /*#__PURE__*/_react.default.createElement("div", {
+    className: "card-body"
+  }, /*#__PURE__*/_react.default.createElement("h3", {
+    className: "card-text"
+  }, "Non-Administrators Registration Details"), /*#__PURE__*/_react.default.createElement("p", {
+    className: "card-text"
+  }, "You can see Non-Administrational like Reaserch Paper presenters and Workshop Presenters Registration Details from here"))))), /*#__PURE__*/_react.default.createElement("div", {
+    className: "col-4"
+  }, /*#__PURE__*/_react.default.createElement("a", {
+    href: "/otherFacilities"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "card-sub"
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    src: _innovation.default,
+    className: "card-img-top",
+    alt: "reviewer"
+  }), /*#__PURE__*/_react.default.createElement("div", {
+    className: "card-body"
+  }, /*#__PURE__*/_react.default.createElement("h3", {
+    className: "card-text"
+  }, "Other Facilities"), /*#__PURE__*/_react.default.createElement("p", {
+    className: "card-text"
+  }, "You can view other facilitues and their details from here"))))))));
+}
+
+var _default = AdminDashboard;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","../dashboards/admin.dashboard.css":"src/components/dashboards/admin.dashboard.css","../images/admin-dashboard.png":"src/components/images/admin-dashboard.png","../images/nonAdmin- dashboards.png":"src/components/images/nonAdmin- dashboards.png","../images/innovation.png":"src/components/images/innovation.png"}],"src/components/images/approved.png":[function(require,module,exports) {
+module.exports = "/approved.6518d825.png";
+},{}],"src/components/images/contract.png":[function(require,module,exports) {
+module.exports = "/contract.e4e84cfa.png";
+},{}],"src/components/images/upload.png":[function(require,module,exports) {
+module.exports = "/upload.25334f16.png";
+},{}],"src/components/subCategorizedViews/otherFacilities.subCategorized.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+require("../dashboards/admin.dashboard.css");
+
+var _approved = _interopRequireDefault(require("../images/approved.png"));
+
+var _contract = _interopRequireDefault(require("../images/contract.png"));
+
+var _upload = _interopRequireDefault(require("../images/upload.png"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function OtherFacilities() {
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
+    className: "topic"
+  }, /*#__PURE__*/_react.default.createElement("h2", null, " Other Facilities. ")), /*#__PURE__*/_react.default.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "row"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "col-4"
+  }, /*#__PURE__*/_react.default.createElement("a", {
+    href: "/postadminview"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "card-sub"
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    src: _approved.default,
+    className: "card-img-top",
+    alt: "admin"
+  }), /*#__PURE__*/_react.default.createElement("div", {
+    className: "card-body"
+  }, /*#__PURE__*/_react.default.createElement("h3", {
+    className: "card-text"
+  }, "Posts Approval List"), /*#__PURE__*/_react.default.createElement("p", {
+    className: "card-text"
+  }, "You can approve or decline posts which sends from editors."))))), /*#__PURE__*/_react.default.createElement("div", {
+    className: "col-4"
+  }, /*#__PURE__*/_react.default.createElement("a", {
+    href: "/workshop"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "card-sub"
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    src: _contract.default,
+    className: "card-img-top",
+    alt: "editor"
+  }), /*#__PURE__*/_react.default.createElement("div", {
+    className: "card-body"
+  }, /*#__PURE__*/_react.default.createElement("h3", {
+    className: "card-text"
+  }, "Workshop Proposal Details"), /*#__PURE__*/_react.default.createElement("p", {
+    className: "card-text"
+  }, "You can see all Workshop Proposal Details from here"))))), /*#__PURE__*/_react.default.createElement("div", {
+    className: "col-4"
+  }, /*#__PURE__*/_react.default.createElement("a", {
+    href: "/paperupload"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "card-sub"
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    src: _upload.default,
+    className: "card-img-top",
+    alt: "reviewer"
+  }), /*#__PURE__*/_react.default.createElement("div", {
+    className: "card-body"
+  }, /*#__PURE__*/_react.default.createElement("h3", {
+    className: "card-text"
+  }, "Research Paper Uploads Details"), /*#__PURE__*/_react.default.createElement("p", {
+    className: "card-text"
+  }, "You can see all Research Paper Uploads Details from here")))))), /*#__PURE__*/_react.default.createElement("div", {
+    className: "row center"
+  }, /*#__PURE__*/_react.default.createElement("a", {
+    href: "/adminDashboard"
+  }, /*#__PURE__*/_react.default.createElement("button", {
+    className: "btn btn-outline-primary"
+  }, "Back")))));
+}
+
+var _default = OtherFacilities;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","../dashboards/admin.dashboard.css":"src/components/dashboards/admin.dashboard.css","../images/approved.png":"src/components/images/approved.png","../images/contract.png":"src/components/images/contract.png","../images/upload.png":"src/components/images/upload.png"}],"src/components/views/postAdminApproval.view.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _axios = _interopRequireDefault(require("axios"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var PostAdminView = /*#__PURE__*/function (_Component) {
+  _inherits(PostAdminView, _Component);
+
+  var _super = _createSuper(PostAdminView);
+
+  function PostAdminView(props) {
+    var _this;
+
+    _classCallCheck(this, PostAdminView);
+
+    _this = _super.call(this, props);
+
+    _defineProperty(_assertThisInitialized(_this), "handleChange", function (e) {
+      _this.setState({
+        status: e.target.status
+      });
+    });
+
+    _this.state = {
+      posts: []
+    };
+    _this.navigatePostPage = _this.navigatePostPage.bind(_assertThisInitialized(_this));
+    _this.back = _this.back.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(PostAdminView, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      _axios.default.get('http://localhost:7000/post/').then(function (response) {
+        _this2.setState({
+          posts: response.data.data
+        }); // console.log(posts);
+
+      });
+    }
+  }, {
+    key: "navigateApprovePostPage",
+    value: function navigateApprovePostPage(e, postId) {
+      window.location = "/approvepost/".concat(postId);
+    }
+  }, {
+    key: "back",
+    value: function back(e) {
+      window.location = '/otherFacilities';
+    }
+  }, {
+    key: "navigatePostPage",
+    value: function navigatePostPage(e) {
+      window.location = '/postAdView';
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this3 = this;
+
+      return /*#__PURE__*/_react.default.createElement("div", {
+        className: "container"
+      }, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+        className: "row"
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        className: "col-8"
+      }, /*#__PURE__*/_react.default.createElement("h1", null, "Posts To be Approved List")), /*#__PURE__*/_react.default.createElement("div", {
+        className: "col-2"
+      }, /*#__PURE__*/_react.default.createElement("button", {
+        type: "button",
+        className: "btn btn-outline-primary",
+        onClick: function onClick(e) {
+          return _this3.navigatePostPage(e);
+        }
+      }, "Show Posts")), /*#__PURE__*/_react.default.createElement("div", {
+        className: "col-2"
+      }, /*#__PURE__*/_react.default.createElement("button", {
+        type: "button",
+        className: "btn btn-outline-primary",
+        onClick: function onClick(e) {
+          return _this3.back(e);
+        }
+      }, " Back"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+        className: "container"
+      }, /*#__PURE__*/_react.default.createElement("table", {
+        className: "table table-hover"
+      }, /*#__PURE__*/_react.default.createElement("thead", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, "Title"), /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, "Description"), /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, "Submitted Date"), /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, "Created Editor"), /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, "Status"), /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, "Approved Date"), /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, "Remarks"))), /*#__PURE__*/_react.default.createElement("tbody", null, this.state.posts.length > 0 && this.state.posts.map(function (item, index) {
+        return /*#__PURE__*/_react.default.createElement("tr", {
+          key: index
+        }, /*#__PURE__*/_react.default.createElement("td", null, item.title), /*#__PURE__*/_react.default.createElement("td", null, item.description), /*#__PURE__*/_react.default.createElement("td", null, item.submittedDate), item.editors.map(function (item, index) {
+          return /*#__PURE__*/_react.default.createElement("td", null, item.name);
+        }), /*#__PURE__*/_react.default.createElement("td", null, item.status), /*#__PURE__*/_react.default.createElement("td", null, item.approvedDate), /*#__PURE__*/_react.default.createElement("td", null, item.remarks), /*#__PURE__*/_react.default.createElement("td", null, /*#__PURE__*/_react.default.createElement("button", {
+          type: "button",
+          className: "btn btn-outline-dark",
+          onClick: function onClick(e) {
+            return _this3.navigateApprovePostPage(e, item._id);
+          }
+        }, "Approval / Declined")));
+      })))));
+    }
+  }]);
+
+  return PostAdminView;
+}(_react.Component);
+
+var _default = PostAdminView;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js"}],"src/components/approvalViews/approvePost.approvalViews.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _axios = _interopRequireDefault(require("axios"));
+
+var _sweetalert = _interopRequireDefault(require("sweetalert2"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+var initialState = {
+  //initiate states
+  id: '',
+  title: '',
+  description: '',
+  submittedDate: '',
+  createdEditor: '',
+  status: '',
+  approvedDate: '',
+  remarks: ''
+};
+
+var approveSelectedPost = /*#__PURE__*/function (_Component) {
+  _inherits(approveSelectedPost, _Component);
+
+  var _super = _createSuper(approveSelectedPost);
+
+  function approveSelectedPost(props) {
+    var _this;
+
+    _classCallCheck(this, approveSelectedPost);
+
+    _this = _super.call(this, props);
+    _this.onChange = _this.onChange.bind(_assertThisInitialized(_this)); //bind onChange function.
+
+    _this.onSubmit = _this.onSubmit.bind(_assertThisInitialized(_this)); //bind onSubmit function.
+
+    _this.back = _this.back.bind(_assertThisInitialized(_this));
+    _this.state = initialState; //apply states.
+
+    return _this;
+  }
+
+  _createClass(approveSelectedPost, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      var approvePost = this.props.match.params.id;
+      console.log("rrrr" + approvePost);
+
+      _axios.default.get("http://localhost:7000/post/".concat(approvePost)).then(function (response) {
+        _this2.setState({
+          id: response.data.data._id
+        });
+
+        _this2.setState({
+          title: response.data.data.title
+        });
+
+        _this2.setState({
+          description: response.data.data.description
+        });
+
+        _this2.setState({
+          submittedDate: response.data.data.submittedDate
+        });
+
+        _this2.setState({
+          createdEditor: response.data.data.editors.name
+        });
+
+        _this2.setState({
+          status: response.data.data.status
+        });
+
+        _this2.setState({
+          approvedDate: response.data.data.approvedDate
+        });
+
+        _this2.setState({
+          remarks: response.data.data.remarks
+        });
+
+        console.log("stat" + response.data.data.status);
+      }).catch(function (error) {
+        alert(error.message);
+      });
+    }
+  }, {
+    key: "onChange",
+    value: function onChange(e) {
+      //update states
+      this.setState(_defineProperty({}, e.target.name, e.target.value));
+    }
+  }, {
+    key: "back",
+    value: function back(e) {
+      window.location = '/postadminview';
+    }
+  }, {
+    key: "onSubmit",
+    value: function onSubmit(e) {
+      //submit details
+      e.preventDefault(); //avoid browser refresh
+
+      var approvePost = {
+        title: this.state.title,
+        description: this.state.description,
+        submittedDate: this.state.submittedDate,
+        createdEditor: this.state.createdEditor,
+        status: this.state.status,
+        approvedDate: this.state.approvedDate,
+        remarks: this.state.remarks
+      };
+      console.log('DATA TO SEND', approvePost);
+
+      _axios.default.patch("http://localhost:7000/post/update/".concat(this.state.id), approvePost).then(function (response) {
+        // alert('Post Data successfully updated')
+        console.log('DATA TO SEND', approvePost);
+
+        _sweetalert.default.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Updated Posts details has been saved',
+          showConfirmButton: false,
+          timer: 1500
+        });
+      }).catch(function (error) {
+        console.log(error.message);
+        alert(error.message);
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this3 = this;
+
+      return /*#__PURE__*/_react.default.createElement("div", {
+        className: "container"
+      }, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("h1", null, "Post Validation"), /*#__PURE__*/_react.default.createElement("form", {
+        onSubmit: this.onSubmit
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        className: "mb-3"
+      }, /*#__PURE__*/_react.default.createElement("label", {
+        htmlFor: "title",
+        className: "form-label"
+      }, "Title"), /*#__PURE__*/_react.default.createElement("input", {
+        disabled: true,
+        type: "text",
+        className: "form-control",
+        id: "title",
+        name: "title",
+        value: this.state.title,
+        onChange: this.onChange
+      })), /*#__PURE__*/_react.default.createElement("div", {
+        className: "mb-3"
+      }, /*#__PURE__*/_react.default.createElement("label", {
+        htmlFor: "description",
+        className: "form-label"
+      }, "Description"), /*#__PURE__*/_react.default.createElement("textarea", {
+        disabled: true,
+        className: "form-control",
+        id: "description",
+        name: "description",
+        value: this.state.description,
+        onChange: this.onChange
+      })), /*#__PURE__*/_react.default.createElement("div", {
+        className: "row"
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        className: "mb-3"
+      }, /*#__PURE__*/_react.default.createElement("label", {
+        htmlFor: "submittedDate",
+        className: "form-label"
+      }, "Submitted Date"), /*#__PURE__*/_react.default.createElement("input", {
+        disabled: true,
+        type: "text",
+        className: "form-control",
+        id: "submittedDate",
+        name: "submittedDate",
+        value: this.state.submittedDate,
+        onChange: this.onChange
+      })), /*#__PURE__*/_react.default.createElement("div", {
+        className: "mb-3"
+      }, /*#__PURE__*/_react.default.createElement("label", {
+        htmlFor: "title",
+        className: "form-label"
+      }, "Created Editor"), /*#__PURE__*/_react.default.createElement("input", {
+        disabled: true,
+        type: "text",
+        className: "form-control",
+        id: "createdEditor",
+        name: "createdEditor",
+        value: this.state.createdEditor,
+        onChange: this.onChange
+      }))), /*#__PURE__*/_react.default.createElement("div", {
+        className: "row"
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        className: "mb-3 col-4"
+      }, /*#__PURE__*/_react.default.createElement("label", {
+        htmlFor: "status",
+        className: "form-label"
+      }, "Status"), /*#__PURE__*/_react.default.createElement("select", {
+        className: "form-select mb-3",
+        id: "lang",
+        onChange: this.onChange,
+        value: this.state.status,
+        name: "status"
+      }, /*#__PURE__*/_react.default.createElement("option", {
+        value: "Pending"
+      }, "Pending "), /*#__PURE__*/_react.default.createElement("option", {
+        value: "Approved"
+      }, "Approved"), /*#__PURE__*/_react.default.createElement("option", {
+        value: "Declined"
+      }, "Declined")))), /*#__PURE__*/_react.default.createElement("div", {
+        className: "mb-3"
+      }, /*#__PURE__*/_react.default.createElement("label", {
+        htmlFor: "approvedDate",
+        className: "form-label"
+      }, "Approved Date"), /*#__PURE__*/_react.default.createElement("input", {
+        type: "date",
+        className: "form-control",
+        id: "approvedDate",
+        name: "approvedDate",
+        value: this.state.approvedDate,
+        onChange: this.onChange
+      })), /*#__PURE__*/_react.default.createElement("div", {
+        className: "mb-3"
+      }, /*#__PURE__*/_react.default.createElement("label", {
+        htmlFor: "remarks",
+        className: "form-label"
+      }, "Remarks"), /*#__PURE__*/_react.default.createElement("textarea", {
+        className: "form-control",
+        id: "remarks",
+        name: "remarks",
+        value: this.state.remarks,
+        onChange: this.onChange
+      })), /*#__PURE__*/_react.default.createElement("div", {
+        className: "mb-3"
+      }, /*#__PURE__*/_react.default.createElement("button", {
+        type: "submit",
+        className: "btn btn-outline-success"
+      }, "Update"))), /*#__PURE__*/_react.default.createElement("div", {
+        className: "col-2"
+      }, /*#__PURE__*/_react.default.createElement("button", {
+        type: "button",
+        className: "btn btn-outline-primary",
+        onClick: function onClick(e) {
+          return _this3.back(e);
+        }
+      }, " Back")));
+    }
+  }]);
+
+  return approveSelectedPost;
+}(_react.Component);
+
+var _default = approveSelectedPost;
 exports.default = _default;
 },{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js","sweetalert2":"node_modules/sweetalert2/dist/sweetalert2.all.js"}],"src/components/footer/footer.js":[function(require,module,exports) {
 "use strict";
@@ -48204,12 +49925,160 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function Footer() {
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "footer"
-  }, /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("h6", null, "This is footer")));
+  }, /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("h6", null, "Powered By TeamVolcano - 2021S1_REG_WE_11")));
 }
 
 var _default = Footer;
 exports.default = _default;
-},{"react":"node_modules/react/index.js"}],"src/App.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js"}],"src/components/views/post.view.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _axios = _interopRequireDefault(require("axios"));
+
+var _sweetalert = _interopRequireDefault(require("sweetalert2"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+var postAdView = /*#__PURE__*/function (_Component) {
+  _inherits(postAdView, _Component);
+
+  var _super = _createSuper(postAdView);
+
+  function postAdView(props) {
+    var _this;
+
+    _classCallCheck(this, postAdView);
+
+    _this = _super.call(this, props);
+    _this.state = {
+      posts: []
+    };
+    _this.back = _this.back.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(postAdView, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      _axios.default.get('http://localhost:7000/post/').then(function (response) {
+        _this2.setState({
+          posts: response.data.data
+        });
+      });
+    }
+  }, {
+    key: "navigateEditPostPage",
+    value: function navigateEditPostPage(e, postId) {
+      window.location = "/updatePost/".concat(postId);
+    }
+  }, {
+    key: "back",
+    value: function back(e) {
+      window.location = '/postadminview';
+    }
+  }, {
+    key: "deletePost",
+    value: function deletePost(e, postId) {
+      console.log("I am on Delete", postId);
+
+      _sweetalert.default.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then(function (result) {
+        if (result.isConfirmed) {
+          _axios.default.delete("http://localhost:7000/post/".concat(postId));
+
+          _sweetalert.default.fire('Deleted!', 'Product has been deleted.', 'success');
+        }
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this3 = this;
+
+      return /*#__PURE__*/_react.default.createElement("div", {
+        className: "container"
+      }, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("h1", null, "Posts - Admin View"), /*#__PURE__*/_react.default.createElement("div", {
+        className: "container"
+      }, /*#__PURE__*/_react.default.createElement("table", {
+        className: "table table-hover"
+      }, /*#__PURE__*/_react.default.createElement("thead", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, "Title"), /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, "Description"), /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, "Submitted Date"), /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, "Created Editor"), /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, "Status"), /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, "Approved Administrator"), /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, "Approved Date"), /*#__PURE__*/_react.default.createElement("th", {
+        scope: "col"
+      }, "Remarks"))), /*#__PURE__*/_react.default.createElement("tbody", null, this.state.posts.length > 0 && this.state.posts.map(function (item, index) {
+        return /*#__PURE__*/_react.default.createElement("tr", {
+          key: index
+        }, /*#__PURE__*/_react.default.createElement("td", null, item.title), /*#__PURE__*/_react.default.createElement("td", null, item.description), /*#__PURE__*/_react.default.createElement("td", null, item.submittedDate), /*#__PURE__*/_react.default.createElement("td", null, item.editors.name), /*#__PURE__*/_react.default.createElement("td", null, item.status), /*#__PURE__*/_react.default.createElement("td", null, item.name), /*#__PURE__*/_react.default.createElement("td", null, item.approvedDate), /*#__PURE__*/_react.default.createElement("td", null, item.remaks));
+      })))), /*#__PURE__*/_react.default.createElement("button", {
+        type: "button",
+        className: "btn btn-outline-primary",
+        onClick: function onClick(e) {
+          return _this3.back(e);
+        }
+      }, " Back"));
+    }
+  }]);
+
+  return postAdView;
+}(_react.Component);
+
+var _default = postAdView;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","axios":"node_modules/axios/index.js","sweetalert2":"node_modules/sweetalert2/dist/sweetalert2.all.js"}],"src/App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -48237,15 +50106,45 @@ var _editor2 = _interopRequireDefault(require("./components/registrationViews/ed
 
 var _reviewer2 = _interopRequireDefault(require("./components/registrationViews/reviewer.registrationView"));
 
-var _admin3 = _interopRequireDefault(require("./components/updateViews/admin.updateViews"));
+var _admin3 = _interopRequireDefault(require("./components/updateViews/admin.updateView"));
+
+var _editor3 = _interopRequireDefault(require("./components/updateViews/editor.updateView"));
+
+var _reviewer3 = _interopRequireDefault(require("./components/updateViews/reviewer.updateViews"));
+
+var _administrational = _interopRequireDefault(require("./components/subCategorizedViews/administrational.subCategory"));
+
+var _nonAdministrational = _interopRequireDefault(require("./components/subCategorizedViews/nonAdministrational.subCategory"));
+
+var _admin4 = _interopRequireDefault(require("./components/dashboards/admin.dashboard"));
+
+var _otherFacilities = _interopRequireDefault(require("./components/subCategorizedViews/otherFacilities.subCategorized"));
+
+var _postAdminApproval = _interopRequireDefault(require("./components/views/postAdminApproval.view"));
+
+var _approvePost = _interopRequireDefault(require("./components/approvalViews/approvePost.approvalViews"));
 
 var _footer = _interopRequireDefault(require("./components/footer/footer"));
+
+var _post = _interopRequireDefault(require("./components/views/post.view"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 //make routes
 function App() {
   return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.BrowserRouter, null, /*#__PURE__*/_react.default.createElement(_navBar.default, null), /*#__PURE__*/_react.default.createElement("section", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Switch, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    path: "/adminSubcategories",
+    component: _administrational.default
+  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    path: "/nonAdminSubcategories",
+    component: _nonAdministrational.default
+  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    path: "/adminDashboard",
+    component: _admin4.default
+  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    path: "/otherFacilities",
+    component: _otherFacilities.default
+  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/editor",
     component: _editor.default
   }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
@@ -48266,12 +50165,27 @@ function App() {
   }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/updateAdmin/:id",
     component: _admin3.default
+  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    path: "/updateEditor/:id",
+    component: _editor3.default
+  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    path: "/updateReviewer/:id",
+    component: _reviewer3.default
+  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    path: "/postadminview",
+    component: _postAdminApproval.default
+  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    path: "/approvepost/:id",
+    component: _approvePost.default
+  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    path: "/postAdView",
+    component: _post.default
   }))), /*#__PURE__*/_react.default.createElement(_footer.default, null)));
 }
 
 var _default = App;
 exports.default = _default;
-},{"./App.css":"src/App.css","react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./components/navBar/navBar":"src/components/navBar/navBar.js","./components/views/editor.view":"src/components/views/editor.view.js","./components/views/reviewer.view":"src/components/views/reviewer.view.js","./components/views/admin.view":"src/components/views/admin.view.js","./components/registrationViews/admin.registrationView":"src/components/registrationViews/admin.registrationView.js","./components/registrationViews/editor.registrationView":"src/components/registrationViews/editor.registrationView.js","./components/registrationViews/reviewer.registrationView":"src/components/registrationViews/reviewer.registrationView.js","./components/updateViews/admin.updateViews":"src/components/updateViews/admin.updateViews.js","./components/footer/footer":"src/components/footer/footer.js"}],"src/index.js":[function(require,module,exports) {
+},{"./App.css":"src/App.css","react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./components/navBar/navBar":"src/components/navBar/navBar.js","./components/views/editor.view":"src/components/views/editor.view.js","./components/views/reviewer.view":"src/components/views/reviewer.view.js","./components/views/admin.view":"src/components/views/admin.view.js","./components/registrationViews/admin.registrationView":"src/components/registrationViews/admin.registrationView.js","./components/registrationViews/editor.registrationView":"src/components/registrationViews/editor.registrationView.js","./components/registrationViews/reviewer.registrationView":"src/components/registrationViews/reviewer.registrationView.js","./components/updateViews/admin.updateView":"src/components/updateViews/admin.updateView.js","./components/updateViews/editor.updateView":"src/components/updateViews/editor.updateView.js","./components/updateViews/reviewer.updateViews":"src/components/updateViews/reviewer.updateViews.js","./components/subCategorizedViews/administrational.subCategory":"src/components/subCategorizedViews/administrational.subCategory.js","./components/subCategorizedViews/nonAdministrational.subCategory":"src/components/subCategorizedViews/nonAdministrational.subCategory.js","./components/dashboards/admin.dashboard":"src/components/dashboards/admin.dashboard.js","./components/subCategorizedViews/otherFacilities.subCategorized":"src/components/subCategorizedViews/otherFacilities.subCategorized.js","./components/views/postAdminApproval.view":"src/components/views/postAdminApproval.view.js","./components/approvalViews/approvePost.approvalViews":"src/components/approvalViews/approvePost.approvalViews.js","./components/footer/footer":"src/components/footer/footer.js","./components/views/post.view":"src/components/views/post.view.js"}],"src/index.js":[function(require,module,exports) {
 "use strict";
 
 var _App = _interopRequireDefault(require("./App"));
@@ -48311,7 +50225,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61651" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58467" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

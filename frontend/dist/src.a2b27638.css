@@ -51,7 +51,60 @@
   }
 
   .footer h6{
-    margin-top: 10px;
+    margin-top: 5px;
+}
+
+/*Checkout Steps*/
+.checkout-steps > div{
+    border-top: 0.3rem #c0c0c0 solid;
+    color: #c0c0c0;
+    flex: 1;
+    padding: 1rem;
+    font-weight: bold;
+  }
+  
+  .checkout-steps > div.active{
+    border-top-color: #f08000;
+    color: #f08000;
+  }
+
+  .checkouts{
+    text-decoration: none;
+    color: #f08000;
+  }
+
+  .checkouts:hover{
+    color: #ff3333;
+  }
+.card-sub{
+    width:18rem;
+    align-items: center;
+    margin-top: 1.5rem;
+    padding: 2rem;
+}
+
+.topic{
+    padding: 30px;
+    font-family:'SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace';
+}
+
+.topic hover{
+    color: blue;
+}
+.card-sub{
+    width:18rem;
+    align-items: center;
+    margin-top: 1.5rem;
+    padding: 2rem;
+}
+
+.topic{
+    padding: 30px;
+    font-family:'SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace';
+}
+
+.topic hover{
+    color: blue;
 }
 
 /*# sourceMappingURL=/src.a2b27638.css.map */

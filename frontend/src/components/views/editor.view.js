@@ -1,6 +1,7 @@
 import React, { Component} from 'react';
 import axios from 'axios';
 import Swal from "sweetalert2";
+import CheckoutSteps from '../checkoutSteps/checkoutSteps';
 
 class viewEditors extends Component {
     constructor(props) {
@@ -9,7 +10,8 @@ class viewEditors extends Component {
             editors: []
         }
         this.deleteEditor = this.deleteEditor.bind(this);
-
+        this.navigateCreateEditorPage = this.navigateCreateEditorPage.bind(this);
+        this.back = this.back.bind(this);
     }
 
     componentDidMount() {   //inbuild function
@@ -17,6 +19,18 @@ class viewEditors extends Component {
             .then(response => {
                 this.setState({ editors: response.data.data });
             })
+    }
+
+    navigateEditEditorPage(e, editorId) {
+        window.location = `/updateEditor/${editorId}`
+    }
+
+    navigateCreateEditorPage(e) {
+        window.location = '/editorRegistration'
+    }
+
+    back(e) {
+        window.location = '/adminSubcategories'
     }
 
     deleteEditor(e , editorId) {
@@ -43,16 +57,14 @@ class viewEditors extends Component {
 
     render() {
         return (
+            <div>
+                <CheckoutSteps step2></CheckoutSteps>
             <div className="container">
                 <br/>
                 <div className = "row">
                     <div className="col-8"><h1>Editors</h1></div>
-                    <div className="col-4"><button type="button" className="btn btn-outline-primary"><a href="/editorRegistration">Create Editor</a></button></div>
-                </div>
-                <div className = "row">
-                    <div className="col-4"></div>
-                    <div className="card col-4"><h6>Total Salary of Editors</h6></div>
-                    <div className="card col-2"></div>
+                    <div className="col-2"><button type="button" className="btn btn-outline-primary" onClick={e => this.navigateCreateEditorPage(e)}>Create Editor</button></div>
+                    <div className="col-2"><button type="button" className="btn btn-outline-primary" onClick={e => this.back(e)}> back</button></div>
                 </div>
                 <br/>
                     <div className="container">
@@ -84,13 +96,25 @@ class viewEditors extends Component {
                                 </td>
                                 <td>{item.userName}</td>
                                 <td>{item.editorSalary}</td>
-                                <td><button type="button" className="btn btn-outline-warning"  onClick={e => this.deleteProduct(e, item._id)} >Edit</button></td>
+                                <td><button type="button" className="btn btn-outline-warning"  onClick={e => this.navigateEditEditorPage(e, item._id)} >Edit</button></td>
                                 <td><button type="button" className="btn btn-outline-danger"  onClick={e => this.deleteEditor(e, item._id)} >Delete</button></td>
                                 </tr>
                             ))}    
                             </tbody>
                         </table>
+                        <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
                     </div>
+            </div>
             </div>
         )
     }

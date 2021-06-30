@@ -10,6 +10,7 @@ const EditorSchema = new mongoose.Schema({    //make schema
     password: { type: String, required: true, trim: true },
     editorSalary: { type: Number, required: true },
     admins: [{ type: mongoose.Schema.Types.ObjectId, required: false, ref: 'admins'}]
+    
 });
 
 const Editor = mongoose.model('editors', EditorSchema);        //give name for collection
