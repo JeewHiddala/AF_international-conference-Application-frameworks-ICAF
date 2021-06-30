@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const request = require('supertest');
 
 //import APIs
-
+const adminAPI = require('../apis/admin.api');
 
 dotenv.config();
 const app = express();
@@ -45,16 +45,20 @@ app.listen(PORT, () => {
 });
 
 //register router - CHANGEABLE
+app.use('/admin', adminAPI());
 
-
-//test case
-// test('should insert a new room', async () => {
-//     await request(app).post('/room/create').send({
-//         code: "Name 22",
-//         amount: 2000,
-//         wing: "English",
-//         pax: 20,
-//     }).expect(200).then((res) => {
-//         id = res.body._id;
-//     });
-// })
+//test case - Hiddalarachchi J. - IT19007502
+test('should insert a new administrator', async () => {
+    await request(app).post('/admin/create').send({
+        name:"Kamal22 Hettiwaththa",
+        email:"Kamal22@gmail.com",
+        nicNo:"965887475V",
+        address:"59,new road,Ampara",
+        mobileNumber:87878,
+        userName:"kamal22",
+        password:"33333",
+        salary:25000,
+    }).expect(200).then((res) => {
+        id = res.body._id;
+    });
+})
