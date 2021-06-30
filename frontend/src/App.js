@@ -1,9 +1,23 @@
 import './App.css';
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';    //make routes
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';    //make routes
 import Navbar from './components/navBar/navBar';
 import Home from './components/home/home';
 import Footer from './components/footer/footer';
+import Home from './components/Home/home';
+import ResearchPaperUpload from './components/Reviewer/researchPaperUploads';
+import editResearchPaperUpload from './components/Reviewer/editResearchPaperUpload';
+import editRevieweProfile from './components/Reviewer/editProfile';
+import ConfirmApproveWorkshopProposals from './components/Reviewer/confirmWorkshopProposal';
+import ReviewedResearchPaperUpload from './components/Reviewer/reviewedResearchPaperUploads';
+import workshopProposal from './components/Reviewer/workshopProposal';
+import EditWorkshopProposals from './components/Reviewer/editworkshopProposals';
+import viewAttendees from './components/Reviewer/attendee';
+import AllAttendeeDetails from './components/Reviewer/viewAttendeeDetails';
+import CreatePost from './components/createPost/createPost';
+import Posts from './components/Posts/posts';
+import updatePosts from './components/updatePost/updatePost';
+import editEditorProfile from './components/editEditorProfile/editEditorProfile';
 import Login from './components/userLogin/login';
 import CreateAttendee from './components/attendee/attendeeRegister';
 import UpdateAttendee from './components/attendee/attendeeUpdate';
@@ -11,18 +25,29 @@ import UpdatePresenter from './components/presenter/presenterUpdate';
 import CreatePresenter from './components/presenter/presenterRegister';
 import AttendeeDashboard from './components/attendee/attendeeDashboard';
 import PresenterDashboard from './components/presenter/presenterDashboard';
-
 import AddAttendeePayment from './components/attendeePayment/makeAttendeePayment';
 
-
-function App(){
-    return(
-        <div>
-            <Router>
-                <Navbar/>
-                <Switch>
-                    <Route exact path='/' component={Home} />
-                    <Route path='/attendee/create' component={CreateAttendee} />
+function App() {
+  return (
+    <div>
+      <Router>
+        <Navbar />
+        <section>
+          <Switch>
+            <Route path="/workshop" component={workshopProposal} />
+            <Route path="/paperupload" component={ResearchPaperUpload} />
+            <Route path="/attendee" component={viewAttendees} />
+            <Route path="/edit/:id" component={EditWorkshopProposals} />
+            <Route path="/view/:id" component={editResearchPaperUpload} />
+            <Route path="/attendee-view/:id" component={AllAttendeeDetails} />
+            <Route path="/profile" component={editRevieweProfile} />
+            <Route path="/configure/:id" component={ReviewedResearchPaperUpload} />
+            <Route path="/confirm/:id" component={ConfirmApproveWorkshopProposals} />
+            <Route path="/" component={Home} exact />
+            <Route path="/create-post" component={CreatePost} />
+            <Route path="/updatePost/:id" component={updatePosts} />
+            <Route path="/profile-update/:id" component={editEditorProfile} />
+            <Route path='/attendee/create' component={CreateAttendee} />
                     <Route path='/presenter/create' component={CreatePresenter} />
                     <Route path='/login' component={Login} />
                     <Route path='/attendee/pay/store' component={AddAttendeePayment} />
@@ -31,14 +56,12 @@ function App(){
                     <Route path='/presenter/dashboard' component={PresenterDashboard} />
                     <Route path='/attendee/:id' component={UpdateAttendee} />
                     <Route path='/presenter/:id' component={UpdatePresenter} />
-
-
-
-                </Switch>
-                <Footer/>
-            </Router>
-        </div>
-    );
+          </Switch>
+        </section>
+        <Footer />
+      </Router>
+    </div>
+  );
 }
 
 export default App;
