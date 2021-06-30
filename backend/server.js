@@ -3,6 +3,13 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');       //environmental variables
 const cors = require('cors');           //middleware
 const bodyParser = require('body-parser');   
+const presenterAPI = require('./src/api/presenter.api');
+const researchPaperAPI = require('./src/api/researchPaper.api');
+const workshopProposalAPI = require('./src/api/workshopProposal.api');
+const reviewerAPI = require('./src/api/reviewer.api');
+const attendeeAPI = require('./src/api/attendee.api');
+const approvedWorkshopProposalAPI = require('./src/api/reviewedWorkshopProposal.api');
+const reviewedResearchPaperUploadAPI = require('./src/api/reviewedResearchPaperUpload.api');
 
 //import APIs
 const adminAPI = require('./src/apis/admin.api');
@@ -41,9 +48,21 @@ app.route('/').get((req, res) => {
 });
 
 //register router
-app.use('/admin', adminAPI());
-app.use('/editor', editorAPI());
+
+app.use('/presenter', presenterAPI());
+
 app.use('/reviewer', reviewerAPI());
+
+app.use('/attendee', attendeeAPI());
+
+app.use('/approvedWorkshopProposal', approvedWorkshopProposalAPI());
+
+app.use('/reviewedResearchPaperUpload', reviewedResearchPaperUploadAPI());
+
+app.use('/workshopProposal', workshopProposalAPI());
+
+app.use('/researchPaper', researchPaperAPI());
+
 
 app.listen(PORT, () => {
   console.log(`Server is up and running on PORT ${PORT}`);

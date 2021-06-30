@@ -1,4 +1,3 @@
-//import react and react components
 import React, { Component } from 'react';
 
 class Navbar extends Component {
@@ -6,7 +5,7 @@ class Navbar extends Component {
         super(props);
     }
 
-    render() {   //use to return things when call navbar component.
+    render() {   
         return (
             <div>
                 <nav className="navbar navbar-expand-lg navbar navbar-dark bg-dark">
@@ -20,18 +19,27 @@ class Navbar extends Component {
                         <div className="collapse navbar-collapse" id="navbarNav">
                             <ul className="navbar-nav">
                                 <li className="nav-item">
-                                    <a className="nav-link active" aria-current="page" href="#">Home</a>
+                                    <a className="nav-link active" aria-current="page" href="/">Home</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#">Features</a>
+                                    <a className="nav-link" href="/features">Features</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#">Pricing</a>
+                                    <a className="nav-link" href="/pricing">Pricing</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link disabled" href="#" tabIndex="-1"
+                                    <a className="nav-link disabled" href="/dis" tabIndex="-1"
                                        aria-disabled="true">Disabled</a>
                                 </li>
+                                <li className="nav-item">
+                                    <a className="nav-link" href="/workshop">Reviewer</a>
+                                 </li>    
+                                 <li className="nav-item">
+                                    <a className="nav-link" href="/paperupload">Research Paper Uploads</a>
+                                 </li>  
+                                 <li className="nav-item">
+                                    <a className="nav-link" href="/profile">Edit Profile</a>
+                                 </li>                    
                             </ul>
                         </div>
                     </div>
