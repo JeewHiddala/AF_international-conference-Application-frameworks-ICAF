@@ -15,6 +15,8 @@ const reviewedResearchPaperUploadAPI = require('./src/api/reviewedResearchPaperU
 const adminAPI = require('./src/apis/admin.api');
 const editorAPI = require('./src/apis/editor.api');
 const reviewerAPI = require('./src/apis/reviewer.api');
+const postAPI = require('./src/apis/post.api');
+
 
 dotenv.config();
 const app = express();
@@ -52,6 +54,8 @@ app.route('/').get((req, res) => {
 app.use('/presenter', presenterAPI());
 
 app.use('/reviewer', reviewerAPI());
+app.use('/post', postAPI());
+
 
 app.use('/attendee', attendeeAPI());
 

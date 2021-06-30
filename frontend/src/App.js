@@ -13,31 +13,38 @@ import workshopProposal from './components/Reviewer/workshopProposal';
 import EditWorkshopProposals from './components/Reviewer/editworkshopProposals';
 import viewAttendees from './components/Reviewer/attendee';
 import AllAttendeeDetails from './components/Reviewer/viewAttendeeDetails';
+import CreatePost from './components/createPost/createPost';
+import Posts from './components/Posts/posts';
+import updatePosts from './components/updatePost/updatePost';
+import editEditorProfile from './components/editEditorProfile/editEditorProfile';
 
-function App(){
-    return(
-        <div>
-            <Router>
-                <Navbar/>
+
+function App() {
+  return (
+    <div>
+      <Router>
+        <Navbar />
         <section>
-            <Switch>
-                <Route path="/workshop"component={workshopProposal}/>
-                <Route path="/paperupload"component={ResearchPaperUpload}/>
-                <Route path="/attendee"component={viewAttendees}/>
-                <Route path="/edit/:id" component={EditWorkshopProposals} />
-                <Route path="/view/:id" component={editResearchPaperUpload}/>
-                <Route path="/attendee-view/:id" component={AllAttendeeDetails}/>
-                <Route path="/profile" component={editRevieweProfile}/>
-                <Route  path="/configure/:id" component={ReviewedResearchPaperUpload}/>       
-                <Route path="/confirm/:id" component={ConfirmApproveWorkshopProposals}/>
-                <Route path="/" component={Home} exact />
-            </Switch>
-            
-        </section>       
-        <Footer/>
+          <Switch>
+            <Route path="/workshop" component={workshopProposal} />
+            <Route path="/paperupload" component={ResearchPaperUpload} />
+            <Route path="/attendee" component={viewAttendees} />
+            <Route path="/edit/:id" component={EditWorkshopProposals} />
+            <Route path="/view/:id" component={editResearchPaperUpload} />
+            <Route path="/attendee-view/:id" component={AllAttendeeDetails} />
+            <Route path="/profile" component={editRevieweProfile} />
+            <Route path="/configure/:id" component={ReviewedResearchPaperUpload} />
+            <Route path="/confirm/:id" component={ConfirmApproveWorkshopProposals} />
+            <Route path="/" component={Home} exact />
+            <Route path="/create-post" component={CreatePost} />
+            <Route path="/updatePost/:id" component={updatePosts} />
+            <Route path="/profile-update/:id" component={editEditorProfile} />
+          </Switch>
+        </section>
+        <Footer />
       </Router>
-        </div>
-    );
+    </div>
+  );
 }
 
 export default App;
