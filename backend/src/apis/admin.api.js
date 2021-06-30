@@ -8,7 +8,7 @@ module.exports = function () {
     router.get('/:id', adminController.getSelectedAdminDetails);       //get selected admin details.
     router.delete('/:id', adminController.deleteAdmin);         //delete selected admin details.
     router.patch('/update/:id', adminController.updateSelectedAdmin);  //update selected admin details.
-    // router.get('/salary', adminController.calculateTotalAdminsSalary);      //get all admins Total salary.
+    router.post('/totalsalary', adminController.calculateTotalAdminsSalary);      //get all admins Total salary.
 
     return router;
 }

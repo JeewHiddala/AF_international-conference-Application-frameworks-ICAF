@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 const initialState = {      //initiate states
     name: '',
     email: '',
-    dateOfBirth: '',
+    nicNo: '',
     address: '',
     mobileNumber: 0,
     userName: '',
@@ -17,6 +17,7 @@ class adminRegistration extends Component {
         super(props);
         this.onChange = this.onChange.bind(this);  //bind onChange function.
         this.onSubmit = this.onSubmit.bind(this);   //bind onSubmit function.
+        this.back = this.back.bind(this);
         this.state = initialState;      //apply states.
     }
 
@@ -24,12 +25,16 @@ class adminRegistration extends Component {
         this.setState({ [e.target.name]: e.target.value })
     }
 
+    back(e) {
+        window.location = '/admin'
+    }
+
     onSubmit(e) {      //submit details
         e.preventDefault();     //avoid browser refresh. because if browser refresh, erase all typed info in form automatically.
         let admin = {
             name: this.state.name,
             email: this.state.email,
-            dateOfBirth: this.state.dateOfBirth,
+            nicNo: this.state.nicNo,
             address: this.state.address,
             mobileNumber: this.state.mobileNumber,
             userName: this.state.userName,
@@ -43,7 +48,7 @@ class adminRegistration extends Component {
                 this.setState({ 
                     name: '',
                     email: '',
-                    dateOfBirth: '',
+                    nicNo: '',
                     address: '',
                     mobileNumber: 0,
                     userName: '',
@@ -108,13 +113,14 @@ class adminRegistration extends Component {
                     </div>
                     <div className="row mb-3">
                         <div className="col">
-                            <label htmlFor="dateOfBirth" className="form-label">Date Of Birth</label>
+                            <label htmlFor="nicNo" className="form-label">National Identity Card Number</label>
                             <input
-                                type="date"
+                                type="text"
                                 className="form-control"
-                                id="dateOfBirth"
-                                name="dateOfBirth"    //give state name
-                                value={this.state.dateOfBirth}      //bind state value
+                                placeholder = "Enter National Identity Card Number"
+                                id="nicNo"
+                                name="nicNo"    //give state name
+                                value={this.state.nicNo}      //bind state value
                                 onChange={this.onChange}    //don't call function. only give a reference.
                             />
                         </div>
@@ -171,6 +177,7 @@ class adminRegistration extends Component {
                         <button type="submit" className="btn btn-outline-success">Submit</button>
                     </div>
                 </form>
+                <div className="col-2"><button type="button" className="btn btn-outline-primary" onClick={e => this.back(e)}> Back</button></div>
             </div>
         )
     }

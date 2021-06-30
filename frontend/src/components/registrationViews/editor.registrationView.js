@@ -22,6 +22,7 @@ class editorRegistration extends Component {
         this.onChange = this.onChange.bind(this);  //bind onChange function.
         this.onSubmit = this.onSubmit.bind(this);   //bind onSubmit function.
         this.onAdminSelect = this.onAdminSelect.bind(this);
+        this.back = this.back.bind(this);
         this.state = initialState;      //apply states.
     }
 
@@ -46,6 +47,11 @@ class editorRegistration extends Component {
     onChange(e) {     //update states
         this.setState({ [e.target.name]: e.target.value })
     }
+
+    
+ back(e) {
+    window.location = '/editor'
+}
 
     onAdminSelect(e) {    //push select admin array
         this.setState({ selectedAdmins: e ? e.map(item => item.value) : [] });
@@ -141,7 +147,7 @@ class editorRegistration extends Component {
                         <div className="col">
                             <label htmlFor="nicNo" className="form-label">National Identity Card Number </label>
                             <input
-                                type="number"
+                                type="text"
                                 className="form-control"
                                 id="nicNo"
                                 name="nicNo"    //give state name
@@ -211,6 +217,7 @@ class editorRegistration extends Component {
                         <button type="submit" className="btn btn-outline-success">Submit</button>
                     </div>
                 </form>
+                <div className="col-2"><button type="button" className="btn btn-outline-primary" onClick={e => this.back(e)}> Back</button></div>
             </div>
         )
     }
