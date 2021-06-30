@@ -48655,7 +48655,319 @@ var viewAttendees = /*#__PURE__*/function (_Component) {
 
 var _default = viewAttendees;
 exports.default = _default;
-},{"./attendee.css":"src/components/Reviewer/attendee.css","sweetalert2":"node_modules/sweetalert2/dist/sweetalert2.all.js","react":"node_modules/react/index.js","axios":"node_modules/axios/index.js","../checkoutSteps/checkoutSteps":"src/components/checkoutSteps/checkoutSteps.js","bootstrap/dist/css/bootstrap.min.css":"node_modules/bootstrap/dist/css/bootstrap.min.css"}],"src/App.js":[function(require,module,exports) {
+},{"./attendee.css":"src/components/Reviewer/attendee.css","sweetalert2":"node_modules/sweetalert2/dist/sweetalert2.all.js","react":"node_modules/react/index.js","axios":"node_modules/axios/index.js","../checkoutSteps/checkoutSteps":"src/components/checkoutSteps/checkoutSteps.js","bootstrap/dist/css/bootstrap.min.css":"node_modules/bootstrap/dist/css/bootstrap.min.css"}],"src/components/Reviewer/viewAttendeeDetails.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+require("./editworkshopProposals.css");
+
+var _sweetalert = _interopRequireDefault(require("sweetalert2"));
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _axios = _interopRequireDefault(require("axios"));
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+var AllAttendeeDetails = /*#__PURE__*/function (_Component) {
+  _inherits(AllAttendeeDetails, _Component);
+
+  var _super = _createSuper(AllAttendeeDetails);
+
+  function AllAttendeeDetails(props) {
+    var _this;
+
+    _classCallCheck(this, AllAttendeeDetails);
+
+    _this = _super.call(this, props);
+    _this.state = {
+      attendee: []
+    };
+    return _this;
+  }
+
+  _createClass(AllAttendeeDetails, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      _axios.default.get("http://localhost:7000/attendee/".concat(this.props.match.params.id)).then(function (response) {
+        _this2.setState({
+          attendee: response.data.data
+        });
+      }).then(function () {
+        console.log(_this2.state.attendee);
+
+        _this2.setState({
+          name: _this2.state.attendee.name
+        });
+
+        _this2.setState({
+          email: _this2.state.attendee.email
+        });
+
+        _this2.setState({
+          mobileNo: _this2.state.attendee.mobileNo
+        });
+
+        _this2.setState({
+          username: _this2.state.attendee.username
+        });
+
+        _this2.setState({
+          password: _this2.state.attendee.password
+        });
+
+        _this2.setState({
+          workplace: _this2.state.attendee.workplace
+        });
+
+        _this2.setState({
+          jobRole: _this2.state.attendee.jobRole
+        });
+
+        _this2.setState({
+          type: _this2.state.attendee.type
+        });
+
+        _this2.setState({
+          country: _this2.state.attendee.country
+        });
+
+        _this2.setState({
+          emergencyContactNo: _this2.state.attendee.emergencyContactNo
+        });
+
+        _this2.setState({
+          emergencyContactName: _this2.state.attendee.emergencyContactName
+        });
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/_react.default.createElement("div", {
+        className: "container"
+      }, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+        className: "card p-4"
+      }, /*#__PURE__*/_react.default.createElement("h5", {
+        htmlFor: "content",
+        className: "form-label mb-4",
+        style: {
+          textAlign: "left"
+        }
+      }), /*#__PURE__*/_react.default.createElement("form", {
+        onSubmit: this.onSubmit,
+        onChange: this.onHandle
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        className: "row"
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        className: "col-md-6"
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        className: "mb-3",
+        style: {
+          textAlign: "left"
+        }
+      }, /*#__PURE__*/_react.default.createElement("label", {
+        htmlFor: "name",
+        className: "form-label"
+      }, "Name"), /*#__PURE__*/_react.default.createElement("input", {
+        type: "text",
+        className: "form-control",
+        id: "name",
+        name: "name",
+        value: this.state.name,
+        onChange: this.onChange
+      })), /*#__PURE__*/_react.default.createElement("div", {
+        className: "mb-3",
+        style: {
+          textAlign: "left"
+        }
+      }, /*#__PURE__*/_react.default.createElement("label", {
+        htmlFor: "email",
+        className: "form-label"
+      }, "Email"), /*#__PURE__*/_react.default.createElement("input", {
+        type: "text",
+        className: "form-control",
+        id: "email",
+        name: "email",
+        value: this.state.email,
+        onChange: this.onChange
+      })), /*#__PURE__*/_react.default.createElement("div", {
+        className: "mb-3",
+        style: {
+          textAlign: "left"
+        }
+      }, /*#__PURE__*/_react.default.createElement("label", {
+        htmlFor: "mobileNo",
+        className: "form-label"
+      }, "Mobile Number"), /*#__PURE__*/_react.default.createElement("input", {
+        type: "number",
+        className: "form-control",
+        id: "mobileNo",
+        name: "mobileNo",
+        value: this.state.mobileNo,
+        onChange: this.onChange
+      })), /*#__PURE__*/_react.default.createElement("div", {
+        className: "mb-3",
+        style: {
+          textAlign: "left"
+        }
+      }, /*#__PURE__*/_react.default.createElement("label", {
+        htmlFor: "userName",
+        className: "form-label"
+      }, "UserName"), /*#__PURE__*/_react.default.createElement("input", {
+        type: "text",
+        className: "form-control",
+        id: "username",
+        name: "username",
+        value: this.state.username,
+        onChange: this.onChange
+      })), /*#__PURE__*/_react.default.createElement("div", {
+        className: "mb-3",
+        style: {
+          textAlign: "left"
+        }
+      }, /*#__PURE__*/_react.default.createElement("label", {
+        htmlFor: "password",
+        className: "form-label"
+      }, "Password"), /*#__PURE__*/_react.default.createElement("input", {
+        type: "password",
+        className: "form-control",
+        id: "password",
+        name: "password",
+        value: this.state.password,
+        onChange: this.onChange
+      })), /*#__PURE__*/_react.default.createElement("div", {
+        className: "mb-3",
+        style: {
+          textAlign: "left"
+        }
+      }, /*#__PURE__*/_react.default.createElement("label", {
+        htmlFor: "workplace",
+        className: "form-label"
+      }, "Work Place"), /*#__PURE__*/_react.default.createElement("input", {
+        type: "text",
+        className: "form-control",
+        id: "workplace",
+        name: "workplace",
+        value: this.state.workplace,
+        onChange: this.onChange
+      })), /*#__PURE__*/_react.default.createElement("div", {
+        className: "mb-3",
+        style: {
+          textAlign: "left"
+        }
+      }, /*#__PURE__*/_react.default.createElement("label", {
+        htmlFor: "jobRole",
+        className: "form-label"
+      }, "Job Role"), /*#__PURE__*/_react.default.createElement("input", {
+        type: "text",
+        className: "form-control",
+        id: "jobRole",
+        name: "jobRole",
+        value: this.state.jobRole,
+        onChange: this.onChange
+      })), /*#__PURE__*/_react.default.createElement("div", {
+        className: "mb-3",
+        style: {
+          textAlign: "left"
+        }
+      }, /*#__PURE__*/_react.default.createElement("label", {
+        htmlFor: "type",
+        className: "form-label"
+      }, "Type"), /*#__PURE__*/_react.default.createElement("input", {
+        type: "text",
+        className: "form-control",
+        id: "type",
+        name: "type",
+        value: this.state.type,
+        onChange: this.onChange
+      })), /*#__PURE__*/_react.default.createElement("div", {
+        className: "mb-3",
+        style: {
+          textAlign: "left"
+        }
+      }, /*#__PURE__*/_react.default.createElement("label", {
+        htmlFor: "country",
+        className: "form-label"
+      }, "Country"), /*#__PURE__*/_react.default.createElement("input", {
+        type: "text",
+        className: "form-control",
+        id: "country",
+        name: "country",
+        value: this.state.country,
+        onChange: this.onChange
+      })), /*#__PURE__*/_react.default.createElement("div", {
+        className: "mb-3",
+        style: {
+          textAlign: "left"
+        }
+      }, /*#__PURE__*/_react.default.createElement("label", {
+        htmlFor: "emergenctContactNo",
+        className: "form-label"
+      }, "Emergency Contact Number"), /*#__PURE__*/_react.default.createElement("input", {
+        type: "text",
+        className: "form-control",
+        id: "emergencyContactNo",
+        name: "emergencyContactNo",
+        value: this.state.emergencyContactNo,
+        onChange: this.onChange
+      })), /*#__PURE__*/_react.default.createElement("div", {
+        className: "mb-3",
+        style: {
+          textAlign: "left"
+        }
+      }, /*#__PURE__*/_react.default.createElement("label", {
+        htmlFor: "emergencyContactName",
+        className: "form-label"
+      }, "Emergency Contact Name"), /*#__PURE__*/_react.default.createElement("input", {
+        type: "text",
+        className: "form-control",
+        id: "emergencyContactName",
+        name: "emergencyContactName",
+        value: this.state.emergencyContactName,
+        onChange: this.onChange
+      })))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null))));
+    }
+  }]);
+
+  return AllAttendeeDetails;
+}(_react.Component);
+
+var _default = AllAttendeeDetails;
+exports.default = _default;
+},{"./editworkshopProposals.css":"src/components/Reviewer/editworkshopProposals.css","sweetalert2":"node_modules/sweetalert2/dist/sweetalert2.all.js","react":"node_modules/react/index.js","axios":"node_modules/axios/index.js"}],"src/App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -48691,6 +49003,8 @@ var _editworkshopProposals = _interopRequireDefault(require("./components/Review
 
 var _attendee = _interopRequireDefault(require("./components/Reviewer/attendee"));
 
+var _viewAttendeeDetails = _interopRequireDefault(require("./components/Reviewer/viewAttendeeDetails"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function App() {
@@ -48711,7 +49025,7 @@ function App() {
     component: _editResearchPaperUpload.default
   }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/attendee-view/:id",
-    component: AllAttendeeDetails
+    component: _viewAttendeeDetails.default
   }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/profile",
     component: _editProfile.default
@@ -48730,7 +49044,7 @@ function App() {
 
 var _default = App;
 exports.default = _default;
-},{"./App.css":"src/App.css","react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./components/navBar/navBar":"src/components/navBar/navBar.js","./components/footer/footer":"src/components/footer/footer.js","./components/Home/home":"src/components/Home/home.js","./components/Reviewer/researchPaperUploads":"src/components/Reviewer/researchPaperUploads.js","./components/Reviewer/editResearchPaperUpload":"src/components/Reviewer/editResearchPaperUpload.js","./components/Reviewer/editProfile":"src/components/Reviewer/editProfile.js","./components/Reviewer/confirmWorkshopProposal":"src/components/Reviewer/confirmWorkshopProposal.js","./components/Reviewer/reviewedResearchPaperUploads":"src/components/Reviewer/reviewedResearchPaperUploads.js","./components/Reviewer/workshopProposal":"src/components/Reviewer/workshopProposal.js","./components/Reviewer/editworkshopProposals":"src/components/Reviewer/editworkshopProposals.js","./components/Reviewer/attendee":"src/components/Reviewer/attendee.js"}],"src/index.js":[function(require,module,exports) {
+},{"./App.css":"src/App.css","react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./components/navBar/navBar":"src/components/navBar/navBar.js","./components/footer/footer":"src/components/footer/footer.js","./components/Home/home":"src/components/Home/home.js","./components/Reviewer/researchPaperUploads":"src/components/Reviewer/researchPaperUploads.js","./components/Reviewer/editResearchPaperUpload":"src/components/Reviewer/editResearchPaperUpload.js","./components/Reviewer/editProfile":"src/components/Reviewer/editProfile.js","./components/Reviewer/confirmWorkshopProposal":"src/components/Reviewer/confirmWorkshopProposal.js","./components/Reviewer/reviewedResearchPaperUploads":"src/components/Reviewer/reviewedResearchPaperUploads.js","./components/Reviewer/workshopProposal":"src/components/Reviewer/workshopProposal.js","./components/Reviewer/editworkshopProposals":"src/components/Reviewer/editworkshopProposals.js","./components/Reviewer/attendee":"src/components/Reviewer/attendee.js","./components/Reviewer/viewAttendeeDetails":"src/components/Reviewer/viewAttendeeDetails.js"}],"src/index.js":[function(require,module,exports) {
 "use strict";
 
 var _App = _interopRequireDefault(require("./App"));
