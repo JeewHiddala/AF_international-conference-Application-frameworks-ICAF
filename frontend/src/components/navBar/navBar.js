@@ -5,7 +5,7 @@ class Navbar extends Component {
         super(props);
     }
 
-    render() {   //use to return things when call navbar component.
+    render() {   
         return (
             <div>
                 <nav className="navbar navbar-expand-lg navbar navbar-dark bg-dark">
@@ -19,21 +19,36 @@ class Navbar extends Component {
                         <div className="collapse navbar-collapse" id="navbarNav">
                             <ul className="navbar-nav">
                                 <li className="nav-item">
-                                    <a className="nav-link active" aria-current="page" href="#">Home</a>
+                                    <a className="nav-link active" aria-current="page" href="/">Home</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#">Features</a>
+                                    <a className="nav-link" href="/">Posts</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#">Pricing</a>
+                                    <a className="nav-link" href="/create-post">Create Post</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link disabled" href="#" tabIndex="-1"
+                                    <a className="nav-link" href="/updatePost/:id">Update Post</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link" href="/profile-update/:id">Update Profile</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link disabled" href="/dis" tabIndex="-1"
                                        aria-disabled="true">Disabled</a>
                                 </li>
                                 <li className="nav-item">
                                     <a className="nav-link" href="/adminDashboard">Administrator Dashboards</a>
                                 </li>
+                                <li>
+                                    <a className="nav-link" href="/workshop">Reviewer</a>
+                                 </li>    
+                                 <li className="nav-item">
+                                    <a className="nav-link" href="/paperupload">Research Paper Uploads</a>
+                                 </li>  
+                                 <li className="nav-item">
+                                    <a className="nav-link" href="/profile">Edit Profile</a>
+                                 </li>                    
                             </ul>
                         </div>
                     </div>

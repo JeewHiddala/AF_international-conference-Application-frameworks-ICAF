@@ -9,6 +9,7 @@ const EditorSchema = new mongoose.Schema({    //make schema
     userName: { type: String, required: true, trim: true },
     password: { type: String, required: true, trim: true },
     editorSalary: { type: Number, required: true },
+    posts: [{ type: mongoose.Schema.Types.ObjectId, required: false, ref: 'posts'}],
     admins: [{ type: mongoose.Schema.Types.ObjectId, required: false, ref: 'admins'}]
     
 });
