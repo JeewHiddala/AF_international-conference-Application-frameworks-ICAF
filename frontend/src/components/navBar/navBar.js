@@ -29,6 +29,12 @@ class Navbar extends Component {
                                     <a className="nav-link" href="/create-post">Create Post</a>
                                 </li>
                                 <li className="nav-item">
+                                    <a className="nav-link" href="/updatePost/:id">Update Post</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link" href="/profile-update/:id">Update Profile</a>
+                                </li>
+                                <li className="nav-item">
                                     <a className="nav-link disabled" href="#" tabIndex="-1"
                                        aria-disabled="true">Disabled</a>
                                 </li>
