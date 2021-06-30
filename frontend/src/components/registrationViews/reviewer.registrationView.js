@@ -23,6 +23,7 @@ class reviewerRegistration extends Component {
         this.onChange = this.onChange.bind(this);  //bind onChange function.
         this.onSubmit = this.onSubmit.bind(this);   //bind onSubmit function.
         this.onAdminSelect = this.onAdminSelect.bind(this);
+        this.back = this.back.bind(this);
         this.state = initialState;      //apply states.
     }
 
@@ -50,6 +51,10 @@ class reviewerRegistration extends Component {
 
     onAdminSelect(e) {    //push select admin array
         this.setState({ selectedAdmins: e ? e.map(item => item.value) : [] });
+    }
+
+    back(e) {
+        window.location = '/reviewer'
     }
 
     onSubmit(e) {      //submit details
@@ -142,7 +147,7 @@ class reviewerRegistration extends Component {
                         <div className="col-5">
                             <label htmlFor="nicNo" className="form-label">National Identity Card Number </label>
                             <input
-                                type="number"
+                                type="text"
                                 className="form-control"
                                 id="nicNo"
                                 name="nicNo"    //give state name
@@ -212,6 +217,7 @@ class reviewerRegistration extends Component {
                         <button type="submit" className="btn btn-outline-success">Submit</button>
                     </div>
                 </form>
+                <div className="col-2"><button type="button" className="btn btn-outline-primary" onClick={e => this.back(e)}> Back</button></div>
             </div>
         )
     }

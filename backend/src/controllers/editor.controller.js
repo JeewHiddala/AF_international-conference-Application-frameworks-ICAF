@@ -28,6 +28,7 @@ const getAllEditorsDetails = async (req, res) => {       //get all editors detai
 const getSelectedEditorDetails = async (req, res) => {          //get selected editor details.
     if (req.params && req.params.id) {
         await Editor.findById(req.params.id)
+        .populate('admins','name')
             .then(data => {
                 res.status(200).send({ data : data });
             })

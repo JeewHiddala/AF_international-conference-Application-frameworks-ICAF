@@ -1,6 +1,7 @@
 import React, { Component} from 'react';
 import axios from 'axios';
 import Swal from "sweetalert2";
+import CheckoutSteps from '../checkoutSteps/checkoutSteps';
 
 class viewReviewer extends Component {
     constructor(props) {
@@ -9,7 +10,8 @@ class viewReviewer extends Component {
             reviewers: []
         }
         this.deleteReviewer = this.deleteReviewer.bind(this);
-
+        this.navigateCreateReviewerPage = this.navigateCreateReviewerPage.bind(this);
+        this.back = this.back.bind(this);
     }
 
     componentDidMount() {   //inbuild function
@@ -17,6 +19,18 @@ class viewReviewer extends Component {
             .then(response => {
                 this.setState({ reviewers: response.data.data });
             })
+    }
+
+    navigateEditReviewerPage(e, reviewerId) {
+        window.location = `/updateReviewer/${reviewerId}`
+    }
+
+    navigateCreateReviewerPage(e) {
+        window.location = '/reviewerRegistration'
+    }
+
+    back(e) {
+        window.location = '/adminSubcategories'
     }
 
     deleteReviewer(e , reviewerId) {
@@ -43,16 +57,14 @@ class viewReviewer extends Component {
 
     render() {
         return (
+            <div>
+                <CheckoutSteps step3></CheckoutSteps>
             <div className="container">
                 <br/>
                 <div className = "row">
                     <div className="col-8"><h1>Reviewers</h1></div>
-                    <div className="col-4"><button type="button" className="btn btn-outline-primary"><a href="/reviewerRegistration">Create Reviewer</a></button></div>
-                </div>
-                <div className = "row">
-                    <div className="col-4"></div>
-                    <div className="card col-4"><h6>Total Salary of Reviewers</h6></div>
-                    <div className="card col-2"></div>
+                    <div className="col-2"><button type="button" className="btn btn-outline-primary" onClick={e => this.navigateCreateReviewerPage(e)}> <a href="/reviewerRegistration">Create Reviewer</a></button></div>
+                    <div className="col-2"><button type="button" className="btn btn-outline-primary" onClick={e => this.back(e)}> back</button></div>
                 </div>
                 <br/>
                     <div className="container">
@@ -77,18 +89,21 @@ class viewReviewer extends Component {
                                 <td>{item.nicNo}</td>
                                 <td>{item.address}</td>
                                 <td>{item.mobileNumber}</td>
+                                <td>
                                 {item.admins.map((item,index)=>(
-                                    <td>{item.name}</td>
+                                    <p>{item.name}</p>
                                 ))}
+                                </td>
                                 <td>{item.userName}</td>
                                 <td>{item.reviewerSalary}</td>
-                                <td><button type="button" className="btn btn-outline-warning"  onClick={e => this.deleteProduct(e, item._id)} >Edit</button></td>
+                                <td><button type="button" className="btn btn-outline-warning"  onClick={e => this.navigateEditReviewerPage(e, item._id)} >Edit</button></td>
                                 <td><button type="button" className="btn btn-outline-danger"  onClick={e => this.deleteReviewer(e, item._id)} >Delete</button></td>
                                 </tr>
                             ))}    
                             </tbody>
                         </table>
                     </div>
+            </div>
             </div>
         )
     }
