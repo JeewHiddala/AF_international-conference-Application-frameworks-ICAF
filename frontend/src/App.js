@@ -12,6 +12,7 @@ import ReviewedResearchPaperUpload from './components/Reviewer/reviewedResearchP
 import workshopProposal from './components/Reviewer/workshopProposal';
 import EditWorkshopProposals from './components/Reviewer/editworkshopProposals';
 import viewAttendees from './components/Reviewer/attendee';
+import AllAttendeeDetails from './components/Reviewer/viewAttendeeDetails';
 
 function App(){
     return(
